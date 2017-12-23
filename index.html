@@ -25,27 +25,56 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 
 	<!--<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>-->
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+		.flex {
+			width: 100%;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.flex a {
+			line-height: 80px;
+			display: inline-block;
+			text-align: center;
+			background-color: #ddd;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 20px;
+			padding: 15px 30px;
+			margin: 5px;
+			color: #151515;
+			font-family: sans-serif;
+		}
+
+		.flex a:hover {
+			transition: all .3s linear;
+			color: #ddd;
+			background-color: #151515;
+		}
+	</style>
 
 </head>
 
 <body>
 
-	<div class="container">
+	<div class="flex">
 
-		<div class="row">
-
-			<div class="col-sm-8 col-sm-offset-2">
-				
-				<h1>LA LA LA !!!</h1>
-
-			</div>
-			
-		</div>
+		<a href="https://frecautanigor.github.io/addnew/">AddNew</a>
+		<a href="https://frecautanigor.github.io/mw/">Man's World</a>
 
 	</div>
+		
 	
-	<link rel="stylesheet" href="css/main.min.css">
-	<script src="js/scripts.min.js"></script>
+
+	
+	<!-- <link rel="stylesheet" href="css/main.min.css">
+	<script src="js/scripts.min.js"></script> -->
 
 </body>
 </html>
