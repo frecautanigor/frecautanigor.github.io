@@ -24,110 +24,132 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 
-	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
-	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/82ecfd9fb3/UntitledProject/style.css">
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #151515; }</style>
+	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/5856d740c1/UntitledProject/style.css">
 
 </head>
 
 <body>
-<nav id="menu__mobile">
-	<ul>
-		<li><a href="">Text__1</a></li>
-		<li><a href="">Text__2</a></li>
-		<li><a href="">Text__3</a></li>
-		<li><a href="">Text__4</a></li>
-		<li><a href="">Text__5</a></li>
-		<li><a href="">Text__6</a></li>
-		<li><a href="">Text__7</a></li>
-		<li><a href="">Text__8</a></li>
-		<li><a href="">Text__9</a></li>
-		<li><a href="">Text__10</a></li>
-	</ul>
-</nav>
 
-	<div id="fullpagez">
+	<nav class="navigation">
 
-		<div class="header-wrap section">
+		<a href="#header" class="logo__link">
+			<img class="logo__img" src="img/logo.svg" alt="Logo">
+		</a>
 
-			<header class="header">
-				<nav class="menu">
-					
-					<a href="" class="menu__logo"><img src="img/logo.svg" alt="Man's World - Logo" height="100%"></a>
+		<ul class="navigation__menu">
+			<li data-menuanchor="about"><a href="#about">Despre Noi</a></li>
+			<li data-menuanchor="services"><a href="#services">servicii</a></li>
+			<li data-menuanchor="testimonials"><a href="#testimonials">testimoniale</a></li>
+			<li data-menuanchor="test"><a href="#test">produse</a></li>
+			<li data-menuanchor="test"><a href="#test">tarife</a></li>
+			<li data-menuanchor="test"><a href="#test">galerie</a></li>
+			<li data-menuanchor="test"><a href="#test">contact</a></li>
+		</ul>
 
-					<ul class="menu__navigation">
-						<li><a class="menu__link" href="">Despre noi</a></li>
-						<li><a class="menu__link" href="">Servicii</a></li>
-						<li><a class="menu__link" href="">Produse</a></li>
-						<li><a class="menu__link" href="">Testimoniale</a></li>
-						<li><a class="menu__link" href="">Galerie</a></li>
-						<li><a class="menu__link" href="">Contact</a></li>
-						<li><a class="menu__link" href="">Programare</a></li>
-					</ul>
+		<ul class="navigation__right">
+			<li>
+				<a href="">
+					<i class="icon icon-avatar"></i>
+					<span>Contul meu</span>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<i class="icon icon-cart"></i>
+					<span>Coș <span class="couter__cart">4</span></span>
+				</a>
+			</li>
+		</ul>
 
-					<ul class="menu__right">
-						<li>
-							<a class="menu__right-link" href="">
-								<i class="icon-avatar icon"></i>
-								Contul meu
-							</a>
-						</li>
+		<div class="hamburger hamburger--collapse">
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+		</div>
 
-						<li class="menu__right-line"></li>
+	</nav>
 
-						<li>
-							<a class="menu__right-link" href="">
-								<i class="icon-cart icon"></i>
-								Coș <span class="cart__count">4</span>
-							</a>
-						</li>
-					</ul>
+	<nav class="navigation__mobile">
+		<ul>
 
-					<a class="menu__right-humburger" href="#menu__mobile"><span></span></a>
+		<div class="hamburger hamburger--collapse is-active" id="exit__menu">
+			<span class="hamburger-box">
+				<span class="hamburger-inner"></span>
+			</span>
+		</div>
+			<li><a href="">Text____1</a></li>
+			<li><a href="">Text____2</a></li>
+			<li><a href="">Text____3</a></li>
+			<li><a href="">Text____4</a></li>
+			<li><a href="">Text____5</a></li>
+			<li><a href="">Text____6</a></li>
+			<li><a href="">Text____7</a></li>
+			<li><a href="">Text____8</a></li>
+			<li><a href="">Text____9</a></li>
+			<li><a href="">Text____10</a></li>
+		</ul>
+		
+		
+	</nav>
 
-				</nav>
+	<div id="main">
+		
+		<header class="header section"">
+			
+			<div class="header__content">
 
 				<div class="header__welcome">
-					
-					<img src="img/logo2.svg" alt="Logo" class="header__welcome-logo">
-
-					<h1>Locul unde bărbaţii sunt răsfăţaţi</h1>
-
+					<img src="img/logo2.svg" alt="">
+					<h1>locul unde bărbaţii sunt răsfăţaţi</h1>
 					<a href="" class="button">Programare online</a>
-
 				</div>
 
 				<div class="header__info">
-					
 					<div class="header__info-item">
-						<span class="title">Adresa</span>
-						<p class="adress">or. Chișinău,<br>str. Bulgară, ap. 5</p>
+						<h2>Adresa</h2>
+						<p>mun. Bălți, str. Ștefon Baton</p>
 					</div>
-					
 					<div class="header__info-item">
-						<span class="title">Sunați-ne</span>
-						<p class="phone">060-69-632</p>
+						<h2>Sunați-ne</h2>
+						<p class="phone__info">068-65-954</p>
 					</div>
-					
 					<div class="header__info-item">
-						<span class="title">Program de lucru</span>
-						<p class="hours">
-							Luni - sâmbăta<br>
-							09:00 - 17:30
-						</p>
+						<h2>Program de lucru</h2>
+						<p>Luni-sâmbăta</p>
+						<p>9:00 - 18:30</p>
 					</div>
-
 				</div>
+					
+			</div>
 
-			</header>
+		</header>
 
-		</div>
+		<section class="about section">
+			<h1>About</h1>
+		</section>
 
-		<div class="box">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi saepe facere numquam fugiat soluta doloribus dolorum eaque, debitis libero voluptatum pariatur architecto non, ratione, odit quis dolores nulla, doloremque quas!</p>
-		</div>
-		
+		<section class="services section">
+			<h1 class="box">Services</h1>
+			
+			<div class="box"><img src="img/favicon/favicon-32x32.png" alt=""></div>
+		</section>
+
+		<section class="testimonials section">
+			<h1 class="box">testimonials</h1>
+			
+			<div class="box"><img src="img/favicon/favicon-32x32.png" alt=""></div>
+		</section>
 
 	</div>
+
+
+
+
+
+
+
+
 	
 	<link rel="stylesheet" href="css/main.min.css">
 	<script src="js/scripts.min.js"></script>
