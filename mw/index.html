@@ -26,22 +26,64 @@
 
 	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #151515; }</style>
 
-	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/1fb0851d96/UntitledProject/style.css">
+	<!-- <link rel="stylesheet" href="https://i.icomoon.io/public/temp/1fb0851d96/UntitledProject/style.css"> -->
 
 </head>
 
 <body>
-<div class="cssload-container">
-	<ul class="cssload-flex-container">
-		<li>
-			<span class="cssload-loading cssload-one"></span>
-			<span class="cssload-loading cssload-two"></span>
-			<span class="cssload-loading-center"></span>
-		</li>
+
+	<div class="cssload-container">
+		<ul class="cssload-flex-container">
+			<li>
+				<span class="cssload-loading cssload-one"></span>
+				<span class="cssload-loading cssload-two"></span>
+				<span class="cssload-loading-center"></span>
+			</li>
+		</div>
 	</div>
-</div>
 
 	<div id="mmenu">
+
+		<nav class="navigation">
+
+			<a href="#header" class="logo__link">
+				<img class="logo__img" src="img/logo.svg" alt="Logo">
+			</a>
+
+			<ul class="navigation__menu">
+				<li data-menuanchor="about"><a href="#about">Despre Noi</a></li>
+				<li data-menuanchor="services"><a href="#services">servicii</a></li>
+				<li data-menuanchor="testimonials"><a href="#testimonials">testimoniale</a></li>
+				<li data-menuanchor="test"><a href="#test">produse</a></li>
+				<li data-menuanchor="test"><a href="#test">tarife</a></li>
+				<li data-menuanchor="test"><a href="#test">galerie</a></li>
+				<li data-menuanchor="test"><a href="#test">contact</a></li>
+			</ul>
+
+			<ul class="navigation__right">
+				<li>
+					<a href="">
+						<i class="icon icon-avatar"></i>
+						<span>Contul meu</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<i class="icon icon-cart"></i>
+						<span>Coș <span class="couter__cart">4</span></span>
+					</a>
+				</li>
+			</ul>
+
+			<a href="#menu">
+				<div class="hamburger hamburger--collapse">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</div>
+			</a>
+
+		</nav>
 
 		<nav class="navigation__mobisle" id="menu">
 			
@@ -190,55 +232,32 @@
 
 			</section>
 
-			<section class="testimonials section">
-				<h1 class="box">testimonials</h1>
-				
-				<div class="box"><img src="img/favicon/favicon-32x32.png" alt=""></div>
+			<section class="testimonials section" >
+
+				<div class="heading">
+					<h2>Testimoniale</h2>
+					<div class="dividing"><span></span></div>
+					<p class="quote">Mulțumim mult clienților care nu numai că cooperează cu noi dar și ne susțin<br>și ne motivează spre realizări noi</p>
+				</div>
+
+				<div class="testimonials__slider owl-carousel">
+					<div class="testimonials__slider-item">
+						<div class="client_img"><img src="img/user_img.jpg" alt=""></div>
+
+						<p class="mesage_client">
+							Odată ce te trezești pe un pat moale în apartamentul tău confortabil. Ceasul va avea . În calendar este duminică. Du-te la fereastră, deschideți perdelele. Și în afara ferestrei va fi orașul tău preferat, despre care ai visat atât de mult ca un adolescent. Du-te în bucătărie să mănânce clătite și bea cafea.
+						</p>
+
+						<div class="info_client">
+							<span class="name_client">Olga Verbițchii</span>
+							<p class="service_client">Tuns, Stiling</p>
+						</div>
+					</div>
+				</div>
+
 			</section>
 
 		</div>
-
-
-		<nav class="navigation">
-
-			<a href="#header" class="logo__link">
-				<img class="logo__img" src="img/logo.svg" alt="Logo">
-			</a>
-
-			<ul class="navigation__menu">
-				<li data-menuanchor="about"><a href="#about">Despre Noi</a></li>
-				<li data-menuanchor="services"><a href="#services">servicii</a></li>
-				<li data-menuanchor="testimonials"><a href="#testimonials">testimoniale</a></li>
-				<li data-menuanchor="test"><a href="#test">produse</a></li>
-				<li data-menuanchor="test"><a href="#test">tarife</a></li>
-				<li data-menuanchor="test"><a href="#test">galerie</a></li>
-				<li data-menuanchor="test"><a href="#test">contact</a></li>
-			</ul>
-
-			<ul class="navigation__right">
-				<li>
-					<a href="">
-						<i class="icon icon-avatar"></i>
-						<span>Contul meu</span>
-					</a>
-				</li>
-				<li>
-					<a href="">
-						<i class="icon icon-cart"></i>
-						<span>Coș <span class="couter__cart">4</span></span>
-					</a>
-				</li>
-			</ul>
-
-			<a href="#menu">
-				<div class="hamburger hamburger--collapse">
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
-					</span>
-				</div>
-			</a>
-
-		</nav>
 
 	</div>
 
