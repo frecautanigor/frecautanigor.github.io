@@ -1,0 +1,95 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('icomoon.eot?czngr');
+  src:  url('icomoon.eot?czngr#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?czngr') format('truetype'),
+    url('icomoon.woff?czngr') format('woff'),
+    url('icomoon.svg?czngr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add-button:before {
+  content: "\e900";
+}
+.icon-book:before {
+  content: "\e901";
+}
+.icon-delivery-truck:before {
+  content: "\e902";
+}
+.icon-facebook:before {
+  content: "\e903";
+}
+.icon-habib-logo:before {
+  content: "\e904";
+}
+.icon-hookah:before {
+  content: "\e905";
+}
+.icon-hour:before {
+  content: "\e906";
+}
+.icon-instagram:before {
+  content: "\e907";
+}
+.icon-logo-small-habib:before {
+  content: "\e908";
+}
+.icon-maps:before {
+  content: "\e909";
+}
+.icon-more-eye:before {
+  content: "\e90a";
+}
+.icon-ok:before {
+  content: "\e90b";
+}
+.icon-play-button:before {
+  content: "\e90c";
+}
+.icon-plus-18:before {
+  content: "\e90d";
+}
+.icon-quotation-left:before {
+  content: "\e90e";
+}
+.icon-quotation-right:before {
+  content: "\e90f";
+}
+.icon-sent-mail:before {
+  content: "\e910";
+}
+.icon-strawberry:before {
+  content: "\e911";
+}
+.icon-telephone:before {
+  content: "\e912";
+}
+.icon-time:before {
+  content: "\e913";
+}
+.icon-vk:before {
+  content: "\e914";
+}
+.icon-youtube:before {
+  content: "\e915";
+}
+.icon-zoom-in:before {
+  content: "\e916";
+}
