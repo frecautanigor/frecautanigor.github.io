@@ -1,0 +1,130 @@
+@import "vars";
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
+@include media-breakpoint-down(lg) {
+	
+}
+
+// ≥992px
+@include media-breakpoint-down(md) {
+
+	nav{
+		.hamburger{display: block;}
+		.links{
+			display: none;
+			&.show{
+				display: flex;
+				width: 100vw;
+				height: 100vh;
+				flex-direction: column;
+				justify-content: center;
+				position: absolute;
+				top: 60px;
+				background-color: rgba($color-dark, .95);
+				a{
+					margin: 10px;
+				}
+			}
+		}
+	}
+
+	.footer{
+		&__main{
+			&-about, &-contacts, &-useful, &-fb{
+				align-items: center;
+			}
+		}
+	}
+
+	.services{
+		&__item{
+			padding: 15px !important;
+		}
+	}
+
+}
+
+// ≥768px
+@include media-breakpoint-down(sm) {
+	.values-row{
+		height: 900px;
+		.filter{
+			height: 900px;
+		}
+	}
+	.values{
+		flex-direction: column;
+	}
+	.services__img{
+		min-height: 200px;
+		background-attachment: fixed;
+	}
+}
+
+// ≥576px
+@include media-breakpoint-down(xs) {
+	.newsletter{
+		form{
+			.form-input, .btn{margin: 15px;}			
+		}
+	}
+	.modal{
+		&__scheldule, &__testimonial, &__career{
+			flex-direction: column;
+		}
+	}
+	.absolute__elements{
+		right: 15px;
+		&-link{
+			height: 40px;
+			width: 40px;
+			&::after{
+				height: 60px;
+				width: 60px;
+			}
+			&:hover{
+				color: $color-white;
+				&::after{
+					height: 50px;
+					width: 50px;
+				}
+			}	
+		}
+		.cd-top {
+			margin-top: 5px;
+			height: 20px;
+			width: 40px;
+		}
+	}
+	.contact__page{
+		&-line{
+			flex-direction: column;
+		}
+	}
+}
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
+@include media-breakpoint-up(sm) {
+
+}
+
+// ≤768px
+@include media-breakpoint-up(md) {
+
+}
+
+// ≤992px
+@include media-breakpoint-up(lg) {
+
+}
+
+// ≤1200px
+@include media-breakpoint-up(xl) {
+	
+}
