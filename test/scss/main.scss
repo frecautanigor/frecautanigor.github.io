@@ -951,6 +951,7 @@ a.link__album{
 			}
 		}
 	}
+
 	&__services{
 		padding-bottom: 30px;
 		margin-top: 30px;
@@ -1103,19 +1104,6 @@ a.link__album{
 	.slick-slide{
 		outline: none !important;
 	}
-}
-
-.fb_dialog{
-  right: 25px!important;
-  bottom: 50px!important;
-  border: 10px solid rgba(255, 78, 78, .4)!important;
-  transition: 0.5s linear!important;
-}
-.fb_dialog:hover{
-  right: 30px!important;
-  box-shadow: none!important;
-  border: 5px solid rgba(255, 78, 78, .4)!important;
-  transition: 0.5s linear!important;
 }
 
 @import "admin"; // Styles for admin
