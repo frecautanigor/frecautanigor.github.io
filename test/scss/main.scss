@@ -927,7 +927,7 @@ a.link__album{
 		padding-bottom: 30px;
 		.h2{margin: 0; padding: 0;}
 		.p{padding: 0; margin: 0;}
-		&__left{
+		&-left{
 			padding: 30px;
 			.btn{
 				display: block;
@@ -936,7 +936,7 @@ a.link__album{
 			}
 			.p{padding: 30px 0}
 		}
-		&__right{
+		&-right{
 			padding: 30px;
 			.value{
 				margin-bottom: 15px;
@@ -1104,6 +1104,19 @@ a.link__album{
 	.slick-slide{
 		outline: none !important;
 	}
+}
+
+.fb_dialog{
+  right: 25px!important;
+  bottom: 50px!important;
+  border: 10px solid rgba(255, 78, 78, .4)!important;
+  transition: 0.5s linear!important;
+}
+.fb_dialog:hover{
+  right: 30px!important;
+  box-shadow: none!important;
+  border: 5px solid rgba(255, 78, 78, .4)!important;
+  transition: 0.5s linear!important;
 }
 
 @import "admin"; // Styles for admin
