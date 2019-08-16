@@ -1,0 +1,81 @@
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $yellow
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'Open Sans', sans-serif;
+	overflow-x: hidden
+	color: $dark
+
+.btn
+	display: inline-block
+	border: none
+	color: #fff
+	text-decoration: none
+	background-color: $red
+	padding: 15px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 2px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	&::after
+		transition: background-color .2s ease
+		position: absolute
+		content: ''
+		height: 4px
+		bottom: 0
+		width: 100%
+		background-color: darken($red, 50%)
+		opacity: .18
+		border-bottom-left-radius: 2px
+		border-bottom-right-radius: 2px
+		left: 0
+	&:focus, &:hover
+		text-decoration: none
+		color: #fff
+	&:hover
+		background-color: lighten($red, 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken($red, 5%)
+		&::after
+			opacity: .32
+
+
+// HEADER START
+
+.header
+	&_topBG
+		height: 80px
+		background-color: #fff
+	&_top
+		display: flex
+		justify-content: space-between
+
+
+// HEADER END
