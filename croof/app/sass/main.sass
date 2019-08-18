@@ -1,7 +1,9 @@
 @import vars
 @import fonts
 @import libs
-
+*
+	margin: 0
+	padding: 
 ::placeholder
 	color: #666
 
@@ -26,59 +28,154 @@ body
 	color: $dark
 	background-color: #ddd
 
+ul, ul li, ul ul li
+	text-indent: 0
+	list-style: none
+
+.trans
+	transition: all .3s ease-in-out
+
 .btn
 	display: inline-block
 	border: none
 	color: #fff
 	text-decoration: none
 	background-color: $red
-	padding: 15px 45px
-	font-size: 13px
+	padding: 0 15px
+	font-size: 18px
 	text-transform: uppercase
-	font-weight: 600
-	letter-spacing: 3px
-	border-radius: 2px
+	font-weight: 400
+	border-radius: 99px
 	text-align: center
 	position: relative
 	outline: none
 	transition: background-color .1s ease
 	cursor: pointer
-	&::after
-		transition: background-color .2s ease
-		position: absolute
-		content: ''
-		height: 4px
-		bottom: 0
-		width: 100%
-		background-color: darken($red, 50%)
-		opacity: .18
-		border-bottom-left-radius: 2px
-		border-bottom-right-radius: 2px
-		left: 0
+	height: 36px
+	line-height: 36px
+	@extend .trans
+
 	&:focus, &:hover
 		text-decoration: none
 		color: #fff
 	&:hover
 		background-color: lighten($red, 5%)
 		&::after
-			opacity: .22
+			opacity: .25
 	&:active
 		background-color: darken($red, 5%)
 		&::after
-			opacity: .32
+			opacity: .35
 
 
 // HEADER START
 
 .header
-	&_topBG
+	&_content
+		position: relative
 		height: 100%
+		width: 100%
+		background-color: rgba($dark, .6)
+
+	
+	&_topBG
+		height: 80px
 		background-color: #fff
 	&_top
 		height: 80px
 		display: flex
 		justify-content: space-between
 		align-items: center
+		&-call
+			.number
+				@extend .trans
+				font-size: 24px
+				color: $dark
+				text-decoration: none
+				margin: 0 30px
+				&:hover
+					color: $red
+			
+			.btn
+				margin: 0 30px
+				[class*="icon"]
+					font-size: 15px
+		
+		&-lang
+			.link
+				font-size: 18px
+				color: $dark
+				text-decoration: none
+				@extend .trans
+				&:hover
+					color: $yellow
+				&.active
+					pointer-events: none
+					color: lighten($dark, 50%)
+	
+	&_menu
+		height: 60px
+		background-color: transparent
+		background-color: $yellow
+		position: absolute
+		width: 100%
+		top: 80px
+		&-list
+			height: 60px
+			display: flex
+			justify-content: center
+			align-items: center
+			[class*="icon"]
+				font-size: 14px
+		&-item, &-link
+			color: $dark
+			margin: 0 10px
+			font-size: 18px
+			text-transform: uppercase
+			font-weight: 600
+			line-height: 60px
+			display: block
+			@extend .trans
+			&:hover
+				text-decoration: none
+				color: #fff
+			&:hover .header_submenu
+				display: block
+	
+	&_submenu
+		position: absolute
+		top: 60px
+		background-color: $yellow
+		padding: 10px
+		display: none
+		&-item, &-link
+			color: $dark
+			margin: 0 10px
+			font-size: 18px
+			text-transform: none
+			font-weight: 400
+			text-align: center
+			display: block
+			@extend .trans
+			line-height: 2
+			&:hover
+				text-decoration: none
+				color: #fff
+				@extend .trans
 
+		&-link
+			position: relative
+			[class*="icon"]
+				font-size: 18px
+				position: relative
+				left: -10px
+				color: transparent
+			&:hover [class*="icon"]
+				left: -2px
+				color: $dark
+				@extend .trans
 
 // HEADER END
+
+.main
+	margin-top: 60px

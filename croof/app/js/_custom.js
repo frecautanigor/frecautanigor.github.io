@@ -1,5 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-	// Custom JS
+	$('.sliderr').slick({
+		dots: true,
+		prevArrow: false,
+    	nextArrow: false,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 1,
+		adaptiveHeight: true
+	});
 
 });
