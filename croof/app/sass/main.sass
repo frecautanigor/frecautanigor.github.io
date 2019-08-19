@@ -1,15 +1,28 @@
 @import vars
 @import fonts
 @import libs
+
 *
 	margin: 0
-	padding: 
+	padding: 0
+
 ::placeholder
 	color: #666
 
 ::selection
 	background-color: $yellow
 	color: #fff
+
+::-webkit-scrollbar 
+	width: 10px
+
+::-webkit-scrollbar-track
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
+	background-color: #fff
+
+::-webkit-scrollbar-thumb
+	background-color: $yellow
+	border-radius: 99px
 
 input, textarea
 	outline: none
@@ -26,10 +39,7 @@ body
 	font-family: 'Open Sans', sans-serif
 	overflow-x: hidden
 	color: $dark
-	+media-breakpoint-down(xs)
-		background: green
-
-
+	
 ul, ul li, ul ul li
 	text-indent: 0
 	list-style: none
@@ -48,16 +58,19 @@ ul, ul li, ul ul li
 	color: $dark
 	text-align: center
 	font-size: 18px
-	padding: 0 30px
+	padding: 0 150px
 
-.section
-	margin: 100px 0
-	// background-color: #fff
 .text-white
 	color: #fff
 
 .trans
 	transition: all .3s ease-in-out
+
+.animated
+	+media-breakpoint-down(md)
+		transition-property: none !important
+		transform: none !important
+		animation: none !important
 
 .icomoon
 	font-family: 'icomoon' !important
@@ -102,6 +115,45 @@ ul, ul li, ul ul li
 		&::after
 			opacity: .35
 
+.button-call
+	&.btn
+		display: inline-block
+		border: none
+		color: #fff
+		text-decoration: none
+		background-color: $red
+		font-size: 28px
+		text-transform: uppercase
+		font-weight: 400
+		border-radius: 999px
+		position: fixed
+		bottom: 15px
+		right: 15px
+		outline: none
+		cursor: pointer
+		height: 60px
+		width: 60px
+		text-align: center
+		line-height: 60px
+		display: none
+		@extend .trans
+
+		&:focus, &:hover
+			text-decoration: none
+			color: #fff
+		&:hover
+			background-color: lighten($red, 5%)
+			&::after
+				opacity: .25
+		&:active
+			background-color: darken($red, 5%)
+			&::after
+				opacity: .35
+	&.fixed
+		display: block
+	&.animated.slower
+		animation-delay: 10s
+
 .img-responsive
 	display: block
 	max-width: 100%
@@ -110,11 +162,25 @@ ul, ul li, ul ul li
 .main
 	margin-top: 60px
 
+.section
+	margin: 100px 0
+
+	&.advantages
+		background-color: $dark
+		padding: 100px 0
+		text-align: center
+		[class*="icon"]
+			font-size: 60px
+			color: #fff
+		.p
+			margin-top: 10px
+			font-size: 18px
+			color: $yellow
+
 // HEADER START
 
 .header
 	&_content
-		position: relative
 		height: 100%
 		width: 100%
 		background-color: rgba($dark, .6)
@@ -128,6 +194,7 @@ ul, ul li, ul ul li
 		display: flex
 		justify-content: space-between
 		align-items: center
+		
 		&-call
 			.number
 				@extend .trans
@@ -142,6 +209,9 @@ ul, ul li, ul ul li
 				margin: 0 30px
 				[class*="icon"]
 					font-size: 15px
+			
+			+media-breakpoint-down(md)
+				display: none
 		
 		&-lang
 			.link
@@ -154,6 +224,9 @@ ul, ul li, ul ul li
 				&.active
 					pointer-events: none
 					color: lighten($dark, 50%)
+					
+					+media-breakpoint-down(md)
+						display: none
 	
 	&_menu
 		height: 60px
@@ -163,12 +236,23 @@ ul, ul li, ul ul li
 		top: 80px
 		z-index: 1
 		@extend .trans
+		&.block
+			display: block
+		+media-breakpoint-down(md)
+			height: 100%
+			bottom: 0
+			right: 0
+			left: 0
+			top: 80px
+			display: none
 		
 		&-list
 			height: 60px
 			display: flex
 			justify-content: center
 			align-items: center
+			+media-breakpoint-down(md)
+				display: block
 			[class*="icon"]
 				font-size: 14px
 		&-item, &-link
@@ -199,12 +283,17 @@ ul, ul li, ul ul li
 					color: $dark
 					&:hover
 						color: #fff
+			+media-breakpoint-down(md)
+				background-color: $yellow
 		&.fixed
 			position: fixed
 			top: 0
 			background-color: $yellow
 			.header_menu-item, .header_menu-link
 				color: $dark
+			+media-breakpoint-down(md)
+				position: absolute
+				top: 80px
 	
 	&_submenu
 		position: absolute
@@ -268,6 +357,8 @@ ul, ul li, ul ul li
 		height: calc(100vh - 80px)
 		display: flex
 		align-items: center
+		+media-breakpoint-down(md)
+			height: 100%
 		&-item
 			[class*="icon"]
 				font-size: 260px
@@ -302,3 +393,88 @@ ul, ul li, ul ul li
 
 
 // SLIDER END
+
+
+#hamburger
+	+media-breakpoint-down(md)
+		display: block
+	cursor: pointer
+	padding: 10px 35px 16px 0px
+	display: none
+	span
+		cursor: pointer
+		height: 2px
+		width: 35px
+		background: $dark
+		position: absolute
+		display: block
+		content: ''
+		transition: all 0.5s ease-in-out
+		&:before, &:after
+			cursor: pointer
+			height: 2px
+			width: 35px
+			background: $dark
+			position: absolute
+			display: block
+			content: ''
+			transition: all 0.5s ease-in-out
+		&:before
+			animation: undo-top .5s forwards
+		&:after
+			bottom: -10px
+			animation: undo-bottom .5s
+	&.active span
+		background-color: transparent
+		&:before
+			top: 0
+			transform: translateY(0px)
+			animation: top-x .5s forwards
+			background: yellow
+		&:after
+			transform: translateY(0px)
+			animation: bottom-x .5s forwards
+			background: yellow
+
+@keyframes top-x
+  0%
+    transform: translateY(-10px) rotate(0)
+
+  50%
+    transform: translateY(0px) rotate(0)
+
+  100%
+    transform: translateY(0px) rotate(45deg)
+
+
+@keyframes bottom-x
+  0%
+    transfrom: translateY(0) rotate(0)
+
+  50%
+    transform: translateY(-10px) rotate(0)
+
+  100%
+    transform: translateY(-10px) rotate(-45deg)
+
+
+@keyframes undo-top
+  0%
+    transform: translateY(0px) rotate(45deg)
+
+  50%
+    transform: translateY(0px) rotate(0)
+
+  100%
+    transform: translateY(-10px) rotate(0)
+
+
+@keyframes undo-bottom
+  0%
+    transform: translateY(-10px) rotate(-45deg)
+
+  50%
+    transform: translateY(-10px) rotate(0)
+
+  100%
+    transfrom: translateY(0px) rotate(0)	
