@@ -26,14 +26,49 @@ body
 	font-family: 'Open Sans', sans-serif
 	overflow-x: hidden
 	color: $dark
-	background-color: #ddd
+	+media-breakpoint-down(xs)
+		background: green
+
 
 ul, ul li, ul ul li
 	text-indent: 0
 	list-style: none
 
+.h1
+	font-size: 32px
+	font-weight: 400
+	color: $yellow
+	text-transform: uppercase
+	text-align: center
+	margin-bottom: 50px
+.p
+	font-style: 16px
+	color: $dark
+.desc
+	color: $dark
+	text-align: center
+	font-size: 18px
+	padding: 0 30px
+
+.section
+	margin: 100px 0
+	// background-color: #fff
+.text-white
+	color: #fff
+
 .trans
 	transition: all .3s ease-in-out
+
+.icomoon
+	font-family: 'icomoon' !important
+	speak: none
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	line-height: 1
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
 
 .btn
 	display: inline-block
@@ -67,6 +102,13 @@ ul, ul li, ul ul li
 		&::after
 			opacity: .35
 
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.main
+	margin-top: 60px
 
 // HEADER START
 
@@ -115,11 +157,13 @@ ul, ul li, ul ul li
 	
 	&_menu
 		height: 60px
-		background-color: transparent
 		background-color: $yellow
 		position: absolute
 		width: 100%
 		top: 80px
+		z-index: 1
+		@extend .trans
+		
 		&-list
 			height: 60px
 			display: flex
@@ -141,14 +185,35 @@ ul, ul li, ul ul li
 				color: #fff
 			&:hover .header_submenu
 				display: block
+		
+		&.homepage
+			background-color: transparent
+			.header_menu-item, .header_menu-link
+				color: $yellow
+				&:hover
+					text-decoration: none
+					color: #fff
+			&:hover
+				background-color: $yellow
+				.header_menu-item, .header_menu-link
+					color: $dark
+					&:hover
+						color: #fff
+		&.fixed
+			position: fixed
+			top: 0
+			background-color: $yellow
+			.header_menu-item, .header_menu-link
+				color: $dark
 	
 	&_submenu
 		position: absolute
 		top: 60px
 		background-color: $yellow
-		padding: 10px
+		padding: 10px 0
 		display: none
 		&-item, &-link
+			padding: 0 15px
 			color: $dark
 			margin: 0 10px
 			font-size: 18px
@@ -165,17 +230,75 @@ ul, ul li, ul ul li
 
 		&-link
 			position: relative
-			[class*="icon"]
+			display: inline-block
+			&::before
+				content: "\e906"
+				@extend .icomoon
 				font-size: 18px
-				position: relative
-				left: -10px
+				position: absolute
+				top: 10px
+				left: -20px
 				color: transparent
-			&:hover [class*="icon"]
-				left: -2px
-				color: $dark
+			&:hover::before
 				@extend .trans
+				color: $dark
+				left: -10px
 
 // HEADER END
 
-.main
-	margin-top: 60px
+// SLIDER START
+
+.slider
+	background-image: url(../img/bg-header.jpg)
+	background-repeat: no-repeat
+	background-position: center
+	background-size: cover
+	height: 100%
+	position: relative
+	margin-top: -60px
+	&::before
+		content: ''
+		background-color: rgba($dark, .6)
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
+	&_content
+		height: calc(100vh - 80px)
+		display: flex
+		align-items: center
+		&-item
+			[class*="icon"]
+				font-size: 260px
+				color: $yellow
+			.h1
+				text-align: left
+				margin-bottom: 15px
+	
+	.slick-dots
+		display: flex
+		padding: 0
+		margin: 0
+		position: absolute
+		bottom: 0
+		font-size: 0
+		width: 100%
+		justify-content: center
+		margin-bottom: 30px
+		button
+			border: none
+			height: 10px
+			width: 10px
+			background-color: transparent
+			border-radius: 999px
+			margin: 0 5px
+			padding: 0
+			border: 2px solid $yellow 
+		.slick-active
+			button
+				background-color: $yellow
+
+
+
+// SLIDER END
