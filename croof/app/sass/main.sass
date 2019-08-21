@@ -35,14 +35,101 @@ body
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	line-height: 1.65
+	line-height: 1.5
 	font-family: 'Open Sans', sans-serif
+	font-weight: normal
 	overflow-x: hidden
 	color: $dark
 	
 ul, ul li, ul ul li
 	text-indent: 0
 	list-style: none
+p
+	margin: 0
+
+#hamburger
+	+media-breakpoint-down(sm)
+		display: block
+	cursor: pointer
+	padding: 10px 35px 16px 0px
+	display: none
+	span
+		cursor: pointer
+		height: 2px
+		width: 35px
+		background: $dark
+		position: absolute
+		display: block
+		content: ''
+		transition: all 0.5s ease-in-out
+		&:before, &:after
+			cursor: pointer
+			height: 2px
+			width: 35px
+			background: $dark
+			position: absolute
+			display: block
+			content: ''
+			transition: all 0.5s ease-in-out
+		&:before
+			animation: undo-top .5s forwards
+		&:after
+			bottom: -10px
+			animation: undo-bottom .5s
+	&.active span
+		background-color: transparent
+		&:before
+			top: 0
+			transform: translateY(0px)
+			animation: top-x .5s forwards
+			background: $yellow
+		&:after
+			transform: translateY(0px)
+			animation: bottom-x .5s forwards
+			background: $yellow
+
+@keyframes top-x
+  0%
+    transform: translateY(-10px) rotate(0)
+
+  50%
+    transform: translateY(0px) rotate(0)
+
+  100%
+    transform: translateY(0px) rotate(45deg)
+
+
+@keyframes bottom-x
+  0%
+    transfrom: translateY(0) rotate(0)
+
+  50%
+    transform: translateY(-10px) rotate(0)
+
+  100%
+    transform: translateY(-10px) rotate(-45deg)
+
+
+@keyframes undo-top
+  0%
+    transform: translateY(0px) rotate(45deg)
+
+  50%
+    transform: translateY(0px) rotate(0)
+
+  100%
+    transform: translateY(-10px) rotate(0)
+
+
+@keyframes undo-bottom
+  0%
+    transform: translateY(-10px) rotate(-45deg)
+
+  50%
+    transform: translateY(-10px) rotate(0)
+
+  100%
+    transfrom: translateY(0px) rotate(0)	
 
 .h1
 	font-size: 32px
@@ -51,6 +138,12 @@ ul, ul li, ul ul li
 	text-transform: uppercase
 	text-align: center
 	margin-bottom: 50px
+.h2
+	font-size: 24px
+	color: $dark
+	text-transform: uppercase
+	font-weight: 400
+	margin-bottom: 0
 .p
 	font-style: 16px
 	color: $dark
@@ -193,12 +286,16 @@ ul, ul li, ul ul li
 			height: 45px
 		
 		&-call
+			+media-breakpoint-down(sm)
+				display: none
 			.number
 				@extend .trans
 				font-size: 24px
 				color: $dark
 				text-decoration: none
 				margin: 0 30px
+				+media-breakpoint-down(md)
+					margin: 0 10px
 				&:hover
 					color: $red
 			
@@ -206,9 +303,10 @@ ul, ul li, ul ul li
 				margin: 0 30px
 				[class*="icon"]
 					font-size: 15px
+				+media-breakpoint-down(md)
+					margin: 0 10px
+
 			
-			+media-breakpoint-down(md)
-				display: none
 		
 		&-lang
 			.link
@@ -216,13 +314,15 @@ ul, ul li, ul ul li
 				color: $dark
 				text-decoration: none
 				@extend .trans
+				+media-breakpoint-down(sm)
+					font-size: 22px
 				&:hover
 					color: $yellow
 				&.active
 					pointer-events: none
 					color: lighten($dark, 50%)
 					
-					+media-breakpoint-down(md)
+					+media-breakpoint-down(sm)
 						display: none
 	
 	&_menu
@@ -235,7 +335,7 @@ ul, ul li, ul ul li
 		@extend .trans
 		&.block
 			display: block
-		+media-breakpoint-down(md)
+		+media-breakpoint-down(sm)
 			height: 100%
 			bottom: 0
 			right: 0
@@ -248,7 +348,7 @@ ul, ul li, ul ul li
 			display: flex
 			justify-content: center
 			align-items: center
-			+media-breakpoint-down(md)
+			+media-breakpoint-down(sm)
 				display: block
 			[class*="icon"]
 				font-size: 14px
@@ -261,6 +361,9 @@ ul, ul li, ul ul li
 			line-height: 60px
 			display: block
 			@extend .trans
+			+media-breakpoint-down(md)
+				margin: 0 8px
+				font-size: 15px
 			&:hover
 				text-decoration: none
 				color: #fff
@@ -280,15 +383,15 @@ ul, ul li, ul ul li
 					color: $dark
 					&:hover
 						color: #fff
-			+media-breakpoint-down(md)
+			+media-breakpoint-down(sm)
 				background-color: $yellow
 		&.fixed
 			position: fixed
 			top: 0
-			background-color: $yellow
+			background-color: rgba($yellow, .9)
 			.header_menu-item, .header_menu-link
 				color: $dark
-			+media-breakpoint-down(md)
+			+media-breakpoint-down(sm)
 				position: absolute
 				top: 80px
 	
@@ -355,7 +458,7 @@ ul, ul li, ul ul li
 		display: flex
 		align-items: center
 		+media-breakpoint-down(md)
-			height: 100%
+			height: 500px
 		&-item
 			[class*="icon"]
 				font-size: 260px
@@ -387,91 +490,20 @@ ul, ul li, ul ul li
 			button
 				background-color: $yellow
 
-
-
 // SLIDER END
 
+// WWA START
 
-#hamburger
-	+media-breakpoint-down(md)
-		display: block
-	cursor: pointer
-	padding: 10px 35px 16px 0px
-	display: none
-	span
-		cursor: pointer
-		height: 2px
-		width: 35px
-		background: $dark
-		position: absolute
-		display: block
-		content: ''
-		transition: all 0.5s ease-in-out
-		&:before, &:after
-			cursor: pointer
-			height: 2px
-			width: 35px
-			background: $dark
-			position: absolute
-			display: block
-			content: ''
-			transition: all 0.5s ease-in-out
-		&:before
-			animation: undo-top .5s forwards
-		&:after
-			bottom: -10px
-			animation: undo-bottom .5s
-	&.active span
-		background-color: transparent
-		&:before
-			top: 0
-			transform: translateY(0px)
-			animation: top-x .5s forwards
-			background: $yellow
-		&:after
-			transform: translateY(0px)
-			animation: bottom-x .5s forwards
-			background: $yellow
-
-@keyframes top-x
-  0%
-    transform: translateY(-10px) rotate(0)
-
-  50%
-    transform: translateY(0px) rotate(0)
-
-  100%
-    transform: translateY(0px) rotate(45deg)
+.wwa
+	&_desc
+		text-transform: uppercase
+		color: $yellow
+		font-size: 18px
+		margin-bottom: 25px
+	.p
+		margin-right: 30px
+	
+// WWA END
 
 
-@keyframes bottom-x
-  0%
-    transfrom: translateY(0) rotate(0)
 
-  50%
-    transform: translateY(-10px) rotate(0)
-
-  100%
-    transform: translateY(-10px) rotate(-45deg)
-
-
-@keyframes undo-top
-  0%
-    transform: translateY(0px) rotate(45deg)
-
-  50%
-    transform: translateY(0px) rotate(0)
-
-  100%
-    transform: translateY(-10px) rotate(0)
-
-
-@keyframes undo-bottom
-  0%
-    transform: translateY(-10px) rotate(-45deg)
-
-  50%
-    transform: translateY(-10px) rotate(0)
-
-  100%
-    transfrom: translateY(0px) rotate(0)	
