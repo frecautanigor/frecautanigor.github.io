@@ -8,11 +8,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		speed: 300,
 		slidesToShow: 1,
 		adaptiveHeight: true,
-		autoplay: true
+		autoplay: false
 	});
 
 	// Menu hamburger
-	var menu = document.querySelector( "#hamburger" )
+	var menu = document.querySelector( "#hamburger" );
 	menu.addEventListener( "click", function(){
 		this.classList.toggle( "active" );
 		$(".header_menu").toggleClass( "block animated fadeInDown" );
@@ -38,6 +38,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		  } else
 		  $(".button-call").removeClass("fixed animated infinite heartBeat slower");
 		}
-	  });
+	  });  
+
+	//   Show submenu 
+	$( "li .header_menu-item" ).toggle(
+		function() {
+			$( ".header_submenu" ).addClass( "active" );
+		}, function() {
+			$( ".header_submenu" ).removeClass( "active" );
+		}
+	);
 
 });
