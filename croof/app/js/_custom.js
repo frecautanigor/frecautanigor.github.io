@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-	$(".slider_content").slick({
+	$(".slider__content").slick({
 		dots: true,
 		prevArrow: false,
     	nextArrow: false,
@@ -15,23 +15,23 @@ document.addEventListener("DOMContentLoaded", function() {
 	var menu = document.querySelector( "#hamburger" );
 	menu.addEventListener( "click", function(){
 		this.classList.toggle( "active" );
-		$(".header_menu").toggleClass( "block animated fadeInDown" );
+		$(".header__menu").toggleClass( "block animated fadeInDown" );
 	});
 
 	// Fixed menu
 	var waypoint = new Waypoint({
-		element: document.getElementsByClassName("header_menu"),
+		element: document.getElementsByClassName("header__menu"),
 		handler: function(dir) {
 		  if (dir === "down") {
-			$(".header_menu").addClass("fixed animated fadeInDown");
+			$(".header__menu").addClass("fixed animated fadeInDown");
 		  } else
-		  $(".header_menu").removeClass("fixed animated fadeInDown");
+		  $(".header__menu").removeClass("fixed animated fadeInDown");
 		}
 	  });
 
 	// Fixed button call
 	var waypoint = new Waypoint({
-		element: document.getElementsByClassName("section wwa"),
+		element: document.getElementsByClassName("section"),
 		handler: function(dir) {
 		  if (dir === "down") {
 			$(".button-call").addClass("fixed animated infinite heartBeat slower");
@@ -40,13 +40,28 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	  });  
 
-	//   Show submenu 
-	$( "li .header_menu-item" ).toggle(
-		function() {
-			$( ".header_submenu" ).addClass( "active" );
-		}, function() {
-			$( ".header_submenu" ).removeClass( "active" );
+	//   COOKIE Block
+	$(function() {
+		// Проверяем запись в куках о посещении
+		// Если запись есть - ничего не происходит
+		if (!$.cookie('cookie__info')) {
+			// если cookie не установлено появится окно
+			// с задержкой 5 секунд
+			var delay__popup = 1000;
+			setTimeout("document.querySelector('.cookie__block').style.display='inline-block'", delay__popup);
 		}
-	);
+
+	});
+	   
+	// Закрытие полосы cookie
+
+	$('.cookie__block-ok').click(function(){
+		$('.cookie__block').fadeOut();
+		$.cookie('cookie__info', true, {
+			// Время хранения cookie в днях
+			expires: 30,
+			path: '/'
+		});
+	});
 
 });

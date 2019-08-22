@@ -238,16 +238,11 @@ p
 				opacity: .35
 	&.fixed
 		display: block
-	&.animated.slower
-		animation-delay: 10s
 
 .img-responsive
 	display: block
 	max-width: 100%
 	height: auto
-
-.main
-	margin-top: 60px
 
 .section
 	margin: 100px 0
@@ -267,16 +262,18 @@ p
 // HEADER START
 
 .header
-	&_content
+	&__content
 		height: 100%
 		width: 100%
 		background-color: rgba($dark, .6)
 
 	
-	&_topBG
+	&__topBG
 		height: 80px
 		background-color: #fff
-	&_top
+		+media-breakpoint-down(sm)
+			box-shadow: 0 0px 16px -7px #f2cb05
+	&__top
 		height: 80px
 		display: flex
 		justify-content: space-between
@@ -325,13 +322,12 @@ p
 					+media-breakpoint-down(sm)
 						display: none
 	
-	&_menu
+	&__menu
 		height: 60px
 		background-color: $yellow
-		position: absolute
 		width: 100%
-		top: 80px
 		z-index: 1
+		position: relative
 		@extend .trans
 		&.block
 			display: block
@@ -367,21 +363,21 @@ p
 			&:hover
 				text-decoration: none
 				color: #fff
-			&:hover .header_submenu
+			&:hover .header__submenu
 				display: block
 				+media-breakpoint-down(sm)
 					display: none
 		
 		&.homepage
 			background-color: transparent
-			.header_menu-item, .header_menu-link
+			.header__menu-item, .header__menu-link
 				color: $yellow
 				&:hover
 					text-decoration: none
 					color: #fff
 			&:hover
 				background-color: $yellow
-				.header_menu-item, .header_menu-link
+				.header__menu-item, .header__menu-link
 					color: $dark
 					&:hover
 						color: #fff
@@ -391,14 +387,14 @@ p
 			position: fixed
 			top: 0
 			background-color: rgba($yellow, .9)
-			.header_menu-item, .header_menu-link
+			.header__menu-item, .header__menu-link
 				color: $dark
 			+media-breakpoint-down(sm)
 				position: absolute
 				top: 80px
 				background-color: $yellow
 	
-	&_submenu
+	&__submenu
 		position: absolute
 		top: 60px
 		background-color: $yellow
@@ -454,6 +450,8 @@ p
 	height: 100%
 	position: relative
 	margin-top: -60px
+	+media-breakpoint-down(sm)
+		margin-top: 0
 	&::before
 		content: ''
 		background-color: rgba($dark, .6)
@@ -462,7 +460,7 @@ p
 		right: 0
 		left: 0
 		bottom: 0
-	&_content
+	&__content
 		height: calc(100vh - 80px)
 		display: flex
 		align-items: center
@@ -507,7 +505,7 @@ p
 // WWA START
 
 .wwa
-	&_desc
+	&__desc
 		text-transform: uppercase
 		color: $yellow
 		font-size: 18px
@@ -516,6 +514,36 @@ p
 		margin-right: 30px
 	
 // WWA END
+
+// COOKIE START
+.cookie
+	.p
+		margin-bottom: 20px
+
+	&__block
+		width: 100%
+		background-color: $dark
+		display: none
+		position: fixed
+		bottom: 0
+		z-index: 99999999
+		padding: 15px 0
+		.p
+			color: #fff
+			font-size: 14px
+			letter-spacing: 1px
+			font-weight: 300
+		.btn
+			background-color: $yellow
+		&-link
+			color: #fff
+			text-decoration: underline
+			@extend .trans
+			&:hover
+				color: $yellow
+
+// COOKIE END
+
 
 
 
