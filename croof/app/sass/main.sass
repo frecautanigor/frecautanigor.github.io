@@ -47,6 +47,16 @@ ul, ul li, ul ul li
 p
 	margin: 0
 
+.parent
+	position: relative
+	padding-top: 66.54135338345866%
+	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+img.loaded
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+
 #hamburger
 	+media-breakpoint-down(sm)
 		display: block
@@ -535,6 +545,17 @@ p
 			font-weight: 300
 		.btn
 			background-color: $yellow
+			&:focus, &:hover
+				text-decoration: none
+				color: #fff
+			&:hover
+				background-color: lighten($yellow, 5%)
+			&::after
+				opacity: .25
+			&:active
+				background-color: darken($yellow, 5%)
+			&::after
+				opacity: .35
 		&-link
 			color: #fff
 			text-decoration: underline

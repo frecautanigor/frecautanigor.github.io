@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		prevArrow: false,
     	nextArrow: false,
 		infinite: true,
-		speed: 300,
+		speed: 500,
 		slidesToShow: 1,
 		adaptiveHeight: true,
-		autoplay: false
+		autoplay: true
 	});
 
 	// Menu hamburger
