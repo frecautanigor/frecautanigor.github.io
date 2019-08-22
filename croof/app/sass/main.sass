@@ -47,10 +47,8 @@ ul, ul li, ul ul li
 p
 	margin: 0
 
-.parent
+.img-parent
 	position: relative
-	padding-top: 66.54135338345866%
-	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
 img.loaded
 	position: absolute
 	top: 0
@@ -276,7 +274,6 @@ img.loaded
 		height: 100%
 		width: 100%
 		background-color: rgba($dark, .6)
-
 	
 	&__topBG
 		height: 80px
@@ -470,6 +467,8 @@ img.loaded
 		right: 0
 		left: 0
 		bottom: 0
+		+media-breakpoint-down(sm)
+			background-color: rgba($dark, .8)
 	&__content
 		height: calc(100vh - 80px)
 		display: flex
@@ -479,13 +478,15 @@ img.loaded
 			min-height: 500px
 		+media-breakpoint-down(sm)
 			height: 100%
-			min-height: 100%
-			padding: 60px 0
-			padding-bottom: 90px
+			min-height: 420px
+			padding: 15px 0
+			padding-bottom: 30px
 		&-item
 			.h1
 				text-align: left
 				margin-bottom: 15px
+				+media-breakpoint-down(sm)
+				font-size: 28px
 	
 	.slick-dots
 		display: flex
@@ -515,6 +516,10 @@ img.loaded
 // WWA START
 
 .wwa
+	.img-parent
+		padding-top: 66.54135338345866%
+		background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+
 	&__desc
 		text-transform: uppercase
 		color: $yellow
