@@ -216,16 +216,18 @@
 			</div>
 		</section>
 
-		<section class="section callback">
+		<section class="section">
 			<div class="container">
 				<div class="row">
 					<div class="col-12"><h1 class="h1">comandă un apel</h1></div>
 					<div class="col-12">
-						<div class="callback__block">
-							<input class="callback__block-input" type="text" placeholder="Nume, Prenume">
-							<input class="callback__block-input" type="text" placeholder="Telefon">
-
-							<button class="btn call-icon">Comandă Apel</button>
+						<div class="callback">
+							<div class="callback__block">
+								<input class="callback__block-input" type="text" placeholder="Nume, Prenume">
+								<input class="callback__block-input" type="text" placeholder="Telefon">
+				
+								<button class="btn call-icon">Comandă Apel</button>
+							</div>
 						</div>
 					</div>
 					
@@ -244,8 +246,15 @@
 
 	<!-- POPUP -->
 	<div id="modal-call" class="modal">
-		<h1 class="h1">Norok la pațani!!!!</h1>
-		<p class="p">De la cumătru</p>
+		<div class="callback">
+			<h1 class="h1">comandă un apel</h1>
+			<div class="callback__block">
+				<input class="callback__block-input" type="text" placeholder="Nume, Prenume">
+				<input class="callback__block-input" type="text" placeholder="Telefon">
+
+				<button class="btn call-icon">Comandă Apel</button>
+			</div>
+		</div>
 	</div>
 
 	<!-- COOKIE -->
