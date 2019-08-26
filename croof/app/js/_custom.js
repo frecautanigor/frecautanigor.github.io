@@ -11,6 +11,20 @@ document.addEventListener("DOMContentLoaded", function() {
 		autoplay: true
 	});
 
+	if (window.matchMedia("(max-width: 576px)").matches) {
+		/* the viewport is less than 576px pixels wide */
+		$(".materials__slider").slick({
+			dots: false,
+			prevArrow: false,
+			nextArrow: false,
+			infinite: true,
+			speed: 200,
+			slidesToShow: 2,
+			adaptiveHeight: true,
+			autoplay: true
+		});
+	  } 
+
 	// Menu hamburger
 	var menu = document.querySelector( "#hamburger" );
 	menu.addEventListener( "click", function(){

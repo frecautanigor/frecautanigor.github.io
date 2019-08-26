@@ -467,13 +467,24 @@ img.loaded
 // SLIDER START
 
 .slider
-	background-image: url(../img/bg-header.jpg)
-	background-repeat: no-repeat
-	background-position: center
-	background-size: cover
+	// background-image: url(../img/bg-header.jpg)
+	// background-repeat: no-repeat
+	// background-position: center
+	// background-size: cover
 	height: 100%
 	position: relative
 	margin-top: -60px
+	height: calc(100vh - 80px)
+	overflow: hidden
+	&__img
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: 1
+		&.img-parent
+			padding-top: 66.66666666666667%
+			background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+		
 	+media-breakpoint-down(sm)
 		margin-top: 0
 	&::before
@@ -484,12 +495,14 @@ img.loaded
 		right: 0
 		left: 0
 		bottom: 0
+		z-index: 2
 		+media-breakpoint-down(sm)
 			background-color: rgba($dark, .8)
 	&__content
 		height: calc(100vh - 80px)
 		display: flex
 		align-items: center
+		z-index: 3
 		+media-breakpoint-down(md)
 			height: 100%
 			min-height: 500px
@@ -527,11 +540,9 @@ img.loaded
 		.slick-active
 			button
 				background-color: $yellow
-
 // SLIDER END
 
 // WWA START
-
 .wwa
 	.img-parent
 		padding-top: 66.54135338345866%
@@ -544,7 +555,6 @@ img.loaded
 		margin-bottom: 25px
 	.p
 		margin-right: 30px
-	
 // WWA END
 
 // COOKIE START
@@ -584,11 +594,9 @@ img.loaded
 			@extend .trans
 			&:hover
 				color: $yellow
-
 // COOKIE END
 
 // CALL-BACK START
-
 .callback
 	&__block
 		text-align: center
@@ -609,7 +617,6 @@ img.loaded
 		.btn
 			display: block
 			margin: 0 auto
-
 // CALL-BACK END
 
 // SERVICES START
@@ -666,4 +673,60 @@ img.loaded
 				color: #fff
 // SERVICES END
 
+// MATERIALS START
+.materials
+	&__link
+		display: block
+		margin: 30px 0
+		text-align: center
+		&:hover
+			text-decoration: none
+		&:hover .materials__item::before
+			opacity: 1
+		&:hover .materials__item .info-more
+			opacity: 1
 
+	&__item
+		border: 5px solid $yellow
+		position: relative
+		width: 70%
+		transform: rotate(45deg)
+		overflow: hidden
+		margin: 50px auto
+		&::before
+			opacity: 0
+			content: ""
+			position: absolute
+			top: 0
+			right: 0
+			height: 100%
+			width: 100%
+			background: rgba($dark, .85)
+			z-index: 1
+			@extend .trans
+		.info-more
+			opacity: 0
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%) rotate(-45deg)
+			text-align: center
+			font-size: 18px
+			white-space: nowrap
+			color: #fff
+			text-transform: uppercase
+			z-index: 1
+
+			@extend .trans
+			[class*="icon"]
+				font-size: 45px
+				margin-bottom: 10px
+				display: block
+		&-img
+			transform: rotate(-45deg) scale(1.41)
+
+			&.img-parent
+				padding-top: 100%
+				background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+
+// MATERIALS END
