@@ -1,5 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+	$(window).on('load', function() {
+		$('.loading__circle').delay(500).fadeOut('slow');
+		$('.loading').delay(1000).fadeOut('slow');
+	})
+
 	$(".slider__content").slick({
 		dots: true,
 		prevArrow: false,

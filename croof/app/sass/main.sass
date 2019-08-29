@@ -14,7 +14,7 @@
 	color: #fff
 
 ::-webkit-scrollbar 
-	width: 10px
+	width: 7px
 
 ::-webkit-scrollbar-track
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3)
@@ -30,6 +30,12 @@ input, textarea
 		border-color: red
 	&:required:valid
 		border-color: green
+
+
++media-breakpoint-down(sm)
+	.animated
+		animation: none
+
 
 body
 	font-size: 16px
@@ -390,7 +396,7 @@ img.loaded
 			&:hover .header__submenu
 				display: block
 				+media-breakpoint-down(sm)
-					display: none
+					// display: block
 		
 		&.homepage
 			background-color: transparent
@@ -441,6 +447,9 @@ img.loaded
 			display: block
 			@extend .trans
 			line-height: 2
+			+media-breakpoint-down(sm)
+				margin: 0 auto
+
 			&:hover
 				text-decoration: none
 				color: #fff
@@ -461,7 +470,11 @@ img.loaded
 				@extend .trans
 				color: $dark
 				left: -10px
-
+.header__menu-item
+	&:active
+		.header__submenu
+			display: block
+			background-color: #fff
 // HEADER END
 
 // SLIDER START
@@ -719,3 +732,104 @@ img.loaded
 				background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
 
 // MATERIALS END
+
+// START PAGE
+body.start__main
+	background-color: $dark
+.start
+	&__center
+		height: calc(100vh - 80px)
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		img
+			height: 220px
+			+media-breakpoint-down(sm)
+				height: 150px
+
+		h1
+			font-size: 28px
+			text-transform: uppercase
+			color: lighten($dark, 50%)
+			font-weight: 300
+			text-align: center
+			+media-breakpoint-down(sm)
+				font-size: 22px
+	&__header
+		height: 80px
+		background-color: $dark
+		box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.3)
+		
+		&-content
+			display: flex
+			align-items: center
+			justify-content: space-between
+			width: 100%
+			height: 80px
+
+			.logo img
+				height: 40px
+				+media-breakpoint-down(sm)
+					height: 35px
+			
+			.callback
+				display: flex
+				align-items: center
+				+media-breakpoint-down(sm)
+					display: block
+				a
+					font-size: 16px
+					text-decoration: none
+					color: lighten($dark, 50%)
+					@extend .trans
+					margin: 0 20px
+					+media-breakpoint-down(sm)
+						margin: 5px 0
+						display: block
+						font-size: 14px
+
+					&:hover
+						color: $yellow
+			
+			.link_lang
+				font-size: 16px
+				text-decoration: none
+				@extend .trans
+				color: lighten(#fff, 50%)
+				+media-breakpoint-down(sm)
+					font-size: 14px
+				&:hover
+					color: $yellow
+				&.active
+					margin: 0 2px
+					pointer-events: none
+					color: lighten($dark, 50%)
+		
+
+.loading
+	position: fixed
+	top: 0
+	right: 0
+	left: 0
+	bottom: 0
+	z-index: 9999999999
+	background-color: $dark
+	&__circle
+		height: 0
+		width: 0
+		padding: 15px
+		border: 6px solid $yellow
+		border-right-color: lighten($dark, 15%)
+		border-radius: 22px
+		animation: rotate 1s infinite linear
+		position: absolute
+		left: 50%
+		top: 50%
+
+@-webkit-keyframes rotate
+	use 0% instead for anticlockwise
+	100%
+		transform: rotate(360deg)
+
+	
