@@ -60,9 +60,11 @@ img.loaded
 	top: 0
 	left: 0
 	width: 100%
-
+.blocker
+	z-index: 9999
+	background-color: rgba(0,0,0,.9)
 .modal
-	padding: 60px
+	padding: 40px
 
 #hamburger
 	+media-breakpoint-down(sm)
@@ -356,7 +358,7 @@ img.loaded
 		height: 60px
 		background-color: $yellow
 		width: 100%
-		z-index: 9999999999999
+		z-index: 999
 		position: relative
 		@extend .trans
 		&.block
@@ -471,7 +473,7 @@ img.loaded
 				color: $dark
 				left: -10px
 .header__menu-item
-	&:active
+	&:focus
 		.header__submenu
 			display: block
 			background-color: #fff
@@ -614,6 +616,12 @@ img.loaded
 			margin: 0 20px
 			margin-bottom: 30px
 			@extend .trans
+			+media-breakpoint-down(sm)
+				margin: 0
+				margin-bottom: 30px
+				font-size: 22px
+
+
 			&:focus
 				border-color: $yellow
 		.btn
@@ -718,12 +726,17 @@ img.loaded
 			color: #fff
 			text-transform: uppercase
 			z-index: 1
-
 			@extend .trans
+			+media-breakpoint-down(sm)
+				font-size: 12px
 			[class*="icon"]
 				font-size: 45px
 				margin-bottom: 10px
 				display: block
+				+media-breakpoint-down(sm)
+				font-size: 35px
+				margin-bottom: 5px
+
 		&-img
 			transform: rotate(-45deg) scale(1.41)
 
