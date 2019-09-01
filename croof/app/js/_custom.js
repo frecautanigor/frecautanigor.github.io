@@ -23,7 +23,29 @@ document.addEventListener("DOMContentLoaded", function() {
 			prevArrow: false,
 			nextArrow: false,
 			infinite: true,
-			speed: 200,
+			speed: 100,
+			slidesToShow: 2,
+			adaptiveHeight: true,
+			autoplay: true
+		});
+
+		$(".partners__slider").slick({
+			dots: false,
+			prevArrow: false,
+			nextArrow: false,
+			infinite: true,
+			speed: 100,
+			slidesToShow: 2,
+			adaptiveHeight: true,
+			autoplay: true
+		});
+
+		$(".gallery__slider").slick({
+			dots: false,
+			prevArrow: false,
+			nextArrow: false,
+			infinite: true,
+			speed: 100,
 			slidesToShow: 2,
 			adaptiveHeight: true,
 			autoplay: true
@@ -82,5 +104,18 @@ document.addEventListener("DOMContentLoaded", function() {
 			path: '/'
 		});
 	});
+
+	// GALLERY START
+	var lightbox = $('.gallery__item').simpleLightbox();
+	$('.gallery__slider').Mosaic({
+		maxRowHeight: 800,
+		refitOnResize: true,
+		refitOnResizeDelay: false,
+		defaultAspectRatio: 0.5,
+		maxRowHeightPolicy: 'crop',
+		highResImagesWidthThreshold: 850,
+		responsiveWidthThreshold: 500
+	});	
+	// GALLERY END
 
 });

@@ -36,6 +36,105 @@ input, textarea
 	.animated
 		animation: none
 
+// START PAGE START
+body.start__main
+	background-color: $dark
+.start
+	&__center
+		height: calc(100vh - 80px)
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		img
+			height: 220px
+			+media-breakpoint-down(sm)
+				height: 150px
+
+		h1
+			font-size: 28px
+			text-transform: uppercase
+			color: lighten($dark, 50%)
+			font-weight: 300
+			text-align: center
+			+media-breakpoint-down(sm)
+				font-size: 22px
+	&__header
+		height: 80px
+		background-color: $dark
+		box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.3)
+		
+		&-content
+			display: flex
+			align-items: center
+			justify-content: space-between
+			width: 100%
+			height: 80px
+
+			.logo img
+				height: 40px
+				+media-breakpoint-down(sm)
+					height: 35px
+			
+			.callback
+				display: flex
+				align-items: center
+				+media-breakpoint-down(sm)
+					display: block
+				a
+					font-size: 16px
+					text-decoration: none
+					color: lighten($dark, 50%)
+					@extend .trans
+					margin: 0 20px
+					+media-breakpoint-down(sm)
+						margin: 5px 0
+						display: block
+						font-size: 14px
+
+					&:hover
+						color: $yellow
+			
+			.link_lang
+				font-size: 16px
+				text-decoration: none
+				@extend .trans
+				color: lighten(#fff, 50%)
+				+media-breakpoint-down(sm)
+					font-size: 14px
+				&:hover
+					color: $yellow
+				&.active
+					margin: 0 2px
+					pointer-events: none
+					color: lighten($dark, 50%)
+		
+
+.loading
+	position: fixed
+	top: 0
+	right: 0
+	left: 0
+	bottom: 0
+	z-index: 9999999999
+	background-color: $dark
+	&__circle
+		height: 0
+		width: 0
+		padding: 15px
+		border: 6px solid $yellow
+		border-right-color: lighten($dark, 15%)
+		border-radius: 22px
+		animation: rotate 1s infinite linear
+		position: absolute
+		left: 50%
+		top: 50%
+
+@-webkit-keyframes rotate
+	use 0% instead for anticlockwise
+	100%
+		transform: rotate(360deg)
+// START PAGE END
 
 body
 	font-size: 16px
@@ -480,12 +579,12 @@ img.loaded
 // HEADER END
 
 // SLIDER START
-
 .slider
 	background-color: $dark
 	background-image: url(../img/bg-header.jpg)
 	background-repeat: no-repeat
 	background-position: center
+	background-attachment: fixed
 	background-size: cover
 	height: 100%
 	position: relative
@@ -504,6 +603,8 @@ img.loaded
 		+media-breakpoint-down(sm)
 			background-color: rgba($dark, .8)
 	&__content
+		min-height: 400px
+		max-height: 700px
 		height: calc(100vh - 80px)
 		display: flex
 		align-items: center
@@ -620,8 +721,6 @@ img.loaded
 				margin: 0
 				margin-bottom: 30px
 				font-size: 22px
-
-
 			&:focus
 				border-color: $yellow
 		.btn
@@ -746,103 +845,49 @@ img.loaded
 
 // MATERIALS END
 
-// START PAGE
-body.start__main
-	background-color: $dark
-.start
-	&__center
-		height: calc(100vh - 80px)
-		display: flex
-		align-items: center
-		justify-content: center
-		flex-direction: column
-		img
-			height: 220px
-			+media-breakpoint-down(sm)
-				height: 150px
-
-		h1
-			font-size: 28px
-			text-transform: uppercase
-			color: lighten($dark, 50%)
-			font-weight: 300
-			text-align: center
-			+media-breakpoint-down(sm)
-				font-size: 22px
-	&__header
-		height: 80px
-		background-color: $dark
-		box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.3)
-		
-		&-content
-			display: flex
-			align-items: center
-			justify-content: space-between
-			width: 100%
-			height: 80px
-
-			.logo img
-				height: 40px
-				+media-breakpoint-down(sm)
-					height: 35px
-			
-			.callback
-				display: flex
-				align-items: center
-				+media-breakpoint-down(sm)
-					display: block
-				a
-					font-size: 16px
-					text-decoration: none
-					color: lighten($dark, 50%)
-					@extend .trans
-					margin: 0 20px
-					+media-breakpoint-down(sm)
-						margin: 5px 0
-						display: block
-						font-size: 14px
-
-					&:hover
-						color: $yellow
-			
-			.link_lang
-				font-size: 16px
-				text-decoration: none
-				@extend .trans
-				color: lighten(#fff, 50%)
-				+media-breakpoint-down(sm)
-					font-size: 14px
-				&:hover
-					color: $yellow
-				&.active
-					margin: 0 2px
-					pointer-events: none
-					color: lighten($dark, 50%)
-		
-
-.loading
-	position: fixed
-	top: 0
-	right: 0
-	left: 0
-	bottom: 0
-	z-index: 9999999999
-	background-color: $dark
-	&__circle
-		height: 0
-		width: 0
-		padding: 15px
-		border: 6px solid $yellow
-		border-right-color: lighten($dark, 15%)
-		border-radius: 22px
-		animation: rotate 1s infinite linear
+// PARTNERS START
+.partners
+	background-color: $yellow
+	background-image: url(../img/bg-partners.jpg)
+	background-repeat: no-repeat
+	background-position: bottom center
+	background-attachment: fixed
+	background-size: cover
+	min-height: 100%
+	max-height: 100%
+	position: relative
+	padding: 50px 0
+	.col-lg-3
+		// background-color: red
+	&::before
+		content: ''
+		background-color: rgba($yellow, .6)
 		position: absolute
-		left: 50%
-		top: 50%
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
 
-@-webkit-keyframes rotate
-	use 0% instead for anticlockwise
-	100%
-		transform: rotate(360deg)
+	&__link
+		display: block
+		width: 100%
 
-	
+	&__item
+		position: relative
+		width: 70%
+		transform: rotate(45deg)
+		overflow: hidden
+		margin: 55px auto
+		background-color: #fff
+
+		&-img
+			transform: rotate(-45deg) scale(1.41)
+
+			&.img-parent
+				padding-top: 100%
+				background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+// PARTNERS END
+.gallery
+	position: relative
+	&__slider
+		position: relative
