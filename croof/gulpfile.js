@@ -47,7 +47,7 @@ gulp.task('scripts', function() {
 		'node_modules/jquery-modal/jquery.modal.min.js', 
 		'node_modules/simplelightbox/dist/simple-lightbox.min.js',
 		'app/libs/cookie/cookie.js', 
-		'app/libs/jquery-mosaic/jquery.mosaic.min.js', 
+		'app/libs/jquery-mosaic/salvattore.min.js', 
 		'app/js/_lazy.js', // JS library plug-in example
 		'app/js/_custom.js', // Custom scripts. Always at the end
 		])

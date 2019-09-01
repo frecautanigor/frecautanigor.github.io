@@ -39,17 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			adaptiveHeight: true,
 			autoplay: true
 		});
-
-		$(".gallery__slider").slick({
-			dots: false,
-			prevArrow: false,
-			nextArrow: false,
-			infinite: true,
-			speed: 100,
-			slidesToShow: 2,
-			adaptiveHeight: true,
-			autoplay: true
-		});
 	  } 
 
 	// Menu hamburger
@@ -107,15 +96,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// GALLERY START
 	var lightbox = $('.gallery__item').simpleLightbox();
-	$('.gallery__slider').Mosaic({
-		maxRowHeight: 800,
-		refitOnResize: true,
-		refitOnResizeDelay: false,
-		defaultAspectRatio: 0.5,
-		maxRowHeightPolicy: 'crop',
-		highResImagesWidthThreshold: 850,
-		responsiveWidthThreshold: 500
-	});	
+
+	// $('.gallery__slider').Mosaic({
+	// 	maxRowHeight: 800,
+	// 	refitOnResize: true,
+	// 	refitOnResizeDelay: false,
+	// 	defaultAspectRatio: 0.5,
+	// 	maxRowHeightPolicy: 'crop',
+	// 	highResImagesWidthThreshold: 850,
+	// 	responsiveWidthThreshold: 500
+	// });	
 	// GALLERY END
 
 });

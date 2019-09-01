@@ -889,5 +889,19 @@ img.loaded
 // PARTNERS END
 .gallery
 	position: relative
-	&__slider
-		position: relative
+	&.gallery__homepage
+		background-color: red
+		.gallery__item img
+			margin-bottom: $gutter
+
+	#grid[data-columns]
+		&::before
+			content: '4 .col-lg-3'
+		
+		+media-breakpoint-down(md)
+			&::before
+				content: '3 .col-md-4'
+		
+		+media-breakpoint-down(sm)
+			&::before
+				content: '2 .col-sm-6'
