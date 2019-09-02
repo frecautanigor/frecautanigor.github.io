@@ -857,8 +857,6 @@ img.loaded
 	max-height: 100%
 	position: relative
 	padding: 50px 0
-	.col-lg-3
-		// background-color: red
 	&::before
 		content: ''
 		background-color: rgba($yellow, .6)
@@ -941,58 +939,54 @@ img.loaded
 // TESTIMONIALS START
 .testimonials
 	background-color: $dark
-	background-image: url(../img/bg-header.jpg)
+	background-image: url(../img/bg-testimonials.jpg)
 	background-repeat: no-repeat
-	background-position: center
+	background-position: top center
 	background-attachment: fixed
 	background-size: cover
-	height: 100%
+	min-height: 100%
+	max-height: 100%
 	position: relative
-	margin-top: -60px
-	
-	+media-breakpoint-down(sm)
-		margin-top: 0
+	padding: 100px 0
 	&::before
 		content: ''
-		background-color: rgba($dark, .6)
+		background-color: rgba($dark, .85)
 		position: absolute
 		top: 0
 		right: 0
 		left: 0
 		bottom: 0
-		+media-breakpoint-down(sm)
-			background-color: rgba($dark, .8)
 	&__content
-		min-height: 400px
-		max-height: 700px
-		height: calc(100vh - 80px)
-		display: flex
-		align-items: center
-		+media-breakpoint-down(md)
-			height: 100%
-			min-height: 500px
-		+media-breakpoint-down(sm)
-			height: 100%
-			min-height: 420px
-			padding: 15px 0
-			padding-bottom: 30px
 		&-item
-			.h1
-				text-align: left
-				margin-bottom: 15px
-				+media-breakpoint-down(sm)
-				font-size: 28px
+			.user
+				display: flex
+				align-items: center
+				margin-top: 60px
+				&_info
+					margin-left: 30px
+				&_name
+					color: $yellow
+				&_func
+					color: #fff
+				&_img
+					width: 115px
+					height: 115px
+					border: 4px solid $yellow
+					&.img-parent
+						padding-top: 14.66%
+						background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+			.p
+				font-size: 18px
 	
 	.slick-dots
 		display: flex
 		padding: 0
 		margin: 0
-		position: absolute
 		bottom: 0
 		font-size: 0
 		width: 100%
 		justify-content: center
-		margin-bottom: 30px
+		margin-top: 60px
 		button
 			border: none
 			height: 10px
@@ -1006,3 +1000,44 @@ img.loaded
 			button
 				background-color: $yellow
 // TESTIMONIALS END
+
+// FOOTER START
+.footer
+	background-color: $dark
+	height: 100%
+	&__nav
+		display: flex
+		justify-content: space-between
+		align-items: center
+		height: 60px
+		color: #fff
+		+media-breakpoint-down(md)
+			flex-direction: column
+			height: 100%
+			padding: 15px 0
+		&-copyright
+			+media-breakpoint-down(md)
+				order: 2
+		
+		&-menu,
+		&-social
+			display: flex
+			margin: 0
+			+media-breakpoint-down(md)
+				order: 1
+			a
+				text-decoration: none
+				color: #fff
+				margin: 0 5px
+				@extend .trans
+
+				&:hover
+					color: $yellow
+		&-menu
+			+media-breakpoint-down(sm)
+				justify-content: space-around
+				width: 100%
+		&-social
+			+media-breakpoint-down(sm)
+				margin: 15px 0
+// FOOTER END

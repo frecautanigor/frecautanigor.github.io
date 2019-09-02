@@ -10,7 +10,18 @@ document.addEventListener("DOMContentLoaded", function() {
 		prevArrow: false,
     	nextArrow: false,
 		infinite: true,
-		speed: 500,
+		speed: 300,
+		slidesToShow: 1,
+		adaptiveHeight: true,
+		autoplay: true
+	});
+
+	$(".testimonials__content").slick({
+		dots: true,
+		prevArrow: false,
+    	nextArrow: false,
+		infinite: true,
+		speed: 300,
 		slidesToShow: 1,
 		adaptiveHeight: true,
 		autoplay: true
@@ -96,16 +107,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// GALLERY START
 	var lightbox = $('.gallery__item').simpleLightbox();
-
-	// $('.gallery__slider').Mosaic({
-	// 	maxRowHeight: 800,
-	// 	refitOnResize: true,
-	// 	refitOnResizeDelay: false,
-	// 	defaultAspectRatio: 0.5,
-	// 	maxRowHeightPolicy: 'crop',
-	// 	highResImagesWidthThreshold: 850,
-	// 	responsiveWidthThreshold: 500
-	// });	
 	// GALLERY END
 
 });
