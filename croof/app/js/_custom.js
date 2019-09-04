@@ -52,6 +52,12 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 	  } 
 
+	if (window.matchMedia("(max-width: 768px)").matches) {
+		/* the viewport is less than 768px pixels wide */
+		$("#menu").metisMenu();
+
+	  } 
+
 	// Menu hamburger
 	var menu = document.querySelector( "#hamburger" );
 	menu.addEventListener( "click", function(){
@@ -108,5 +114,5 @@ document.addEventListener("DOMContentLoaded", function() {
 	// GALLERY START
 	var lightbox = $('.gallery__item').simpleLightbox();
 	// GALLERY END
-
+	  
 });

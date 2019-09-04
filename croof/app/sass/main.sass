@@ -402,8 +402,6 @@ img.loaded
 	&__topBG
 		height: 80px
 		background-color: #fff
-		+media-breakpoint-down(sm)
-			box-shadow: 0 0px 16px -7px #f2cb05
 	&__top
 		height: 80px
 		display: flex
@@ -460,8 +458,12 @@ img.loaded
 		z-index: 999
 		position: relative
 		@extend .trans
+
 		&.block
 			display: block
+			position: absolute
+			bottom: 0
+			right: 0
 		+media-breakpoint-down(sm)
 			height: 100%
 			bottom: 0
@@ -497,8 +499,12 @@ img.loaded
 			&:hover .header__submenu
 				display: block
 				+media-breakpoint-down(sm)
-					// display: block
-		
+					display: none
+		&.homepage.block
+			.header__menu-item, .header__menu-link
+				color: $dark !important
+				&:hover
+					color: #fff !important
 		&.homepage
 			background-color: transparent
 			.header__menu-item, .header__menu-link
@@ -550,7 +556,8 @@ img.loaded
 			line-height: 2
 			+media-breakpoint-down(sm)
 				margin: 0 auto
-
+				font-size: 16px
+				margin: 0
 			&:hover
 				text-decoration: none
 				color: #fff
@@ -571,11 +578,6 @@ img.loaded
 				@extend .trans
 				color: $dark
 				left: -10px
-.header__menu-item
-	&:focus
-		.header__submenu
-			display: block
-			background-color: #fff
 // HEADER END
 
 // SLIDER START
