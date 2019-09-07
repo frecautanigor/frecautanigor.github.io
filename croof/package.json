@@ -12,6 +12,7 @@
 		"animate.css": "^3.7.2",
 		"bootstrap": "^4.3.1",
 		"browser-sync": "^2.26.7",
+		"bxslider": "^4.2.14",
 		"del": "^5.0.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^6.1.0",
