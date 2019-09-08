@@ -684,41 +684,56 @@ img.loaded
 
 // COOKIE START
 .cookie
+	.desc
+		margin-bottom: 80px
+	.h4
+		font-weight: 600
+		font-size: 18px
+		line-height: .3
 	.p
-		margin-bottom: 20px
+		font-size: 14px
+	&__item
+		margin-top: 30px
 
 	&__block
 		width: 100%
-		background-color: $dark
+		background-color: rgba($yellow, .8)
 		display: none
 		position: fixed
 		bottom: 0
 		z-index: 99999999
 		padding: 15px 0
-		.p
-			color: #fff
-			font-size: 14px
-			letter-spacing: 1px
-			font-weight: 300
-		.btn
+		@extend .trans
+		&:hover
+			@extend .trans
 			background-color: $yellow
+		.p
+			color: $dark
+			font-size: 18px
+		.btn
+			background-color: $dark
+			font-size: 14px !important
+			padding: 0 30px
+			@extend .trans
+
 			&:focus, &:hover
 				text-decoration: none
 				color: #fff
 			&:hover
-				background-color: lighten($yellow, 5%)
+				background-color: lighten($dark, 5%)
 			&::after
 				opacity: .25
 			&:active
-				background-color: darken($yellow, 5%)
+				background-color: darken($dark, 5%)
 			&::after
 				opacity: .35
 		&-link
-			color: #fff
+			color: $dark
 			text-decoration: underline
 			@extend .trans
 			&:hover
-				color: $yellow
+				color: $dark
+				text-decoration: none
 // COOKIE END
 
 // CALL-BACK START
@@ -750,6 +765,30 @@ img.loaded
 
 // SERVICES START
 .services
+
+	&__content
+		&-schema
+			margin: 120px 0
+			+media-breakpoint-down(md)
+				margin: 60px 0
+			.img-parent
+				padding-top: 50% !important
+		.desc
+			margin-bottom: 100px
+		.h4
+			color: $yellow
+			margin-bottom: 50px
+			font-size: 24px
+			text-transform: uppercase
+			font-weight: 400
+			+media-breakpoint-down(sm)
+				margin-bottom: 15px
+
+		.p
+			font-size: 14px
+		.img-parent
+			padding-top: 66.54135338345866%
+			background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
 	
 	&__item
 		display: block
