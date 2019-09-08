@@ -989,9 +989,18 @@ img.loaded
 		z-index: 999
 		+media-breakpoint-down(sm)
 			top: 80px
+			display: none
 		&.fixed
 			position: fixed
+			display: flex
 			top: 120px
+			+media-breakpoint-down(sm)
+				display: none
+		&.fixed.sm
+			display: flex
+
+
+			
 		&-icon
 			height: 80px
 			width: 80px

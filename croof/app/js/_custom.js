@@ -52,14 +52,30 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 	  }
 
-	  window.scrollTo( 0, 999, { 
-		behavior: 'smooth'
-	  });
-
 	if (window.matchMedia("(max-width: 768px)").matches) {
 		/* the viewport is less than 768px pixels wide */
 		$("#menu").metisMenu();
 
+		var waypoint = new Waypoint({
+			element: document.getElementsByClassName("section"),
+			handler: function(dir) {
+			  if (dir === "down") {
+				$(".albums__button").addClass("fixed sm animated bounceInLeft");
+			  } else
+			  $(".albums__button").removeClass("fixed sm animated bounceInLeft");
+			}
+		  });
+
+		  var waypoint = new Waypoint({
+			element: document.getElementsByClassName("callback"),
+			handler: function(dir) {
+			  if (dir === "down") {
+				$(".albums__button").removeClass("fixed sm animated bounceInLeft");
+			  } else
+			  $(".albums__button").addClass("fixed sm animated bounceInLeft");
+			},
+			offset: '80%'
+		  });
 	  } 
 
 	// Menu hamburger
@@ -79,15 +95,16 @@ document.addEventListener("DOMContentLoaded", function() {
 		  $(".header__menu").removeClass("fixed animated fadeInDown");
 		}
 	  });
+
 	var waypoint = new Waypoint({
-		element: document.getElementsByClassName("albums__button"),
+		element: document.getElementsByClassName("section"),
 		handler: function(dir) {
 		  if (dir === "down") {
 			$(".albums__button").addClass("fixed");
 		  } else
 		  $(".albums__button").removeClass("fixed");
 		},
-		offset: '120px'
+		offset: '140px'
 	  });
 
 	// Fixed button call
