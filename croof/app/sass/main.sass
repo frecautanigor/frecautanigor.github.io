@@ -999,8 +999,6 @@ img.loaded
 		&.fixed.sm
 			display: flex
 
-
-			
 		&-icon
 			height: 80px
 			width: 80px
@@ -1038,6 +1036,18 @@ img.loaded
 
 			
 
+	&.video
+		.albums
+			&__item
+				img
+					opacity: .15
+				&-hover
+					opacity: 1
+				&-text
+					background-color: transparent
+				&:hover img
+					@extend .trans
+					opacity: 1
 
 	&__item
 		position: relative
@@ -1214,3 +1224,20 @@ img.loaded
 				margin: 15px 0
 				font-size: 24px
 // FOOTER END
+
+// POPUP VIDEO
+.modal-video
+	margin: 0
+	padding: 0
+	margin-bottom: -5px
+.video-popup
+	position: relative
+	padding-bottom: 56.25%
+	padding-top: 25px
+	height: 0
+	&__content
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%

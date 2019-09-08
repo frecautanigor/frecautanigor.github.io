@@ -87,25 +87,25 @@
 	<!-- CONTENT START -->
 	
 	<main class="main">
-
-		<section class="section albums gallery">
+	
+		<section class="section albums video gallery">
 			
 			<a href="" class="albums__button">
-				<span class="albums__button-icon"><i class="icon-video-player"></i></span>
-				<span class="albums__button-text">Galerie<br>video</span>
+				<span class="albums__button-icon"><i class="icon-picture"></i></span>
+				<span class="albums__button-text">Galerie<br>foto</span>
 			</a>
 
 			<div class="container">
 
 				<div class="row">
-					<div class="col-12"><h3 class="h3">Lucrările Noastre</h3></div>
+					<div class="col-12"><h3 class="h3">Galerie Video Poiecte</h3></div>
 					<div class="col-lg-8 offset-lg-2 col-12"><p class="desc">Vă invităm să navigați puțin prin portofoliul nostru și să evaluați rezultatele proiectelor noastre.</p></div>
 
 				</div>
 
 				<div class="row" id="gallery-albums" data-columns>
 
-					<a href="" class="albums__item">
+					<a href="#modal-video" rel="modal:open" class="albums__item">
 
 						<div class="albums__item-img">
 							<img src="https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg" alt="" class="img-responsive">
@@ -117,12 +117,11 @@
 						</div>
 
 						<div class="albums__item-hover">
-							<i class="icon-next"></i>
-							<p class="p">Vezi proiectul</p>
+							<i class="icon-play-button"></i>
 						</div>
 					</a>
 
-					<a href="" class="albums__item">
+					<a href="#modal-video" rel="modal:open" class="albums__item">
 
 						<div class="albums__item-img">
 							<img src="https://tinyjpg.com/images/social/website.jpg" alt="" class="img-responsive">
@@ -134,11 +133,10 @@
 						</div>
 
 						<div class="albums__item-hover">
-							<i class="icon-next"></i>
-							<p class="p">Vezi proiectul</p>
+							<i class="icon-play-button"></i>
 						</div>
 					</a>
-					<a href="" class="albums__item">
+					<a href="#modal-video" rel="modal:open" class="albums__item">
 	
 							<div class="albums__item-img">
 								<img src="https://tinyjpg.com/images/social/website.jpg" alt="" class="img-responsive">
@@ -150,11 +148,10 @@
 							</div>
 	
 							<div class="albums__item-hover">
-								<i class="icon-next"></i>
-								<p class="p">Vezi proiectul</p>
+								<i class="icon-play-button"></i>
 							</div>
 						</a>
-					<a href="" class="albums__item">
+					<a href="#modal-video" rel="modal:open" class="albums__item">
 
 						<div class="albums__item-img">
 							<img src="http://themehall.com/preview/plain/wp-content/uploads/sites/3/2013/03/unicorn-wallpaper.jpg" alt="" class="img-responsive">
@@ -166,11 +163,10 @@
 						</div>
 
 						<div class="albums__item-hover">
-							<i class="icon-next"></i>
-							<p class="p">Vezi proiectul</p>
+							<i class="icon-play-button"></i>
 						</div>
 					</a>
-					<a href="" class="albums__item">
+					<a href="#modal-video" rel="modal:open" class="albums__item">
 
 							<div class="albums__item-img">
 								<img src="https://cdn.pixabay.com/photo/2016/06/18/17/42/image-1465348_960_720.jpg" alt="" class="img-responsive">
@@ -182,8 +178,7 @@
 							</div>
 	
 							<div class="albums__item-hover">
-								<i class="icon-next"></i>
-								<p class="p">Vezi proiectul</p>
+								<i class="icon-play-button"></i>
 							</div>
 						</a>
 	
@@ -310,7 +305,12 @@
 		</div>
 	</div>
 
-
+<!-- POPUP VIDEO -->
+<div id="modal-video" class="modal modal-video">
+	<div class="video-popup">
+		<iframe class="video-popup__content" src="https://www.youtube.com/embed/CJzaYLc4pPY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</div>
 
 
 
