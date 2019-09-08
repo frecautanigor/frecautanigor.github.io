@@ -50,7 +50,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			adaptiveHeight: true,
 			autoplay: true
 		});
-	  } 
+	  }
+
+	  window.scrollTo( 0, 999, { 
+		behavior: 'smooth'
+	  });
 
 	if (window.matchMedia("(max-width: 768px)").matches) {
 		/* the viewport is less than 768px pixels wide */
@@ -75,6 +79,16 @@ document.addEventListener("DOMContentLoaded", function() {
 		  $(".header__menu").removeClass("fixed animated fadeInDown");
 		}
 	  });
+	var waypoint = new Waypoint({
+		element: document.getElementsByClassName("albums__button"),
+		handler: function(dir) {
+		  if (dir === "down") {
+			$(".albums__button").addClass("fixed");
+		  } else
+		  $(".albums__button").removeClass("fixed");
+		},
+		offset: '120px'
+	  });
 
 	// Fixed button call
 	var waypoint = new Waypoint({
@@ -85,6 +99,17 @@ document.addEventListener("DOMContentLoaded", function() {
 		  } else
 		  $(".button-call").removeClass("fixed animated infinite heartBeat slower");
 		}
+	  });
+
+	var waypoint = new Waypoint({
+		element: document.getElementsByClassName("callback"),
+		handler: function(dir) {
+		  if (dir === "down") {
+			$(".button-call").removeClass("fixed animated infinite heartBeat slower");
+		  } else
+		  $(".button-call").addClass("fixed animated infinite heartBeat slower");
+		},
+		offset: '80%'
 	  });  
 
 	//   COOKIE Block

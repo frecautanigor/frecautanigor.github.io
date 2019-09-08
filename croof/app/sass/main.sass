@@ -137,6 +137,7 @@ body.start__main
 // START PAGE END
 
 body
+	scroll-behavior: smooth
 	font-size: 16px
 	min-width: 320px
 	position: relative
@@ -979,6 +980,56 @@ img.loaded
 
 // ALBUMS START
 .albums
+	&__button
+		position: absolute
+		top: 200px
+		height: 80px
+		display: flex
+		align-items: center
+		z-index: 999
+		+media-breakpoint-down(sm)
+			top: 80px
+		&.fixed
+			position: fixed
+			top: 120px
+		&-icon
+			height: 80px
+			width: 80px
+			display: flex
+			align-items: center
+			justify-content: center
+			font-size: 40px
+			color: $dark
+			background-color: $yellow
+			opacity: .5
+			@extend .trans
+			z-index: 2
+		&-text
+			text-align: center
+			color: #fff
+			padding: 0 15px
+			font-size: 24px
+			background-color: $yellow
+			height: 100%
+			line-height: 1.3
+			align-items: center
+			display: flex
+			position: relative
+			z-index: 1
+			left: -500px
+		&:hover
+			text-decoration: none
+			
+		&:hover .albums__button-icon
+			opacity: 1
+
+		&:hover .albums__button-text
+			left: 0
+			@extend .trans
+
+			
+
+
 	&__item
 		position: relative
 		background: $dark
