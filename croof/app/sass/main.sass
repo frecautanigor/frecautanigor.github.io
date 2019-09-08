@@ -31,11 +31,6 @@ input, textarea
 	&:required:valid
 		border-color: green
 
-
-// +media-breakpoint-down(sm)
-// 	.animated
-// 		// animation: none
-
 // START PAGE START
 body.start__main
 	background-color: $dark
@@ -165,6 +160,10 @@ img.loaded
 	background-color: rgba(0,0,0,.9)
 .modal
 	padding: 40px
+	min-width: 800px
+	+media-breakpoint-down(md)
+		min-width: 100%
+
 
 #hamburger
 	+media-breakpoint-down(sm)
