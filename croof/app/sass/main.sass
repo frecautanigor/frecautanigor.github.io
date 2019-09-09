@@ -764,8 +764,40 @@ img.loaded
 // CALL-BACK END
 
 // SERVICES START
-.services
+.balcon-fixed
+	padding: 100px 0
+	background-color: $dark
+	background-repeat: no-repeat
+	background-position: center
+	background-attachment: fixed
+	background-size: cover
+	height: 100%
+	position: relative
+	margin: 100px 0
+	&::before
+		content: ''
+		background-color: rgba($dark, .60)
+		position: absolute
+		top: 0
+		right: 0
+		left: 0
+		bottom: 0
 
+.materials__small
+	.materials__item-text .h2
+		font-size: 16px !important
+		font-weight: 600
+
+	.info-more
+		font-size: 12px !important
+.services
+	&__price
+		text-align: center
+		font-size: 32px
+		text-transform: uppercase
+		color: $red
+	&__name
+		color: $dark
 	&__content
 		&-schema
 			margin: 120px 0
@@ -787,7 +819,7 @@ img.loaded
 		.p
 			font-size: 14px
 		.img-parent
-			padding-top: 66.54135338345866%
+			padding-top: 66.66666666666667%
 			background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
 	
 	&__item
@@ -886,7 +918,7 @@ img.loaded
 			z-index: 1
 			@extend .trans
 			+media-breakpoint-down(sm)
-				font-size: 12px
+				font-size: 12px !important
 			[class*="icon"]
 				font-size: 45px
 				margin-bottom: 10px
