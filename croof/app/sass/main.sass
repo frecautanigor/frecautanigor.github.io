@@ -1324,6 +1324,52 @@ img.loaded
 				font-size: 24px
 // FOOTER END
 
+.price
+	.desc
+		margin-bottom: 100px
+	&__item
+		position: relative
+		display: block
+		margin: $gutter/2 0
+		
+		&-text
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+			z-index: 1
+			color: #fff
+			text-align: center
+			font-size: 24px
+			text-transform: uppercase
+			width: 100%
+			span
+				color: $red
+			.p
+				font-size: 18px
+				color: #fff
+				text-transform: uppercase
+				margin-top: 20px
+				margin-bottom: 50px
+	
+		&-img
+			position: relative
+			&::before
+				content: ""
+				position: absolute
+				top: 0
+				height: 100%
+				width: 100%
+				background: rgba($dark, .85)
+				z-index: 1
+				@extend .trans
+
+			&.img-parent
+				padding-top: 54%
+				background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+
+
+
 // POPUP VIDEO
 .modal-video
 	margin: 0
