@@ -84,6 +84,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		this.classList.toggle( "active" );
 		$(".header__menu").toggleClass( "block animated fadeInDown" );
 	});
+	var menu = document.querySelector( "#hamburger" );
+	menu.addEventListener( "click", function(){
+		$(".admin .menu").toggleClass( "block" );
+	});
 
 	// Fixed menu
 	var waypoint = new Waypoint({

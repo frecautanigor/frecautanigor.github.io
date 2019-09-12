@@ -1,0 +1,164 @@
+.admin
+    #hamburger
+        display: block
+        span
+            background: $dark
+            &:before, &:after
+                background: $dark
+            &:before
+                animation: undo-top .5s forwards
+            &:after
+                bottom: -10px
+                animation: undo-bottom .5s
+        &.active span
+            background-color: transparent
+            &:before
+                animation: top-x .5s forwards
+                background: $dark
+            &:after
+                animation: bottom-x .5s forwards
+                background: $dark
+    
+    header
+        background-color: $yellow
+
+    .nav
+        height: 60px
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-between
+        .link-admin
+            font-size: 18px
+            color: $dark
+    .menu
+        z-index: 999
+        position: absolute
+        top: 60px
+        background-color: $yellow
+        padding: 20px 60px
+        display: none
+        &.block
+            display: block
+       
+        &__item
+            text-align: center
+            padding: 10px 0
+            .btn
+                margin-top: 30px
+            &-link
+                padding: 0 15px
+                color: $dark
+                margin: 0 10px
+                font-size: 18px
+                text-transform: none
+                font-weight: 400
+                text-align: center
+                display: block
+                @extend .trans
+                position: relative
+                display: inline-block
+                &-ghid
+                    color: $red
+                &:hover
+                    color: #fff
+                    text-decoration: none
+                &::before
+                    content: "\e906"
+                    @extend .icomoon
+                    font-size: 18px
+                    position: absolute
+                    top: 5px
+                    left: -20px
+                    color: transparent
+                &:hover::before
+                    @extend .trans
+                    color: $dark
+                    left: -10px
+                &-ghid
+                    &:hover
+                        text-decoration: underline
+                        color: $red
+                    &::before
+                        content: ''
+
+    .hello
+        max-height: 100%
+        height: 100vh
+        display: flex
+        align-items: center
+        text-align: center
+        position: relative
+        &__title
+            color: $red
+            margin-bottom: 15px
+        &__icon
+            position: absolute
+            top: 0
+            left: -60%
+            font-size: 100px
+            color: red
+            +media-breakpoint-down(sm)
+                left: -20%
+                font-size: 60px
+
+    .login
+        display: flex
+        flex-direction: column
+        align-items: center
+        height: 100vh
+        padding: 50px
+        +media-breakpoint-down(md)
+            padding: 40px
+        +media-breakpoint-down(sm)
+            padding: 30px
+
+        &__website
+            color: $yellow
+
+
+        &__logo
+            align-self: start
+        &__form
+            margin: auto
+            text-align: center
+            &-input
+                max-width: 250px
+                border: 2px solid $dark
+                border-radius: 999px
+                height: 45px
+                overflow: hidden
+                display: flex
+                padding: 0 15px
+                align-items: center
+                margin: 15px 0
+                .placeholder
+                    color: #777
+                    font-size: 18px
+                .input
+                    height: 100%
+                    border: 0
+                    width: 100%
+                    margin-left: 10px
+
+            &-title
+                color: $red
+                text-transform: uppercase
+                font-size: 24px
+                margin-bottom: 15px
+            .btn
+                margin-top: 15px
+                text-transform: none     
+
+    .error
+        padding: 30px
+        background-color: $red
+        border-radius: 999px
+        position: fixed
+        bottom: 30px
+        left: 30px
+        color: #fff
+        box-shadow: 0px 0px 24.32px 7.68px rgba(217, 40, 24, 0.3)
+
+    .next
+    

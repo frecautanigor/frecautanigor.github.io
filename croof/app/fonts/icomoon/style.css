@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('icomoon.eot?qs5r1l');
-  src:  url('icomoon.eot?qs5r1l#iefix') format('embedded-opentype'),
-    url('icomoon.ttf?qs5r1l') format('truetype'),
-    url('icomoon.woff?qs5r1l') format('woff'),
-    url('icomoon.svg?qs5r1l#icomoon') format('svg');
+  src:  url('icomoon.eot?xeef4s');
+  src:  url('icomoon.eot?xeef4s#iefix') format('embedded-opentype'),
+    url('icomoon.ttf?xeef4s') format('truetype'),
+    url('icomoon.woff?xeef4s') format('woff'),
+    url('icomoon.svg?xeef4s#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,30 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-youtube:before {
+  content: "\e912";
+}
+.icon-correct1:before {
+  content: "\e913";
+}
+.icon-delete:before {
+  content: "\e914";
+}
+.icon-edit:before {
+  content: "\e915";
+}
+.icon-location:before {
+  content: "\e916";
+}
+.icon-mail:before {
+  content: "\e917";
+}
+.icon-next1:before {
+  content: "\e918";
+}
+.icon-upward:before {
+  content: "\e911";
+}
 .icon-correct:before {
   content: "\e910";
 }
