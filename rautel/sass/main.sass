@@ -1,0 +1,1280 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html,body
+	min-height: 100%
+
+body
+	background-color: $white
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $RobotoLight
+	overflow-x: hidden
+	color: $black
+	textarea, input:not([type="submit"]):not([type="checkbox"]):not([type="radio"]):not(#widget_convertor_suma):not([accept*="image"])
+		border: none
+		outline: none
+		margin: 25px
+		min-height: 40px
+		min-width: 250px
+		border-radius: 20px
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+	textarea
+		min-height: 130px
+	label.error
+		color: $red
+		margin: 0
+		display: block
+		&:not(#captcha-error):not(#radio-error)
+			margin-top: -20px
+body::-webkit-scrollbar
+	width: 10px
+	padding: 2px
+	background-color: $black
+	box-shadow: 0 0 10px rgba(0,0,0,0.5)
+
+body::-webkit-scrollbar-thumb
+	border-radius: 16px
+	background-color: $accent
+
+
+.transition
+	transition: all .3s linear !important
+
+.fixed
+	position: fixed
+
+.btn, button
+	width: fit-content
+	display: inline-block
+	border: 1px solid $accent
+	color: $accent
+	text-decoration: none
+	background-color: $white
+	font-family: $OswaldExtraLight
+	padding: 0 15px
+	font-size: 16px
+	border-radius: 7px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	cursor: pointer
+	line-height: 1.65
+	text-decoration: none
+	&.logout
+		background-color: transparent
+		border: none
+	&.large
+		font-size: 18px
+		border-radius: 30px
+		padding: 5px 30px
+	&.new-type
+		font-size: 14px
+		background-color: $lgray
+		border-color: transparent
+		&:hover, &:active
+			color: $accent
+			text-decoration: none	
+			background-color: darken($lgray, 5%)
+	&.delete
+		color: $red
+		border-color: $red
+		&:hover, &:active
+			background-color: rgba($red, .9)
+			color: $white			
+	&.more
+		background-color: $lgray
+		border-color: $gray
+		color: $gray
+		text-decoration: none
+		&:hover
+			background-color: $white
+			border-color: $black
+			text-decoration: none
+			color: $black
+	&:hover, &:active
+		text-decoration: none
+		color: $white
+	&:hover
+		text-decoration: none
+		background-color: darken($accent, 5%)
+	&:active
+		text-decoration: none
+		background-color: darken($accent, 10%)
+	&.hamburger:hover, &.hamburger:active
+		background: transparent
+.accent
+	color: $accent
+			
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+	&.img-height
+		height: 100%
+
+.img-desc
+	font-size: 12px
+	display: block
+	text-align: center
+	margin: 4px
+
+b, strong
+	font-family: $RobotoRegular
+	i, em
+		font-family: $RobotoMediumItalic
+
+i, em
+	font-family: $RobotoLightItalic
+	b, strong
+		font-family: $RobotoRegularItalic
+
+ul
+	list-style-type: disc
+	margin: 0 15px
+	ul
+		list-style-type: circle
+
+h1, h2, h3, .h1, .h2, .h3
+	color: $accent
+
+h1, .h1
+	font-family: $OswaldExtraLight
+	font-size: 32px
+	text-align: center
+	padding: 15px 0
+	&.left
+		text-align: left
+
+h2, .h2
+	text-align: center
+	font-size: 24px
+	color: $black
+	padding: 10px 0
+	line-height: 1.3
+
+h3, .h3
+	font-size: 16px
+	font-family: $OswaldMedium
+	line-height: 1.6
+	&.black
+		color: $black
+
+p, .p
+	font-family: $RobotoLight
+	font-size: 14px
+	margin: 0
+
+a
+	color: $accent
+
+.announce-text
+	font-family: $OswaldExtraLight
+	text-align: center
+	font-size: 24px
+	padding: 15px
+	line-height: 1.6
+	&.left
+		text-align: left
+
+.link
+	color: $accent
+	text-decoration: none
+	&:hover
+		color: darken($accent, 10%)
+		text-decoration: underline
+	&.insta:hover
+		color: $insta
+		text-decoration: none
+
+.section
+	padding: 30px 0
+
+
+// begin mayore's message
+.may-message
+	text-align: right
+	&__name
+		display: inline-block
+		margin-bottom: 10px
+	.p
+		text-align: justify
+
+// open-info
+.open-info
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding: 5px
+	margin: 15px 0
+	border-top: 1px solid $black
+	.creator
+		b
+			color: $accent
+	.date
+		font-family: $OswaldExtraLight
+		font-size: 16px
+		color: $dgray
+
+
+// begin preview
+.preview
+	display: block
+	background-color: $white
+	box-shadow: 0px 0px 10px 0px $gray
+	margin-top: $gutter/2
+	margin-bottom: $gutter/2
+	&:hover .effect
+		opacity: 0
+		@extend .transition
+	&.notice
+		background-color: $notice-yellow
+		padding: 10px
+
+	&.album
+		box-shadow: none
+		border-bottom: 5px solid $gray
+		.image
+			.effect
+				background-color: rgba($accent, .7)
+				opacity: 0
+		&:hover
+			border-bottom: 5px solid $accent
+			.image
+				.effect
+					opacity: 1
+		.creator
+			margin: 0
+			margin-bottom: 5px
+			color: $accent	
+	&.photo, &.video
+		width: fit-content
+		margin: 0 auto
+		color: $black
+		box-shadow: none
+		border-bottom: 5px solid $gray
+		margin: 10px 0px
+		@extend .transition
+		.h3
+			text-align: center
+			padding: 5px
+		.creator
+			color: $accent
+		.image .effect
+			background-color: rgba($black, .4)
+		&:hover
+			border-color: $red
+			.image .effect
+				opacity: 1
+				display: flex
+				background-color: rgba($black, .7)
+				span
+					font-size: 45px
+					color: $red
+	&.photo
+		border: none
+		margin: 0px
+		.image .effect span
+			font-size: 30px
+	.image
+		position: relative
+		span
+			color: $white
+			font-size: 50px
+			@extend .transition
+
+		.effect
+			width: 100%
+			height: 100%
+			position: absolute
+			background-color: rgba($black, .7)
+			display: flex
+			align-items: center
+			justify-content: center
+			@extend .transition
+	&__margin
+		padding: 15px
+	.h2
+		text-align: left
+		&.center
+			text-align: center
+	.h3
+		margin-bottom: 15px
+		color: $black
+	.date
+		text-align: right
+		padding-right: 15px
+		margin-top: 10px
+		font-size: 14px
+		color: $gray
+		&.left
+			text-align: left
+	.creator
+			text-align: left
+			padding-right: 15px
+			font-size: 16px
+			color: $gray
+
+//pagination
+.pagination
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 20px 0
+	a
+		display: flex
+		align-items: center
+		justify-content: center
+		margin: 0 10px
+		color: $accent
+		border: 1px solid $accent
+		border-radius: 5px
+		padding: 2px 7px
+		&:hover
+			background-color: $accent
+			color: $white
+		&.is-active
+			background-color: $accent
+			color: $white
+
+// begin share-btns
+.share-btns
+	padding: 15px
+
+// begin new-content
+.new-content
+	margin: 10px 0
+	padding: 0 5px
+
+// news-tag (news nav)
+.news-tags
+	padding: 15px
+	margin-bottom: 15px
+	border-bottom: 1px solid $black
+	&.no-devider
+		border: none
+		margin: 0
+	a
+		margin: 5px 5px
+		&.btn:hover
+			background-color: $black
+		&.is-active
+			background-color: $black
+
+//begin btn load more container 
+.btn-container
+	padding: 0 $gutter/2
+	display: flex
+	justify-content: center
+
+//begin masonry
+.grid
+	margin-right: -15px
+	margin-left: -15px
+
+// begin modal
+.modl
+	*:not(.icon)
+		@extend .transition
+	display: none
+	// change after front end
+	z-index: 9999999
+	position: fixed
+	justify-content: center
+	top: 0
+	height: 100%
+	width: 100%
+	background-color: rgba($black, .9)
+	overflow-y: scroll
+	padding: 100px 0
+	&.visible
+		display: flex
+	&-window
+		background-color: $lgray
+		padding: 0 40px
+		position: relative
+		height: fit-content
+		max-width: 900px
+		z-index: 2
+	&-close
+		position: absolute
+		top: 0px
+		right: -25px
+		a
+			color: $white
+			font-size: 18px
+			opacity: .5
+			&:hover
+				opacity: 1
+	&-nav
+		width: fit-content
+		margin: 0 auto
+		border-bottom: 2px solid $accent
+		display: flex
+		justify-content: center
+		a
+			font-size: 16px
+			font-family: $OswaldExtraLight
+			color: $black
+			padding: 15px
+			[class*="icon-"]
+				color: $accent
+			&:hover
+				background-color: $white
+	.tab-content
+		display: none
+		padding: 40px 0
+		&.tab-active
+			display: block
+		.big-link
+			display: block
+			color: black
+			font-size: 24px
+			text-align: center
+			font-family: $OswaldExtraLight
+			padding: 30px 5px
+			margin: 15px 0
+			line-height: 1.2
+			&:hover
+				background-color: $white
+			[class*="icon-"]
+				display: block
+				font-size: 50px
+				margin-bottom: 10px
+			img
+				width: 100px
+				display: block
+				margin: 0 auto
+		.soc-links
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			margin-bottom: 60px
+			.line-1, .line-2
+				margin: 10px 0
+			.soc-link
+				color: $gray
+				font-size: 50px
+				margin: 0 20px
+				.insta:hover
+					color: $insta
+				.fb:hover
+					color: $fb
+				.odno:hover
+					color: $odno
+				.yt:hover
+					color: $yt
+		.form
+			display: flex
+			justify-content: center
+			&-left, &-right
+				display: flex
+				flex-direction: column
+				align-items: center
+				input, textarea
+					text-align: center
+					font-size: 16px
+					font-family: $OswaldExtraLight
+					padding: 5px
+				input::placeholder, textarea::placeholder
+					color: $gray
+				.captcha
+					display: flex
+					align-items: center
+					margin: 0
+					padding-right: 13px
+					cursor: pointer
+					user-select: none
+					font-family: $OswaldExtraLight
+					input						
+						opacity: 0
+						cursor: pointer
+					.checkmark
+						height: 15px
+						width: 15px
+						margin-right: 10px
+						background-color: $white
+						border: 1px solid $accent
+						border-radius: 5px
+				.captcha
+					background-color: none
+					input:checked ~ .checkmark
+						border-color: $white
+					.checkmark:after
+						content: ""
+						display: none
+				.captcha
+					input:checked ~ .checkmark:after
+						display: block
+						margin: 1px auto
+					.checkmark:after
+						width: 6px
+						height: 8px
+						border: solid $accent
+						border-width: 0 2px 2px 0
+						transform: rotate(45deg)
+				.choosing
+					width: 100%
+					display: flex
+					justify-content: space-around
+					font-family: $OswaldExtraLight
+					.captcha-container
+						display: flex
+						align-items: flex-end
+					.problem-type
+						display: flex
+						flex-direction: column
+						.title
+							color: $accent
+							font-size: 18px
+							margin-left: 13px
+						.radiobtn
+							display: flex
+							align-items: center
+							margin: 0
+							padding-right: 13px
+							cursor: pointer
+							user-select: none
+							font-family: $OswaldExtraLight
+							input						
+								opacity: 0
+								cursor: pointer
+							.checkmark
+								height: 14px
+								width: 14px
+								margin-right: 10px
+								background-color: $white
+								border-radius: 50%
+								border: 1px solid $accent
+						.radiobtn
+							background-color: none
+							// &:hover input ~ .checkmark
+							// 	background-color: gray 
+							input:checked ~ .checkmark
+								border-color: $white
+							.checkmark:after
+								content: ""
+								display: none
+
+						.radiobtn
+							input:checked ~ .checkmark:after
+								display: block
+								margin: 3px auto
+							.checkmark:after
+								width: 6px
+								height: 6px
+								border-radius: 50%
+								background: $accent
+		.submit
+			display: block
+			margin: 20px auto
+
+	.tab-name
+		text-align: center
+		font-size: 32px
+		color: $accent
+		font-family: $OswaldExtraLight
+		margin-bottom: 30px
+
+
+
+		
+// begin header
+.header
+	*:not(.icon)
+		@extend .transition
+	position: relative
+	display: flex
+	flex-direction: column
+	height: 100%
+	justify-content: flex-end
+	&-wrapper
+		height: 300px
+		position: relative
+		background-size: cover
+		background-position: center center
+
+		&::before
+			content: ''
+			background-color: rgba($black, .8)
+			height: 100%
+			width: 100%
+			position: absolute
+
+.logo
+	text-align: center
+	font-family: $OswaldMedium
+	&-wrapper
+		height: 100%
+		width: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+	&__img
+		height: 80px
+		&:hover
+			opacity: .5
+	&__slogan
+		line-he
+		ight: .5
+		.h2
+			color: $accent
+			text-transform: uppercase
+		.h3
+			color: $white
+			font-family: $OswaldExtraLight
+			font-size: 20px
+	
+// begin nav
+.nav-container
+	&.nav-fixed
+		z-index: 999999
+		position: fixed
+		top: 0
+		width: 100%
+		background-color: rgba($black, .85)
+		transition: all .5s linear !important
+		&:hover
+			background-color: $black
+.navbar
+	z-index: 99999
+	height: 50px
+	&-toggler
+		color: $white
+		&:focus
+			outline: none
+			border: none		
+	.navbar-collapse
+		.nav-link
+			height: 50px
+			display: flex
+			align-items: center
+			padding: 0 15px
+			text-decoration: none
+			color: $accent
+			font-family: $OswaldExtraLight
+			font-size: 18px
+			span
+				margin-right: 5px
+				color: $white
+				font-size: 20px
+			&:hover
+				background-color: $accent
+				color: $white
+			&:focus
+				background-color: rgba($accent, .2)
+				outline: none
+	.home
+		height: 100%
+		display: flex
+		align-items: center
+		margin: 0 15px
+		a
+			height: 100%
+			display: flex
+			align-items: center
+			text-decoration: none
+			font-size: 20px
+			color: $white
+			&:hover
+				color: $accent
+	.right a
+		font-family: $OswaldExtraLight
+		margin: 0 5px
+		font-size: 20px
+		color: $white
+		&:hover
+			text-decoration: none
+			color: $accent
+		&.lang
+			color: $accent
+			&:hover
+				text-decoration: underline
+.dropdown-menu
+	margin: 0
+	padding: 0
+	background-color: $white
+	border: none
+	border-radius: 0
+	min-width: auto
+	width: auto
+	white-space: nowrap
+	box-shadow: 0px 5px 4px -2px $gray
+	a
+		height: 50px
+		display: flex
+		align-items: center
+		padding: 0 30px
+		text-decoration: none
+		color: $accent
+		font-family: $OswaldExtraLight
+		font-size: 18px
+		outline: none
+		span
+			margin-right: 5px
+			color: $black
+			font-size: 20px
+		&:hover
+			background-color: $lgray
+.hamburger
+	height: 50px
+	display: flex
+	align-items: center
+	&.is-active, &:focus
+		outline: none
+.is-active
+	.hamburger-inner
+		&::after, &::before
+			background-color: $accent
+
+
+// begin footer
+
+.footer
+	*:not(.icon)
+		@extend .transition
+	&__info
+		background: $black
+		padding: 30px 0
+		.h2
+			font-family: $OswaldExtraLight
+			color: $accent
+			margin-bottom: 20px
+			text-align: left
+		.p
+			color: $dgray
+		&-item
+			padding: 0 10px
+			margin: 30px 0
+			a
+				text-decoration: none
+				color: $dgray
+				font-family: $OswaldExtraLight
+			.tag
+				display: inline-block
+				border: 1px solid $dgray
+				border-radius: 5px
+				padding: 0 10px
+				margin: 4px
+				&:hover
+					border-color: $white
+			.social
+				a
+					display: block
+					max-width: fit-content
+					font-size: 16px
+					margin: 10px 0
+					span
+						margin-right: 10px
+					&:hover
+						&.insta
+							color: $insta
+						&.fb
+							color: $fb
+						&.odno
+							color: $odno
+						&.yt
+							color: $yt
+			.contact
+				line-height: 1.3
+
+				a
+					display: block
+					max-width: fit-content
+				.p
+					font-family: $OswaldExtraLight
+
+	&__sponsor
+		&-item
+			text-align: center
+			outline: none
+			margin: 50px 0
+			a
+				display: inline-block
+				max-width: fit-content
+				outline: none
+				img
+					height: 60px
+					text-align: center
+
+	&__last
+		background-color: $black
+		width: 100%
+		&-links
+			display: flex
+			justify-content: center
+			a
+				color: white
+				margin: 40px
+				font-family: $OswaldExtraLight
+				&:hover
+					color: $accent
+		&-devider
+			width: 70%
+			margin: 0 auto
+			height: 1px
+			background-color: #fff
+		&-authors
+			color: $accent
+			text-align: center
+			padding: 40px 0
+			font-family: $OswaldExtraLight
+			a
+				color: $accent
+				&:hover
+					color: $insta
+
+// MAIN  !!!
+
+.sidebar
+	margin: 15px 0
+	// border: 2px solid $accent
+	&__item
+		margin-bottom: 30px
+		background-color: $white
+		border-radius: 10px
+		box-shadow: 0 1px 2px 0 rgba($black, 0.20), 0 1px 3px 1px rgba($black, 0.10)
+		&-title
+			display: flex
+			align-items: center
+			justify-content: center
+			background-color: $black
+			color: $accent
+			height: 40px
+			font-family: $OswaldExtraLight
+			font-size: 20px
+			margin: 0
+		&-content:not(.meteo):not(.map)
+			padding: 15px
+			// may-mess
+			.m-mes
+				.message
+					display: flex
+					justify-content: center
+					align-items: center
+					font-family: $RobotoRegularItalic
+					text-align: center
+					
+				.mayor
+					text-decoration: underline
+					font-family: $OswaldMedium
+					text-align: right
+					padding: 10px
+			// contests
+			.side-contest, .side-survey, .side-announce
+				.h1
+					color: $black
+				.big-icon
+					color: $accent
+					font-size: 50px
+					text-align: center
+				.p, a
+					margin: 15px auto
+					display: block
+					width: fit-content
+					&.prop
+						color: $accent
+						&:hover
+							text-decoration: underline
+				.date
+					margin-top: 30px
+			// usefull -links
+			.side-useful
+				a
+					display: flex
+					align-items: center
+					justify-content: center
+					flex-direction: column
+					margin: 40px 0
+					.h1
+						@extend .transition
+						font-size: 23px
+					img
+						width: 25%
+					&:hover .h1
+						@extend .transition
+						color: $black
+			.side-events
+				.event
+					display: flex
+					justify-content: center
+					align-items: center
+					color: $black
+					margin: 10px 0
+					border-radius: 10px
+					background-color: $notice-yellow
+					@extend .transition
+					&:hover
+						background-color: rgba($notice-yellow, .5)
+					.date
+						display: flex
+						flex-direction: column
+						justify-content: center
+						padding: 10px
+						.day
+							color: $red
+						.devider
+							height: 1px
+							background-color: $accent
+						.month
+							color: $black
+						.h2
+							margin: 0
+							padding: 0
+					.name
+						padding: 10px
+						color: $dgray
+						font-family: $RobotoLightItalic
+						text-align: left
+						font-size: 18px
+					
+
+
+.content
+	box-shadow: 0px 5px 20px 0px $gray
+	background-color: $white
+	margin: 15px 0
+	padding: 0 15px
+	&__nav
+		height: 40px
+		display: flex
+		align-items: center
+		justify-content: center
+		border-bottom: 1px solid $black
+		&.is-active
+			display: flex
+		a
+			padding: 7px 15px
+			font-size: 16px
+			font-family: $OswaldExtraLight
+			color: $accent
+			&:hover
+				background-color: $black
+		&-toggler
+			display: none
+			flex-direction: column
+			font-size: 32px
+			text-align: center
+			width: fit-content
+			margin: 15px auto
+			.icon
+				transform: rotate(90deg)
+				&:hover
+					cursor: pointer
+			&.is-active
+				.icon
+					transform: rotate(-90deg)
+
+.fancybox-container
+	z-index: 999999999
+
+// administration & moderator
+
+.adm_header
+	display: flex
+	align-items: center
+	justify-content: space-around
+	width: 100vw
+	background-color: $black
+	min-height: 80px
+	ul
+		display: flex
+		align-items: center
+		justify-content: space-around
+		.dropdown-menu.show
+			box-shadow: none 
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			width: fit-content !important
+			padding: 10px
+			.dropdown-item
+				height: fit-content
+				width: fit-content
+				margin: 5px
+				padding: 0
+				&:hover
+					color: $black
+					background-color: transparent
+			.divider
+				height: 1px
+				width: 100%
+				background-color: $accent
+	.top-line
+		display: flex
+		align-items: center
+		justify-content: space-around
+		min-height: 80px
+
+	.bottom-line
+		display: flex
+		align-items: center
+		justify-content: space-around
+
+		.hamburger
+			display: none
+	&-logo
+		img
+			width: 60px
+			height: 60px
+	&-nav
+		display: flex
+		align-items: center
+		justify-content: center
+		background-color: $black
+		&.is-active
+			display: flex
+			flex-direction: column
+		a
+			margin: 15px
+			color: $accent
+			text-align: center
+			&:hover
+				color: $white
+				text-decoration: none
+	.user
+		display: flex
+		flex-direction: column
+		justify-content: flex-start
+		margin-left: 15px
+		p
+			margin: 0
+			color: $white
+			font-size: 16px
+		a
+			width: fit-content
+			margin: 0
+			color: $accent
+			&:hover
+				text-decoration: underline
+.adm_content
+	border: 2px solid rgba($blue, .8)
+	border-radius: 15px
+	padding: 15px
+	margin: 15px 0
+	width: 100%
+	.capitol
+		margin: 60px 0
+		.btn
+			margin: 20px 0
+	form
+		display: flex
+		flex-direction: column
+		input[type*="text"], textarea
+			max-width: 960px
+			padding: 10px
+			box-shadow: 0px 0px 5px 0px $gray
+		.tags
+			display: flex
+			justify-content: center
+			margin: 15px
+			input[type=checkbox]
+				display: none
+				& + label
+					font-size: 14px
+					border-radius: 7px
+					background-color: $lgray
+					border-color: transparent
+					color: $accent
+					padding: 0 15px
+					margin: 5px
+					cursor: pointer
+					width: fit-content
+					&::selection
+						background-color: transparent
+						color: $accent
+
+				&:checked + label
+					background-color: $black
+					border-color: darken($black, 30%)
+		.video
+			margin: 15px
+			display: flex
+			align-items: center
+			justify-content: center
+		.main-header
+			display: flex
+			justify-content: space-around
+			align-items: center
+		&.adm-maymess
+			display: flex
+			justify-content: space-around
+			align-items: center
+			flex-direction: row
+			.left, .right
+				display: flex
+				flex-direction: column
+				justify-content: center
+				align-items: center
+
+		label.input-file
+			background-color: $black
+			display: flex
+			padding: 15px
+			border-radius: 20px
+			color: $accent
+			cursor: pointer
+			max-width: fit-content
+
+		label.input-file:hover
+			background-color: rgba($black, .9)
+		input[accept*="image"]
+			margin-left: 15px
+			cursor: pointer
+			max-width: 160px
+
+		.btn
+			width: fit-content
+			margin: 15px 0
+	.add-item
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		&:hover
+			background-color: darken($white, 4%)
+
+
+div[class*="modal-"]
+	position: fixed
+	z-index: 999999
+	bottom: 20px
+	left: 20px
+	padding: 30px
+	font-size: 20px
+	background-color: $white
+	box-shadow: 0px 0px 5px 0px $gray
+	border-radius: 10px
+.modal-succes
+	color: $accent
+	display: none
+	&.is-active
+		display: block
+.modal-error
+	color: $red
+	display: none
+	&.is-active
+		display: block
+.modal-confirm
+	display: none
+	&.is-active
+		display: block
+.popup-body
+	z-index: 999999999999
+	position: fixed
+	width: 100vw
+	height: 100vh
+	background-color: rgba(black, .9)
+	display: none
+	justify-content: center
+	align-items: center
+	&.is-active
+		display: flex
+	.popup-window
+		background-color: $white
+		padding: 20px
+		margin: 15px
+		box-shadow: 0px 0px 3px 0px $gray
+		border-radius: 20px
+		display: flex
+		flex-direction: column
+		.h1
+			font-size: 24px
+.cookie-popup
+	z-index: 99999999999
+	position: fixed
+	bottom: 0
+	width: 100vw
+	background-color: rgba($white, .9)
+	padding: 20px
+	display: flex
+	align-items: center
+	justify-content: center
+	flex-direction: column
+	box-shadow: 0px 0px 3px 0px $gray
+	&.invisible
+		display: none
+
+
+.log-page
+	background-color: $black
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	min-height: 100vh
+	.logo
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		margin: 15px
+		img
+			display: block
+			width: 100px
+	.login
+		display: flex
+		flex-direction: column
+		align-items: center
+		background-color: $white
+		border-radius: 20px
+		padding: 15px
+		margin: 15px
+
+		input
+			color: $accent
+			box-shadow: 0px 0px 5px 0px $gray
+			margin: 15px !important
+			padding-left: 15px
+	.log-footer
+		width: 100vw
+		margin-top: 60px
+		.sponsor
+			margin: 15px
+			display: flex
+			justify-content: space-around
+			a
+				display: block
+				img
+					display: block
+					height: 80px
+// preloader
+#p_prldr
+	position: fixed
+	z-index: 99999999999999999999
+	background-color: $black
+	display: flex
+	width: 100vw
+	height: 100vh
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	.contpre
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		.svg_anm
+			display: block !important
+			width: 80px
+			height: 80px
+@import "media" // Always at the end			
+		

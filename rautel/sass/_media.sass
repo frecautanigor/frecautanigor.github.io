@@ -1,0 +1,132 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
++media-breakpoint-down(lg)
+	.nav-container
+		margin: 0 auto
+		width: 90%
+	
+	.dropdown-menu
+		border-color: $black
+
+// ≥992px
++media-breakpoint-down(md)
+	
+	.nav-container
+		width: 100%
+		&.nav-fixed
+			background-color: $black
+		.navbar
+
+			.navbar-collapse
+				position: absolute
+				top: 50px
+				left: 0
+				z-index: 9999
+				width: 100vw
+				padding: 0
+				margin: 0
+				background-color: $white
+				.nav-link
+					color: $black
+					font-size: 18px
+					span
+						color: $accent
+						font-size: 20px
+					&:hover
+						background-color: $accent
+						color: $white
+						& span
+							color: $white
+	
+	.modl
+		&-nav
+			display: none
+		&-close
+			right: 20px
+			top: 20px
+		a
+			color: $black
+		&-window
+			padding: 0
+	
+	.sidebar
+		display: none
+	.content
+		padding: 0 30px
+
+
+
+// ≥768px
++media-breakpoint-down(sm)
+	.tab-content
+		.form
+			flex-direction: column
+
+	.adm_header
+		flex-direction: column
+		ul
+			flex-direction: column
+			li
+				margin: 5px 0
+		.top-line
+		.bottom-line
+			width: 100vw
+			.hamburger
+				display: flex
+		&-nav
+			display: none
+			background-color: $black
+			&.is-active
+				display: flex
+				flex-direction: column
+	.adm_content
+		form
+			.tags, .video, &.adm-maymess
+				flex-direction: column
+				b
+					display: block
+			.main-header, .adm-maymess
+				flex-direction: column
+
+// ≥576px
++media-breakpoint-down(xs)
+	.content__nav-toggler
+		display: flex
+	.content__nav
+		display: none
+		flex-direction: column
+		height: auto
+
+	.footer__last-links
+		display: flex
+		flex-direction: column
+		align-items: center
+		a
+			margin: 20px
+
+	.open-info
+		flex-direction: column
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+
+// ≤1200px
++media-breakpoint-up(xl)
+
+	.nav-container
+		margin: 0 auto
+		width: 85%
+
+	.dropdown-menu
+		border-color: $black

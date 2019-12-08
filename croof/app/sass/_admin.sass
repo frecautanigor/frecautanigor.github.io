@@ -1,10 +1,26 @@
 .admin
-    #hamburger
+    #admin__hamburger
+        cursor: pointer
+        padding: 10px 35px 16px 0px
         display: block
         span
+            cursor: pointer
+            height: 2px
+            width: 35px
             background: $dark
+            position: absolute
+            display: block
+            content: ''
+            transition: all 0.5s ease-in-out
             &:before, &:after
+                cursor: pointer
+                height: 2px
+                width: 35px
                 background: $dark
+                position: absolute
+                display: block
+                content: ''
+                transition: all 0.5s ease-in-out
             &:before
                 animation: undo-top .5s forwards
             &:after
@@ -13,9 +29,12 @@
         &.active span
             background-color: transparent
             &:before
+                top: 0
+                transform: translateY(0px)
                 animation: top-x .5s forwards
                 background: $dark
             &:after
+                transform: translateY(0px)
                 animation: bottom-x .5s forwards
                 background: $dark
     
@@ -159,6 +178,62 @@
         left: 30px
         color: #fff
         box-shadow: 0px 0px 24.32px 7.68px rgba(217, 40, 24, 0.3)
+
+    .title
+        font-size: 32px
+        color: $dark
+        text-align: center
+    .albums
+        &__item
+            &-hover
+                .edit
+                    z-index: 9999
+                    position: relative
+                    display: inline
+                    color: $yellow
+                    font-size: 30px
+                    margin: 0 10px
+            &-add
+                height: 250px
+                display: flex
+                justify-content: center
+                align-items: center
+                text-decoration: none
+                &:hover
+                    opacity: .9
+                .content
+                    text-align: center
+                    color: #fff
+                    line-height: .8
+                    margin-bottom: 20px
+                .plus
+                    font-size: 120px
+                    font-weight: bold
+                .text
+                    font-size: 24px
+    
+    .blocker
+        background-color: rgba(#fff, .9)
+        background-color: transparent
+    .modal
+        box-shadow: 0px 0px 24.32px 7.68px rgba(34, 34, 34, 0.3)
+    .input
+        height: 40px
+        border: 2px solid $dark
+        width: 100%
+        padding: 2px 15px
+        margin: 15px 0
+    .input-desc
+        color: $yellow
+        font-size: 18px
+        margin-top: 15px
+    input[type=file].input
+        border: 0
+        padding: 0
+        cursor: pointer
+        height: auto
+        margin: 5px 0
+
 
     .next
     

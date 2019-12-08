@@ -79,14 +79,15 @@ document.addEventListener("DOMContentLoaded", function() {
 	  } 
 
 	// Menu hamburger
-	var menu = document.querySelector( "#hamburger" );
-	menu.addEventListener( "click", function(){
-		this.classList.toggle( "active" );
-		$(".header__menu").toggleClass( "block animated fadeInDown" );
+
+	$("#hamburger").click( function() {
+		$(this).toggleClass("active");
+		$(".header__menu").toggleClass("block animated fadeInDown");
 	});
-	var menu = document.querySelector( "#hamburger" );
-	menu.addEventListener( "click", function(){
-		$(".admin .menu").toggleClass( "block" );
+
+	$("#admin__hamburger").click( function() {
+		$(this).toggleClass("active");
+		$(".admin .menu").toggleClass("block");
 	});
 
 	// Fixed menu

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Administrare blocuri principale - Răuțel</title>
+		<meta name="description" content="">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<!-- Template Basic Images Start -->
+		<link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="img/favicon/android-icon icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon icon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon icon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon icon-16x16.png">
+		<link rel="manifest" href="img/favicon/manifest.json">
+		<!-- Template Basic Images End -->
+		<!-- Custom Browsers & Windows Color Start -->
+		<meta name="theme-color" content="#000">
+		<meta name="msapplication-TileColor" content="#000">
+		<meta name="msapplication-TileImage" content="img/favicon/ms-icon icon-144x144.png">
+		<!-- Custom Browsers & Windows Color End -->
+		<link rel="stylesheet" href="css/main.min.css">
+	</head>
+	<body class="">
+		<!-- varu aici e pop-upul pt delogare -->
+			<div class="popup-body animated fadeIn">
+				<div class="popup-window">
+					<h1 class="h1">Sigur doriți să părăsiți AdminPanel?</h1>
+					<div class="buttons">
+						<a href="" class="btn delete">Da</a>
+						<button class="btn close-popup">Nu</button>
+					</div>
+				</div>
+			</div>
+		<!-- varu aici sunt modalurile-notificari ele sun displaynone -->
+			<div class="modal-succes animated fadeIn">Date salvate cu succes</div>
+			<div class="modal-error animated fadeIn">A intervenit o eroare</div>
+			<div class="modal-confirm animated fadeIn">Sunteți sigur că doriți să ștergeți acest item?
+				<div>
+					<a href="" class="btn delete">Da</a>
+					<button class="btn close-notify">Nu</button>
+				</div>
+			</div>
+	
+			
+		<header class="adm_header">
+
+			<div class="top-line">
+				<div class="adm_header-logo">
+					<a href="">
+						<img src="img/logo.svg" alt="">
+					</a>
+				</div>
+			</div>
+			
+			<div class="bottom-line">
+				<div class="menu">
+					<button class="hamburger hamburger--spring">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
+					</button>
+
+					<div class="adm_header-nav animated fadeInTop">
+						<ul>
+							<li><a href="" class="">Principale</a></li>
+
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Moderatori</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#">Biserica Creștin-Ortodoxă</a>
+									<a class="dropdown-item" href="#">Biserica Creștin-Baptistă</a>
+									<a class="dropdown-item" href="#">Sala Regatului Martorilor lui Iehova</a>
+									<div class="divider"></div>
+									<a class="dropdown-item" href="#">Grădinița</a>
+									<a class="dropdown-item" href="#">Gimnaziul</a>
+									<a class="dropdown-item" href="#">Biblioteca</a>
+									<a class="dropdown-item" href="#">Centrul Meșteșugarilor</a>
+									<a class="dropdown-item" href="#">Sala de Sport</a>
+									<div class="divider"></div>
+									<a class="dropdown-item" href="#">Centrul Medical</a>
+									<a class="dropdown-item" href="#">Secția de Poliție</a>
+									<a class="dropdown-item" href="#">Poșta</a>
+								</div>
+							</li>
+
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pagini de Informare</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#">Info primărie</a>
+									<div class="divider"></div>
+									<a class="dropdown-item" href="#">SatulMeu</a>
+									<a class="dropdown-item" href="#">Consiliul</a>
+									<a class="dropdown-item" href="#">Util</a>
+								</div>
+							</li>
+
+							<li class="dropdown">
+								<a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Media & acivități</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#">Noutăți</a>
+									<a class="dropdown-item" href="#">Anunțuri</a>
+									<a class="dropdown-item" href="#">Foto</a>
+									<a class="dropdown-item" href="#">Video</a>
+									<div class="divider"></div>
+									<a class="dropdown-item" href="#">Concursuri</a>
+									<a class="dropdown-item" href="#">Sondaje</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="user">
+						<p>Administrator (primărie)</p>
+						<button class="btn logout">logout <span class="icon-logout"></span></button>
+				</div>
+			</div>
+
+		</header>
+
+
+		<div class="container">
+		
+					<div class="adm_content">
+						<h1 class="h1">Administrare Blocuri principale</h2>
+						<hr>
+						<section class="container">
+							<h2 class="h2">Header-ul principal</h2>
+							<form action="">
+
+								<div class="main-header">
+									
+									<div class="img">
+										<label for="file" class="input-file">
+											Alegeți imaginea
+											<input type="file" id="file" accept="image/*">
+										</label>
+									</div>
+									<input type="text" placeholder="Slogan">
+
+
+								</div>
+								
+								<button class="btn">Salvează</button>
+								
+
+							</form>	
+						</section>
+						<section class="container">
+							<h2 class="h2">Notițele din side-bar</h2>
+							<div class="row">
+								<div class="col-12 col-md-6 grid-item">
+									<div class="preview notice">
+										<form action="">
+												<input type="text" placeholder="Denumirea Evenimentului (scurt)" class="h2">								
+												<input type="text" placeholder="Linkul la anunț sau noutate">								
+											<button class="btn">Salvează</button>
+										</form>	
+									</div>
+								</div>
+								<div class="col-12 col-md-6 grid-item">
+									<div class="preview notice">
+										<form action="">
+												<input type="text" placeholder="Denumirea Evenimentului (scurt)" class="h2">								
+												<input type="text" placeholder="Linkul la anunț sau noutate">								
+											<button class="btn">Salvează</button>
+										</form>	
+									</div>
+								</div>
+								<div class="col-12 col-md-6 grid-item">
+									<div class="preview notice">
+										<form action="">
+												<input type="text" placeholder="Denumirea Evenimentului (scurt)" class="h2">								
+												<input type="text" placeholder="Linkul la anunț sau noutate">								
+											<button class="btn">Salvează</button>
+										</form>	
+									</div>
+								</div>
+								<div class="col-12 col-md-6 grid-item">
+									<div class="preview notice">
+										<form action="">
+												<input type="text" placeholder="Denumirea Evenimentului (scurt)" class="h2">								
+												<input type="text" placeholder="Linkul la anunț sau noutate">								
+											<button class="btn">Salvează</button>
+										</form>	
+									</div>
+								</div>
+								
+							</div>
+						</section>
+						<section class="container">
+							<h2 class="h2">Blocurile de pe principală</h2>
+							
+							<form action="" class="adm-maymess">
+									
+									<div class="left">
+										<label for="file" class="input-file">
+											Alegeți imaginea
+											<input type="file" id="file" accept="image/*">
+										</label>
+										<input type="text" placeholder="nume primar">
+									</div>
+
+									<div class="right">
+										<textarea name="content" id="c5" class="editor">
+										   	&lt;p&gt;<b>Mesajul primarului...</b>&lt;/p&gt;
+										</textarea>
+										<button class="btn">Salvează</button>
+									</div>
+								
+							
+							</form>	
+
+							</div>
+						</section>
+					</div>
+
+		</div>
+		
+		<script src="js/scripts.min.js"></script>
+
+	</body>
+</html>

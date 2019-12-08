@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>CROOF - ADMIN</title>
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="icon" href="../img/favicon.png">
+	
+	<link rel="stylesheet" href="../css/styles.min.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap&subset=cyrillic" rel="stylesheet">
+	
+
+</head>
+
+<body class="admin">
+
+		<header class="header">
+			
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+
+						<nav class="nav">
+
+							<a href="javascript:void(0);" id="admin__hamburger"><span></span></a>
+			
+							<ul class="menu">
+			
+								<li class="menu__item">
+									<a href="" class="menu__item-link">Galerie photo</a>
+								</li>
+			
+								<li class="menu__item">
+									<a href="" class="menu__item-link">Galerie video</a>
+								</li>
+			
+								<li class="menu__item">
+									<a href="" class="menu__item-link">Prețuri</a>
+								</li>
+			
+								<li class="menu__item">
+									<a href="" class="menu__item-link">Recenzii</a>
+								</li>
+			
+								<li class="menu__item">
+									<a href="" class="menu__item-link">Comenzi de apel</a>
+								</li>
+			
+								<li class="menu__item">
+									<a href="" class="menu__item-link menu__item-link-ghid">Ghid</a>
+								</li>
+
+								<li class="menu__item">
+									<a href="" class="btn">Delogare</a>
+								</li>
+			
+							</ul>
+							
+							<a href="" class="link-admin">Croof Admin</a>
+
+						</nav>
+
+					</div>
+				</div>
+			</div>
+
+
+		</header>
+
+
+		<section class="section albums gallery">
+
+			<div class="container">
+
+				<div class="row">
+					<div class="col-12">
+						<p class="title">Galerie foto</p>
+					</div>
+				</div>
+
+				<div class="row" id="gallery-albums" data-columns>
+
+					<a href="#modal_add_album" rel="modal:open" class="albums__item albums__item-add">
+
+						<div class="content">
+							<div class="plus">+</div>
+							<div class="text">Adauga album</div>
+						</div>
+
+					</a>
+
+					<a href="" class="albums__item">
+
+						<div class="albums__item-img">
+							<img src="https://tinyjpg.com/images/social/website.jpg" alt="" class="img-responsive">
+						</div>
+
+						<div class="albums__item-text">
+							<span class="project-name">Proiect 6:</span>
+							Casă acoperiă cu șindrilă bituminoasă în orașul Durlești
+						</div>
+
+						<div class="albums__item-hover">
+							<button onclick="window.location.href='#modal_add_album'" class="edit"><i class="icon-edit"></i></button>
+							<button onclick="window.location.href='#modal_add_album'" class="delete"><i class="icon-delete"></i></button>
+						</div>
+						
+					</a>
+					
+				</div>
+			</div>
+
+		</section>
+
+		<!-- POPUP -->
+		<div id="modal_add_album" class="modal">
+			
+			<input type="text" class="input" placeholder="Denumirea albumului">
+			
+			<input type="text" class="input" placeholder="Număr Proiect (cifra)">
+
+			<p class="input-desc">Selectați imaginile proiectului</p>
+			<input type="file" class="input">
+
+			<p class="input-desc">Selectați imaginea de copertă a proiectului</p>
+			<input type="file" class="input">
+
+		</div>
+
+	<script src="../js/scripts.min.js"></script>
+
+
+</body>
+</html>
