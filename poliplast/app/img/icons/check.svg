@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   viewBox="0 0 38.666668 50.666668"
+   height="50.666668"
+   width="38.666668"
+   xml:space="preserve"
+   id="svg2"
+   version="1.1"><metadata
+     id="metadata8"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+     id="defs6" /><g
+     transform="matrix(1.3333333,0,0,-1.3333333,0,50.666667)"
+     id="g10"><g
+       transform="scale(0.1)"
+       id="g12"><path
+         id="path14"
+         style="fill:#151515;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="M 18.2031,18.7031 H 273.203 V 363.703 H 18.2031 Z m 22.5,45 h 30 v 30 h -30 z m 44.5274,1.7188 H 253.727 v -7.5 H 85.2305 Z m 0,232.5821 H 253.727 v -7.5 H 85.2305 Z m -44.5274,-1.801 h 30 v 30 h -30 z m 33.75,-7.5 h -41.25 v 45 h 45 v -45 z M 41.7383,220.977 h 29.3359 v 29.339 H 41.7383 Z m 43.4922,-0.938 H 253.727 v -7.5 H 85.2305 Z M 74.8242,213.477 H 34.2383 v 44.339 H 78.5742 V 213.477 Z M 41.7383,143.262 h 29.3359 v 29.34 H 41.7383 Z m 43.4922,-1.176 H 253.727 v -7.5 H 85.2305 Z M 74.8242,135.762 H 34.2383 v 44.34 h 44.3359 v -44.34 z M 74.4531,56.2031 h -41.25 v 44.9999 h 45 V 56.2031 Z M 280.703,3.70313 H 3.19922 C 3.24609,128.703 3.24609,253.703 3.19922,378.703 H 288.203 V 3.70313 h -7.5" /><path
+         id="path16"
+         style="fill:#f2a03d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 40.1563,318.512 13.7148,-12.574 20.9023,40.371 13.3047,-6.856 -29.8906,-57.73 -28.1133,25.773 10.0821,11.016" /><path
+         id="path18"
+         style="fill:#f2a03d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="M 40.1563,241.785 53.8711,229.211 74.7734,269.586 88.0781,262.73 58.1875,205 30.0742,230.77 40.1563,241.785" /><path
+         id="path20"
+         style="fill:#f2a03d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         d="m 40.1563,164.102 13.7148,-12.575 20.9023,40.371 13.3047,-6.851 -29.8906,-57.731 -28.1133,25.77 10.0821,11.016" /></g></g></svg>

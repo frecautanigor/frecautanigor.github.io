@@ -1,0 +1,66 @@
+// thin 100
+// thin 100 Italic
+// light 300
+// light 300 Italic
+// regular 400
+// regular 400 Italic
+// medium 500
+// medium 500 Italic
+// bold 700
+// bold 700 Italic
+// black 900
+// black 900 Italic
+
+
+@mixin font($f-name, $f-style, $f-weight, $f-url)
+	@font-face
+		font-family: $f-name
+		font-style: $f-style
+		font-weight: $f-weight
+		src: url($f-url) format('woff2')
+
+// WOFF2
+@include font('Roboto', normal, 900, '../fonts/Roboto-Black.woff2')
+@include font('Roboto', italic, 900, '../fonts/Roboto-BlackItalic.woff2')
+
+@include font('Roboto', normal, 700, '../fonts/Roboto-Bold.woff2')
+@include font('Roboto', italic, 700, '../fonts/Roboto-BoldItalic.woff2')
+
+@include font('Roboto', normal, 400, '../fonts/Roboto-Regular.woff2')
+@include font('Roboto', italic, 400, '../fonts/Roboto-Italic.woff2')
+
+@include font('Roboto', normal, 300, '../fonts/Roboto-Light.woff2')
+@include font('Roboto', italic, 300, '../fonts/Roboto-LightItalic.woff2')
+
+@include font('Roboto', normal, 500, '../fonts/Roboto-Medium.woff2')
+@include font('Roboto', italic, 500, '../fonts/Roboto-MediumItalic.woff2')
+
+@include font('Roboto', normal, 100, '../fonts/Roboto-Thin.woff2')
+@include font('Roboto', italic, 100, '../fonts/Roboto-ThinItalic.woff2')
+
+@include font('Roboto', normal, 500, '../fonts/Roboto-Medium.woff2')
+@include font('Roboto', italic, 500, '../fonts/Roboto-MediumItalic.woff2')
+
+// WOFF
+@include font('Roboto', normal, 900, '../fonts/Roboto-Black.woff')
+@include font('Roboto', italic, 900, '../fonts/Roboto-BlackItalic.woff')
+
+@include font('Roboto', normal, 700, '../fonts/Roboto-Bold.woff')
+@include font('Roboto', italic, 700, '../fonts/Roboto-BoldItalic.woff')
+
+@include font('Roboto', normal, 400, '../fonts/Roboto-Regular.woff')
+@include font('Roboto', italic, 400, '../fonts/Roboto-Italic.woff')
+
+@include font('Roboto', normal, 300, '../fonts/Roboto-Light.woff')
+@include font('Roboto', italic, 300, '../fonts/Roboto-LightItalic.woff')
+
+@include font('Roboto', normal, 500, '../fonts/Roboto-Medium.woff')
+@include font('Roboto', italic, 500, '../fonts/Roboto-MediumItalic.woff')
+
+@include font('Roboto', normal, 100, '../fonts/Roboto-Thin.woff')
+@include font('Roboto', italic, 100, '../fonts/Roboto-ThinItalic.woff')
+
+@include font('Roboto', normal, 500, '../fonts/Roboto-Medium.woff')
+@include font('Roboto', italic, 500, '../fonts/Roboto-MediumItalic.woff')
+
+@import "../fonts/icons/style.css"
