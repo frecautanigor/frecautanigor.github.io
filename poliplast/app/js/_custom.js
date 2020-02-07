@@ -1,20 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
+	
+	$(window).on('load', function () {
+		var preloader = $('.loader');
+		var preloaderFigure = preloader.find('.loader__figure');
+
+		preloaderFigure.delay(900).fadeOut();
+		preloader.delay(1000).fadeOut('slow');
+	});
+
     // Styles for select TAG
     $('.select').niceSelect();
 
     // Link catalog
-    $('.nav__item-catalog').click(function () {
+    $('.nav__item-catalog .humburger-catalog').click(function () {
         $('.humburger-catalog').toggleClass('open');
         $('.text').toggleClass('open');
+	});
+
+    $('.nav__item-catalog .text').click(function () {
+        $('.humburger-catalog').toggleClass('open');
+        $('.text').toggleClass('open');
+	});
+
+    $('.nav .search').click(function () {
+        $(this).toggleClass('active');
+        $('.header__search').toggleClass('show');
 	});
 
     // Link catalog
     $('.nav__item-menu').click(function () {
         $('.humburger-menu').toggleClass('open');
+        $('#catalog__menu-responsive').toggleClass('show');
 	});
 	
 	// Arcodion menu
-    $("#catalog__menu").accordion();
+	$("#catalog__menu").accordion();
+	$("#catalog__menu-responsive").accordion();
 
 	// Slider products
 	$('.product__slider').slick({
@@ -44,7 +65,13 @@ document.addEventListener("DOMContentLoaded", function () {
 			  }
 			},
 			{
-			  breakpoint: 768,
+			  breakpoint: 700,
+			  settings: {
+				slidesToShow: 2
+			  }
+			},
+			{
+			  breakpoint: 500,
 			  settings: {
 				slidesToShow: 1
 			  }
@@ -148,45 +175,38 @@ document.addEventListener("DOMContentLoaded", function () {
 		$input.val(value);
 	});
 
-	$('.slider').cardslider({
-
-		// keyboard navigation
-		// keys: {
-		//   next: 38,
-		//   prev: 40
-		// },
-	  
-		// 'up', 'down', 'right', 'left'
+	// Main home slider
+	var cardslider = $('.slider').cardslider({
 		direction: 'up',
-	  
-		// shows navigation
 		nav: true,
-	  
-		// allows swipe event on touch devices
 		swipe: true,
-	  
-		// shows bottom pagination dots
 		dots: true,
-	  
-		// infinite loop
 		loop: true,
-	  
-		// callbacks
-		// beforeCardChange: null,
-		// afterCardChange: null
-		
-	  })
+	}).data('cardslider');
 
+	if(typeof(cardslider) != "undefined" && cardslider !== null) {
+		setInterval(function () {
+			cardslider.nextCard();
+		}, 10000);
+	}
+
+	// Modal
+	var modal = new tingle.modal({
+		closeMethods: ['btn-close'],
+        // footer: true,
+        // stickyFooter: true
+	});
+
+	modal.setContent(document.querySelector('.modal').innerHTML);
 	
-	// $('.slider').slick({
-    // slidesToShow: 1,
-    // slidesToScroll: 1,
-    // arrows: true,
-    // dots: true,
-    // centerMode: true,
-    // variableWidth: true,
-    // infinite: true,
-    // focusOnSelect: true,
-    // cssEase: 'linear',
-    // touchMove: true,
+	var btn = document.querySelector('.callback');
+    btn.addEventListener('click', function(){
+        modal.open();
+	});
+
+	var btnClose = document.querySelector('.btn-close');
+    btnClose.addEventListener('click', function(){
+        modal.close();
+	});
+
 });

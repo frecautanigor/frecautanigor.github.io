@@ -27,10 +27,10 @@
 		"simplebar": "^5.1.0",
 		"slick-carousel": "^1.8.1",
 		"smart-grid": "^2.1.2",
+		"tingle.js": "^0.15.2",
 		"waypoints": "^4.0.1"
 	},
 	"dependencies": {
-		"animate.css": "^3.7.2",
-		"tingle.js": "^0.15.2"
+		"animate.css": "^3.7.2"
 	}
 }

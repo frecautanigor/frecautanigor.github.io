@@ -39,7 +39,12 @@
 </head>
 
 <body>
-	
+	<!-- LOADER -->
+	<div class="loader">
+		<div class="loader__figure"></div>
+	</div>
+	 <!-- LOADER -->
+		
 	<!-- Header -->
 	<header class="header">
 		<div class="header__wrapper fixeddd">
@@ -82,7 +87,7 @@
 							<div class="info">Звонок по РФ бесплатно</div>
 						</div>
 	
-						<a href="" class="btn">Перезвоните мне</a>
+						<button class="btn callback">Перезвоните мне</button>
 					</div>
 	
 					<div class="header__shop">
@@ -106,17 +111,111 @@
 			</div>
 	
 			<nav class="nav">
+				<div id="catalog__menu-responsive" class="responsive catalog__menu menu">
+					<ul>
+						<li class="catalog__menu-item">
+							<a href="javascript:void(0);" class="catalog__menu-link">Каталог</a>
+							<ul class="catalog__submenu submenu">
+
+								<li class="catalog__submenu-item">
+									<a href="javascript:void(0);" class="catalog__submenu-link">
+										<i class="catalog__menu-icon icon-menu"></i>
+										<span>Трубы чугунные ЧК, SML</span>
+									</a>
+									<ul class="catalog__submenu submenu">
+										<li class="catalog__submenu-item"><a href="javascript:void(0);" class="catalog__submenu-link">Трубы чугунные SML и фитинги</a></li>
+										<li class="catalog__submenu-item"><a href="javascript:void(0);" class="catalog__submenu-link"><i class="catalog__submenu-icon"></i>Трубы чугунные ЧК и фитинги</a>
+											<ul class="submenu">
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+	
+							</ul>
+						</li>
+						<li class="catalog__menu-item"><a href="" class="catalog__menu-link">Lorem, ipsum.</a></li>
+						<li class="catalog__menu-item"><a href="" class="catalog__menu-link">Nostrum, deserunt!</a></li>
+						<li class="catalog__menu-item"><a href="" class="catalog__menu-link">Soluta, nihil.</a></li>
+						<li class="catalog__menu-item"><a href="" class="catalog__menu-link">Quo, quis.</a></li>
+						<li class="catalog__menu-item"><a href="" class="catalog__menu-link">In, soluta?</a></li>
+					</ul>
+				</div>
 				<div class="nav__item-menu">
 					<div class="text">Меню</div>
 					<div class="humburger humburger-menu"><span></span><span></span><span></span><span></span></div>
 				</div>
+				<div class="search"></div>
+
 				<div class="wrapper">
-						
-					<div class="nav__content">
-	
+					
+					<div class="nav__content">	
 						<div class="nav__item-catalog">
 							<div class="humburger humburger-catalog"><span></span><span></span><span></span><span></span></div>
 							<div class="text">Каталог</div>
+ 
+							<ul class="multilevel">
+								<li class="multilevel__item">
+									<a href="javascript:void(0);" class="multilevel__item-link">
+										<i class="catalog__menu-icon icon-menu"></i>
+										<span>Трубы чугунные ЧК, SML</span>
+									</a>
+								</li>
+								<li class="multilevel__item">
+									<a href="javascript:void(0);" class="multilevel__item-link">
+										<i class="catalog__menu-icon icon-menu"></i>
+										<span>Трубы чугунные ЧК, SML</span>
+									</a>
+								</li>
+
+								
+								<li class="multilevel__item multilevel__item-arrow">
+									<a href="javascript:void(0);" class="multilevel__item-link">
+										<i class="catalog__menu-icon icon-menu"></i>
+										<span>Трубы чугунные ЧК, SML</span>
+									</a>
+									<ul class="multilevel__item-submenu">
+										<li class="multilevel__item">
+											<a href="javascript:void(0);" class="multilevel__item-link">
+												<i class="catalog__menu-icon icon-menu"></i>
+												<span>Трубы чугунные ЧК, SML</span>
+											</a>
+										</li>
+										<li class="multilevel__item multilevel__item-arrow">
+											<a href="javascript:void(0);" class="multilevel__item-link">
+												<i class="catalog__menu-icon icon-menu"></i>
+												<span>Трубы чугунные ЧК, SML</span>
+											</a>
+											<ul class="multilevel__item-submenu">
+												<li class="multilevel__item">
+													<a href="javascript:void(0);" class="multilevel__item-link">
+														<i class="catalog__menu-icon icon-menu"></i>
+														<span>Трубы чугунные ЧК, SML</span>
+													</a>
+												</li>
+												<li class="multilevel__item">
+													<a href="javascript:void(0);" class="multilevel__item-link">
+														<i class="catalog__menu-icon icon-menu"></i>
+														<span>Трубы чугунные ЧК, SML</span>
+													</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="multilevel__item">
+									<a href="javascript:void(0);" class="multilevel__item-link">
+										<i class="catalog__menu-icon icon-menu"></i>
+										<span>Трубы чугунные ЧК, SML</span>
+									</a>
+								</li>
+							</ul>
+
 						</div>
 						
 						<a href="" class="nav__item">Пункт</a>
@@ -223,7 +322,7 @@
 			<div class="wrapper__right">
 
 				<div class="view">
-
+					<div class="view__info-title top">Труба нПВХ 125х5.0х3000 мм. обсадная  для скважин</div>
 					<div class="view__slider">
 						<div class="view__slider-img">
 							<div class="item">
@@ -326,6 +425,38 @@
 						</div>
 					</div>
 
+				</div>
+
+				<div class="view__info-event responsive">
+					<div class="top">
+
+						<div class="quantity">
+							<div class="quantity__form">
+								<button class="button minus-btn" type="button" name="button"></button>
+								<input type="text" name="name" value="1002" class="input">
+								<button class="button plus-btn" type="button" name="button"></button>
+								<span class="span">Количество<br>(метров)</span>
+							</div>
+							<div class="quantity__total">
+								Итого: <span class="span">9 5478.67 ₽</span class="span">
+							</div>
+						</div>
+
+						<div class="delivery">
+							<div class="delivery__title">Информация о доставке</div>
+							<ul class="delivery__info">
+								<li>Масса (кг):<span class="delivery__info-span">1150</span class="delivery__info-span"></li>
+								<li>Объем (м<sup>3</sup>):<span class="delivery__info-span">9</span></li>
+							</ul>
+						</div>
+
+					</div>
+
+					<div class="buttons">
+						<a href="" class="btn">В корзину</a>
+						<a href="" class="btn-brown">Купить в один клик</a>
+					</div>
+					
 				</div>
 
 				<div class="tabs">
@@ -566,16 +697,20 @@
 						<li><a href="">Трубы для наружного водоснабжения</a></li>
 						<li><a href="">Трубы для наружного водоснабжения</a></li>
 					</ul>
+					<ul class="footer__item-nav is-copy">
+						<li><a href="">Трубы для канализации</a></li>
+						<li><a href="">Сендвич панели</a></li>
+					</ul>
 				</div>
 
-				<div class="footer__item">
+				<div class="footer__item footer__item-first">
 					<ul class="footer__item-nav">
 						<li><a href="">Трубы для канализации</a></li>
 						<li><a href="">Сендвич панели</a></li>
 					</ul>
 				</div>
 
-				<div class="footer__item">
+				<div class="footer__item footer__item-last">
 					<div class="footer__item-ul">
 						<ul class="footer__item-nav">
 							<li><a href="">О компании</a></li>
@@ -598,6 +733,25 @@
 		</div>
 	</div>
 
+	<!-- Modal blocks -->
+	<div class="modal">
+		<div class="modal__callback">
+			<div class="h2">Обратный звонок</div>
+
+			<button class="btn-close"></button>
+
+			<input type="text" placeholder="Имя" class="input">
+			<input type="text" placeholder="Телефон" class="input">
+
+			<p class="p">Отправляя сообщение, я принимаю <a href="">пользовательское соглашение</a> и подтверждаю, что ознакомлен и согласен с <a href="">политикой конфиденциальности</a> данного сайта.</p>
+
+			<div class="button">
+				<button class="btn">Перезвоните мне</button>
+			</div>
+		</div>
+	</div>
+
+	
 	<script src="js/scripts.min.js"></script>
 
 </body>

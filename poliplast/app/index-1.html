@@ -39,7 +39,12 @@
 </head>
 
 <body>
-	
+	<!-- LOADER -->
+	<div class="loader">
+		<div class="loader__figure"></div>
+	</div>
+	 <!-- LOADER -->
+		
 	<!-- Header -->
 	<header class="header">
 		<div class="header__wrapper fixeddd">
@@ -82,7 +87,7 @@
 							<div class="info">Звонок по РФ бесплатно</div>
 						</div>
 	
-						<a href="" class="btn">Перезвоните мне</a>
+						<button class="btn callback">Перезвоните мне</button>
 					</div>
 	
 					<div class="header__shop">
@@ -106,17 +111,111 @@
 			</div>
 	
 			<nav class="nav">
+				<div id="catalog__menu-responsive" class="responsive catalog__menu menu">
+					<ul>
+						<li class="catalog__menu-item">
+							<a href="javascript:void(0);" class="catalog__menu-link">Каталог</a>
+							<ul class="catalog__submenu submenu">
+
+								<li class="catalog__submenu-item">
+									<a href="javascript:void(0);" class="catalog__submenu-link">
+										<i class="catalog__menu-icon icon-menu"></i>
+										<span>Трубы чугунные ЧК, SML</span>
+									</a>
+									<ul class="catalog__submenu submenu">
+										<li class="catalog__submenu-item"><a href="javascript:void(0);" class="catalog__submenu-link">Трубы чугунные SML и фитинги</a></li>
+										<li class="catalog__submenu-item"><a href="javascript:void(0);" class="catalog__submenu-link"><i class="catalog__submenu-icon"></i>Трубы чугунные ЧК и фитинги</a>
+											<ul class="submenu">
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+												<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+	
+							</ul>
+						</li>
+						<li class="catalog__menu-item"><a href="" class="catalog__menu-link">Lorem, ipsum.</a></li>
+						<li class="catalog__menu-item"><a href="" class="catalog__menu-link">Nostrum, deserunt!</a></li>
+						<li class="catalog__menu-item"><a href="" class="catalog__menu-link">Soluta, nihil.</a></li>
+						<li class="catalog__menu-item"><a href="" class="catalog__menu-link">Quo, quis.</a></li>
+						<li class="catalog__menu-item"><a href="" class="catalog__menu-link">In, soluta?</a></li>
+					</ul>
+				</div>
 				<div class="nav__item-menu">
 					<div class="text">Меню</div>
 					<div class="humburger humburger-menu"><span></span><span></span><span></span><span></span></div>
 				</div>
+				<div class="search"></div>
+
 				<div class="wrapper">
-						
-					<div class="nav__content">
-	
+					
+					<div class="nav__content">	
 						<div class="nav__item-catalog">
 							<div class="humburger humburger-catalog"><span></span><span></span><span></span><span></span></div>
 							<div class="text">Каталог</div>
+ 
+							<ul class="multilevel">
+								<li class="multilevel__item">
+									<a href="javascript:void(0);" class="multilevel__item-link">
+										<i class="catalog__menu-icon icon-menu"></i>
+										<span>Трубы чугунные ЧК, SML</span>
+									</a>
+								</li>
+								<li class="multilevel__item">
+									<a href="javascript:void(0);" class="multilevel__item-link">
+										<i class="catalog__menu-icon icon-menu"></i>
+										<span>Трубы чугунные ЧК, SML</span>
+									</a>
+								</li>
+
+								
+								<li class="multilevel__item multilevel__item-arrow">
+									<a href="javascript:void(0);" class="multilevel__item-link">
+										<i class="catalog__menu-icon icon-menu"></i>
+										<span>Трубы чугунные ЧК, SML</span>
+									</a>
+									<ul class="multilevel__item-submenu">
+										<li class="multilevel__item">
+											<a href="javascript:void(0);" class="multilevel__item-link">
+												<i class="catalog__menu-icon icon-menu"></i>
+												<span>Трубы чугунные ЧК, SML</span>
+											</a>
+										</li>
+										<li class="multilevel__item multilevel__item-arrow">
+											<a href="javascript:void(0);" class="multilevel__item-link">
+												<i class="catalog__menu-icon icon-menu"></i>
+												<span>Трубы чугунные ЧК, SML</span>
+											</a>
+											<ul class="multilevel__item-submenu">
+												<li class="multilevel__item">
+													<a href="javascript:void(0);" class="multilevel__item-link">
+														<i class="catalog__menu-icon icon-menu"></i>
+														<span>Трубы чугунные ЧК, SML</span>
+													</a>
+												</li>
+												<li class="multilevel__item">
+													<a href="javascript:void(0);" class="multilevel__item-link">
+														<i class="catalog__menu-icon icon-menu"></i>
+														<span>Трубы чугунные ЧК, SML</span>
+													</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="multilevel__item">
+									<a href="javascript:void(0);" class="multilevel__item-link">
+										<i class="catalog__menu-icon icon-menu"></i>
+										<span>Трубы чугунные ЧК, SML</span>
+									</a>
+								</li>
+							</ul>
+
 						</div>
 						
 						<a href="" class="nav__item">Пункт</a>
@@ -137,13 +236,11 @@
 		</div>
 	</header>
 
-	
+	<!-- Slider for home page -->
 	<div class="slider">
 		<ul>
 			<li>
-				<div class="slider__item" style="background: #B0D9D5;">
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
+				<div class="slider__item" style="background: #B0D9D5;">					
 					<div class="button">
 						<a href="" class="btn-black">Подробнее</a>
 					</div>
@@ -151,82 +248,56 @@
 			</li>
 			<li>
 				<div class="slider__item" style="background: #21BFAF;">
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
-					<a href="" class="btn-black">Подробнее</a>
-				</div>
-			</li>
-			<li>
-				<div class="slider__item" style="background: #023059;">
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
-					<a href="" class="btn-black">Подробнее</a>
-				</div>
-			</li>
-			<li>
-				<div class="slider__item" style="background: #B0D9D5;">
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
 					<div class="button">
 						<a href="" class="btn-black">Подробнее</a>
 					</div>
 				</div>
 			</li>
 			<li>
-				<div class="slider__item" style="background: #21BFAF;">
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
-					<a href="" class="btn-black">Подробнее</a>
-				</div>
-			</li>
-			<li>
 				<div class="slider__item" style="background: #023059;">
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
-					<a href="" class="btn-black">Подробнее</a>
-				</div>
-			</li>
-			<li>
-				<div class="slider__item" style="background: #B0D9D5;">
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
 					<div class="button">
 						<a href="" class="btn-black">Подробнее</a>
 					</div>
 				</div>
 			</li>
 			<li>
-				<div class="slider__item" style="background: #21BFAF;">
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
-					<a href="" class="btn-black">Подробнее</a>
+				<div class="slider__item" style="background: #B8D9B0;">
+					<div class="button">
+						<a href="" class="btn-black">Подробнее</a>
+					</div>
 				</div>
 			</li>
 			<li>
-				<div class="slider__item" style="background: #023059;">
-					<p class="p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat saepe laborum dolor sint, explicabo asperiores totam eveniet omnis suscipit blanditiis ipsam exercitationem, vel unde? Quidem consequuntur ea dolores neque suscipit.</p>
-					<a href="" class="btn-black">Подробнее</a>
+				<div class="slider__item" style="background: #D9C6B0;">
+					<div class="button">
+						<a href="" class="btn-black">Подробнее</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="slider__item" style="background: #D9B0B0;">
+					<div class="button">
+						<a href="" class="btn-black">Подробнее</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="slider__item" style="background: #B1B0D9;">
+					<div class="button">
+						<a href="" class="btn-black">Подробнее</a>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="slider__item" style="background: #FFB7EC;">
+					<div class="button">
+						<a href="" class="btn-black">Подробнее</a>
+					</div>
 				</div>
 			</li>
 		</ul>
 	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+		
 	<div class="wrapper">
 
 		<div class="wrapper__row">
@@ -241,7 +312,7 @@
 							<li class="catalog__menu-item">
 								<a href="javascript:void(0);" class="catalog__menu-link">
 									<i class="catalog__menu-icon icon-menu"></i>
-									<span>Трубы чугунные ЧК, SML, ВЧШГ</span>
+									<span>Трубы чугунные ЧК, SML</span>
 								</a>
 								<ul class="catalog__submenu submenu">
 									<li class="catalog__submenu-item"><a href="javascript:void(0);" class="catalog__submenu-link">Трубы чугунные SML и фитинги</a></li class="catalog__submenu-item">
@@ -259,13 +330,13 @@
 							</li>
 
 							<li class="catalog__menu-item">
-								<a href="javascript:void(0);" class="catalog__menu-link active">
+								<a href="javascript:void(0);" class="catalog__menu-link">
 									<i class="catalog__menu-icon icon-menu"></i>
 									<span>Трубы чугунные ЧК, SML, ВЧШГ</span>
 								</a>
 								<ul class="catalog__submenu submenu">
 									<li class="catalog__submenu-item">
-										<a href="javascript:void(0);" class="catalog__submenu-link active"><i class="catalog__submenu-icon"></i>Трубы чугунные SML и фитинги</a>
+										<a href="javascript:void(0);" class="catalog__submenu-link"><i class="catalog__submenu-icon"></i>Трубы чугунные SML и фитинги</a>
 										<ul class="submenu">
 											<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
 											<li class="catalog__submenu-item"><a href="" class="catalog__submenu-link">Трубы чугунные ЧК</a></li>
@@ -504,16 +575,20 @@
 						<li><a href="">Трубы для наружного водоснабжения</a></li>
 						<li><a href="">Трубы для наружного водоснабжения</a></li>
 					</ul>
+					<ul class="footer__item-nav is-copy">
+						<li><a href="">Трубы для канализации</a></li>
+						<li><a href="">Сендвич панели</a></li>
+					</ul>
 				</div>
 
-				<div class="footer__item">
+				<div class="footer__item footer__item-first">
 					<ul class="footer__item-nav">
 						<li><a href="">Трубы для канализации</a></li>
 						<li><a href="">Сендвич панели</a></li>
 					</ul>
 				</div>
 
-				<div class="footer__item">
+				<div class="footer__item footer__item-last">
 					<div class="footer__item-ul">
 						<ul class="footer__item-nav">
 							<li><a href="">О компании</a></li>
@@ -536,140 +611,25 @@
 		</div>
 	</div>
 
-	
+	<!-- Modal blocks -->
+	<div class="modal">
+		<div class="modal__callback">
+			<div class="h2">Обратный звонок</div>
 
+			<button class="btn-close"></button>
 
+			<input type="text" placeholder="Имя" class="input">
+			<input type="text" placeholder="Телефон" class="input">
 
+			<p class="p">Отправляя сообщение, я принимаю <a href="">пользовательское соглашение</a> и подтверждаю, что ознакомлен и согласен с <a href="">политикой конфиденциальности</a> данного сайта.</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- <div class="container">
-
-		<div class="slider">
-			
-			<div class="item">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi nobis hic id nihil repellendus officia veniam, accusantium natus dignissimos excepturi? Est, fuga adipisci. Blanditiis, cum id suscipit consectetur quo fugit?
+			<div class="button">
+				<button class="btn">Перезвоните мне</button>
 			</div>
-			
-			<div class="item">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi nobis hic id nihil repellendus officia veniam, accusantium natus dignissimos excepturi? Est, fuga adipisci. Blanditiis, cum id suscipit consectetur quo fugit?
-			</div>
-			
-			<div class="item">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi nobis hic id nihil repellendus officia veniam, accusantium natus dignissimos excepturi? Est, fuga adipisci. Blanditiis, cum id suscipit consectetur quo fugit?
-			</div>
-			
-			<div class="item">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi nobis hic id nihil repellendus officia veniam, accusantium natus dignissimos excepturi? Est, fuga adipisci. Blanditiis, cum id suscipit consectetur quo fugit?
-			</div>
-			
-			<div class="item">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi nobis hic id nihil repellendus officia veniam, accusantium natus dignissimos excepturi? Est, fuga adipisci. Blanditiis, cum id suscipit consectetur quo fugit?
-			</div>
-			
-		  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<div class="sslider">
-
-			<div class="slider__item">
-				<div class="slider__item-content">
-					1 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, architecto, perspiciatis vel commodi nulla dolorem officia similique consectetur molestias quod alias, doloremque totam nam ex? Odio nobis cum dignissimos atque!
-				</div>
-			</div>
-
-			<div class="slider__item">
-				<div class="slider__item-content">
-					2 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, architecto, perspiciatis vel commodi nulla dolorem officia similique consectetur molestias quod alias, doloremque totam nam ex? Odio nobis cum dignissimos atque!
-				</div>
-			</div>
-
-			<div class="slider__item">
-				<div class="slider__item-content">
-					3 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, architecto, perspiciatis vel commodi nulla dolorem officia similique consectetur molestias quod alias, doloremque totam nam ex? Odio nobis cum dignissimos atque!
-				</div>
-			</div>
-
-			<div class="slider__item">
-				<div class="slider__item-content">
-					4 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, architecto, perspiciatis vel commodi nulla dolorem officia similique consectetur molestias quod alias, doloremque totam nam ex? Odio nobis cum dignissimos atque!
-				</div>
-			</div>
-
 		</div>
-	</div> -->
+	</div>
 
+	
 	<script src="js/scripts.min.js"></script>
 
 </body>

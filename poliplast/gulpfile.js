@@ -56,6 +56,7 @@ gulp.task('scripts', function() {
 		'app/libs/Card-Slider/dist/js/jquery.cardslider.min.js',
 		'node_modules/slick-carousel/slick/slick.min.js',
 		'node_modules/simplebar/dist/simplebar.min.js',
+		'node_modules/tingle.js/dist/tingle.min.js',
 		'app/js/_libs.js',
 		'app/js/_custom.js', // Custom scripts. Always at the end
 		])

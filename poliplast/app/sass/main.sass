@@ -87,7 +87,7 @@ button:focus
 	color: #666
 
 ::selection
-	background-color: red
+	background-color: $green
 	color: #fff
 
 input, textarea
@@ -194,6 +194,8 @@ body
 .p
 	font-size: 16px
 	font-weight: 400
+	+xs-block()
+		font-size: 14px
 
 .img-responsive
 	display: block
@@ -210,6 +212,8 @@ body
 		line-height: normal
 		font-weight: 700
 		max-width: 100%
+		+xs-block()
+			font-size: 22px
 .main_page
 	.title__content
 		max-width: 270px
@@ -220,6 +224,10 @@ body
 	&__content
 		+col()
 		+size(12)
+		+shift-padding(0.5)
+		+shift-xs-padding(1.1)
+
+
 	&__slider
 		&-item
 			display: flex !important
@@ -232,6 +240,9 @@ body
 			background-size: cover
 			background-position: center
 			background-repeat: no-repeat
+			+xs-block()
+				height: 150px
+				padding: 10px
 		&-text
 			font-size: 26px
 			font-weight: 700
@@ -239,6 +250,11 @@ body
 			max-width: 340px
 			text-align: right
 			margin-bottom: auto
+			+xs-block()
+				font-size: 20px
+		.btn
+			+xs-block()
+				font-size: 10px
 			
 
 
@@ -251,20 +267,25 @@ body
 		+size(12)
 	&__slider
 		+shift-md(0.4)
-		+shift-xs(1.3)
+		+shift-sm_768(0.45)
+		+shift-xs(0.5)
 
 		.slick-slide
 			margin: 0 22px !important
+			+sm_768(margin, 0 15px !important)
+
 		.slick-list
 			margin: 0 -22px !important
+			+sm_768(margin, 0 -15px !important)
+
 		&-img
 			display: flex
 			align-items: center
 			justify-content: center
 			margin: 15px 0
 			img
-				height: 70px
-				+sm(height, 55px)
+				@extend .img-responsive
+				// +sm(height, 55px)
 		&-info
 			font-size: 14px
 			margin-top: 30px
@@ -290,7 +311,11 @@ body
 .header
 	height: 190px
 	+sm-block()
-		height: 100px
+		height: 190px
+		background: #fff
+	+xs-block()
+		height: 165px
+
 		&__logo
 			+col()
 	&__wrapper
@@ -299,7 +324,7 @@ body
 		top: 0
 		left: 0
 		right: 0
-		z-index: 9999
+		z-index: 999
 		+sm(height, inherit)
 		.header__logo .header__phone-number
 			display: none
@@ -308,14 +333,23 @@ body
 			top: 0
 			+sm-block()
 				height: 60px
+			+xs-block()
+				height: 40px
+				.search
+					display: block
+
 			.header__top
 				height: 80px
 				+sm-block()
 					padding: 0
 					height: 60px
+				+xs-block()
+					height: 40px
 			.nav
 				+sm-block()
 					top: -50px
+				+xs-block()
+					top: -40px
 
 			.header__login,
 			.header__search-menu,
@@ -334,18 +368,59 @@ body
 				+sm-block()
 					margin: 0
 					order: 0
+					&.show
+						display: block
 			.header__search-form
 				+sm-block()
 					min-width: auto
 					width: 210px
+			.header__logo .header__phone-number
+				+xs-block()
+					display: none
+			.header__phone .header__phone-number
+				+xs-block()
+					display: block
+			.header__phone
+				+xs-block()
+					width: 100%
+					flex-direction: row
+					justify-content: flex-start
+					.btn
+						padding: 0 10px
+						margin-left: auto
+						margin-right: 87px
+			.header__search
+				+xs-block()
+					position: absolute
+					top: 40px
+					padding: 10px
+					background-color: #fff
+					width: 100%
+					display: none
+			.header__search-form
+				+xs-block()
+					max-width: 100%
+					width: 100%
+					left: 15px
+					right: 15px
+						
+			.nav
+				+xs-block()
+					height: 40px
+					&__item-menu
+						.text
+							display: none
 	&__top
 		+row-flex()
 		height: 140px
 		align-items: center
 		justify-content: space-between
-		+sm-block()
-			height: 100px
+		+xs-block()
+			height: auto
 			padding-top: 20px
+			align-items: end
+			justify-content: center
+			background: #fff
 
 
 	&__phone
@@ -355,17 +430,34 @@ body
 			display: flex
 			align-items: center
 			justify-content: space-between
+		+xs-block()
+			flex-direction: column
+			margin-top: 0px
+			margin-bottom: 10px
+
+			.btn
+				padding: 0 60px
+				height: 25px
+				font-size: 12px
+				line-height: 25px
+				z-index: 9
+
 		&-number
 			text-align: center
 			+sm_768-block()
 				margin-right: 0px
 				left: -25px
 				position: relative
+			+xs-block()
+				left: 0
+				z-index: 9
+
 
 			.number
 				+trans()
 				font-size: 24px
 				+sm(font-size, 24px)
+				+xs(font-size, 100%)
 				text-decoration: none
 				color: $black
 				&:hover
@@ -382,6 +474,10 @@ body
 		+sm-block()
 			order: 5
 			margin: auto
+		+xs-block()
+			margin: 0 auto 0 15px
+			z-index: 1
+
 		&-form
 			height: 41px
 			border: 1px solid $gray
@@ -394,6 +490,10 @@ body
 				min-width: 245px
 			+sm-block()
 				height: 25px
+			+xs-block()
+				min-width: 100%
+				max-width: 220px
+
 
 		&-input
 			width: 100%
@@ -452,11 +552,15 @@ body
 				font-size: 14px
 
 
-
 	&__shop
 		+col()
 		text-align: right
-		+sm(margin-top, -12px)
+		+sm-block()
+			margin-top: -12px
+		+xs-block()
+			position: absolute
+			right: 0
+			margin-top: 0
 
 		
 		&-cart
@@ -516,12 +620,63 @@ body
 // NAVIGATION
 .nav
 	box-shadow: 0px 7px 10px 0px rgba(237,238,240,1)
+	.search
+		position: absolute
+		top: 50%
+		right: 50px
+		transform: translate(-50%, -50%) scale(.8)
+		width: 20px
+		height: 20px
+		border-radius: 100%
+		background: $green
+		cursor: pointer
+		display: none
+		&:before, &:after
+			content: ''
+			position: absolute
+			display: block
+		
+		&:before 
+			width: 16px
+			height: 16px
+			background: #fff
+			border-radius: 10px
+			margin: 2px
+			transform: rotate(45deg)
+			transition: all 0.1s ease
+		
+		&:after
+			width: 2px
+			height: 12px
+			background: $green
+			border-radius: 4px
+			margin: 14px 0 0 19px
+			transform: rotate(-45deg)
+			transition: all .2s ease
+		
+		&.active
+			&:before
+				background: #fff
+				width: 2px
+				height: 14px
+				margin: 3px 0 0 9px
+
+			&:after
+				background: #fff
+				width: 2px
+				height: 14px
+				margin: 3px 0 0 9px
+				
+			
+		
 	+sm-block()
 		top: -42px
 		position: relative
 		height: 50px
 		display: flex
 		align-items: center
+	+xs-block()
+		top: -37px
 	&__content
 		height: 50px
 		display: flex
@@ -529,6 +684,15 @@ body
 		align-items: center
 		+sm-block()
 			display: none
+		// &.show
+		// 	display: block
+		// 	flex-direction: column
+		// 	position: absolute
+		// 	right: 0
+		// 	top: 50px
+		// 	width: 250px
+		// 	background: red
+		// 	height: 100%
 
 	&__item
 		+trans()
@@ -536,6 +700,7 @@ body
 		&:hover
 			+trans()
 			color: $green
+
 		&-menu
 			cursor: pointer
 			display: none
@@ -543,6 +708,9 @@ body
 			margin-right: $fields_sm
 			order: 2
 			+sm(display, inline-flex)
+			+sm-block()
+				position: absolute
+				right: 0
 			+trans()
 			.humburger span
 				height: 3px
@@ -593,6 +761,7 @@ body
 			cursor: pointer
 			display: flex
 			align-items: center
+			position: relative
 			+trans()
 			&:hover
 				color: $green
@@ -631,6 +800,9 @@ body
 	+row-flex()
 	padding: 30px 0
 	justify-content: space-between
+	align-items: center
+	+xs-block()
+		padding: 15px 0
 	&__content
 		+col()
 		display: flex
@@ -642,10 +814,14 @@ body
 			&::after
 				content: '>'
 				padding: 0 5px
+				+xs-block()
+					font-size: 10px
 	&__link
 		color: $black
 		font-size: 16px
 		font-weight: 400
+		+xs-block()
+			font-size: 10px
 		&:hover
 			color: $green
 
@@ -654,16 +830,49 @@ body
 	font-size: 14px
 	font-weight: 400
 	text-align: right
+	+xs-block()
+		font-size: 10px
 	&__count
 		color: $gray
 
 // Catalog
+#catalog__menu-responsive
+	display: none
+	&.show
+		display: block
+.responsive
+	&.catalog__menu
+		background-color: #fff
+		box-shadow: 0 0 10px rgba(21,21,21,0)
+		padding: 0
+		padding-bottom: 0
+		min-width: 100%!important
+		ul:first-child
+			background: #fff
+			min-width: 200px
+			max-width: 370px
+			height: 100vh
+			position: absolute
+			right: 0
+			top: 20px
+			+xs(min-width, 100%)
+		.catalog__menu-link
+			font-size: 16px !important
+			padding: 10px 20px !important
+			&:hover
+				color: $green !important
+				
+			
+
 .catalog
 	+col()
 	+size(3)
 	+size-sm(12)
 	+md-block()
 		display: none
+	.menu ul .submenu li:hover>a
+		border-left: solid 6px transparent !important
+	
 
 	&__menu
 		background-color: #fff
@@ -688,10 +897,10 @@ body
 			color: $black !important
 			border-bottom: none !important
 			border-top: 1px solid rgba(#161616, .05)
-			&:hover, &.active
+			&:hover, &.submenu-indicator-minus
 				color: $green !important
 				background: rgba(#151515, .05) !important
-			&.active
+			&.submenu-indicator-minus
 				border-bottom: 1px solid rgba(#161616, .05) !important
 		&-icon
 			font-size: 30px !important
@@ -731,11 +940,11 @@ body
 			font-size: 12px !important
 			color: $black !important
 			border-bottom: 1px solid rgba(#161616, .05) !important
-			&:hover, &.active
+			&:hover, &.submenu-indicator-minus
 				color: $green !important
 				background: rgba(#151515, .05) !important
 				border-left-color: transparent !important
-			&.active
+			&.submenu-indicator-minus
 				.catalog__submenu-icon
 					&::before
 						background-color: transparent
@@ -788,27 +997,41 @@ body
 .benefits
 	+col()
 	+size(6)
+	+size-xs(12)
 	margin-bottom: 40px
 	&__icon
+		+xs-block()
+			float: left
+			margin-right: 10px
 	&__title
 		font-size: 20px
 		margin: 3px 0
+		+clearfix()
+		+xs-block()
+			font-size: 18px
+			line-height: 1.2
+
 	&__desc
 		font-size: 16px
 		font-weight: 400
 		margin-left: 20px
+		+xs-block()
+			margin-left: 50px
 
 // CONTACTS
 .contact
 	&__maps
 		+col()
 		+size(9)
+		+size-sm(12)
 		margin-bottom: 70px
 		iframe
 			width: 100%
 			outline: 0
 			border: 0
 			height: 330px
+			+sm(height, 270px)
+			+xs(height, 535px)
 	&__info
 		height: 315px
 		width: 380px
@@ -820,6 +1043,18 @@ body
 		top: 50px
 		padding: 30px 20px
 		font-weight: 400
+		+sm-block()
+			padding: 20px
+			right: 15px
+			top: 20px
+			height: max-content
+		+xs-block()
+			padding: 15px
+			top: 0px
+			right: 15px
+			left: 15px
+			width: 90%
+			margin: 0 auto
 
 		&-email
 			position: absolute
@@ -828,9 +1063,14 @@ body
 			font-size: 16px
 			font-weight: 400
 			color: $black
+			+xs-block()
+				top: 15px
 
 		&-title
 			font-size: 32px
+			+xs-block()
+				font-size: 19px
+
 		&-phone
 			display: block
 			color: $black
@@ -846,6 +1086,8 @@ body
 			margin-top: 10px
 			margin-bottom: 30px
 			color: $black
+			+xs-block()
+				margin: 5px 0
 			.icon
 				color: $green
 				font-size: 24px
@@ -871,10 +1113,24 @@ body
 .footer
 	background-color: #EDEEF0
 	padding: 30px 0
+	+xs(padding, 15px 0)
+
 
 	&__item
 		+col()
 		+size(4)
+		+size-sm(6)
+		+size-xs(12)
+		.is-copy
+			display: none
+			+sm(display, block)
+
+		&-first
+			+sm-block()
+				order: 3
+				display: none
+		&-last
+			+sm(order, 0)
 
 		&-copyright
 			font-weight: 400
@@ -886,14 +1142,23 @@ body
 		&-ul
 			margin-bottom: 20px
 			display: flex
+			+sm(flex-direction, column)
 			.footer__item-nav
 				margin-right: 30px
 
 // VIEW
 .view
 	display: flex
+	+xs-block()
+		flex-direction: column
+
 	&__slider
 		width: 250px
+		+sm(width, 180px)
+		+xs-block()
+			margin: 0 auto
+			width: 290px
+			height: 290px
 
 		&-img
 			height: 300px
@@ -901,9 +1166,12 @@ body
 			display: flex
 			align-items: center
 			justify-content: center
+			+sm(height, 220px)
+
 			img
 				padding: 15px
 				margin: auto
+				@extend .img-responsive
 
 		&-nav
 			margin-top: 10px
@@ -916,6 +1184,7 @@ body
 				align-items: center
 				justify-content: center
 				height: 70px
+				+sm(height, 50px)
 				background-color: #EDEEF0
 				img
 					padding: 5px
@@ -929,6 +1198,13 @@ body
 			font-weight: 700
 			line-height: 1.3
 			margin-bottom: 15px
+			&.top
+				display: none
+				+xs(display, block)
+			+xs(display, none)
+
+			+sm(font-size, 28px)
+
 
 		&-price
 			display: flex
@@ -936,10 +1212,16 @@ body
 			color: #787D85
 			font-weight: 400
 			font-size: 16px
+			+sm(font-size, 14px)
+
+			+sm(flex-direction, column)
+
 			.price_title, .storage_title
 				font-size: 20px
 				font-weight: 700
 				color: $black
+				+sm(font-size, 18px)
+
 			.price_list
 				li:first-child()
 					.price_money
@@ -949,6 +1231,7 @@ body
 						color: #787D85
 			.price_money
 				font-size: 20px
+				+sm(font-size, 16px)
 				font-weight: 400
 				color: $green
 				margin-right: 5px
@@ -960,6 +1243,8 @@ body
 				border: 1px solid #EDEEF0
 				max-width: 310px
 				width: 100%
+				+sm(margin-top, 25px)
+
 				&_list
 					display: flex
 					justify-content: space-between
@@ -981,6 +1266,11 @@ body
 			padding: 15px
 			margin-top: 10px
 			font-weight: 400
+			+sm(display, none)
+
+			&.responsive
+				display: none
+				+sm(display, block)
 			.top
 				display: flex
 				justify-content: space-between
@@ -997,6 +1287,54 @@ body
 						margin-left: 5px
 						color: $black
 
+
++xs-block()
+	.order__img
+		padding: 15px 0px !important
+	.order
+		padding: 15px !important
+	.category__items
+		justify-content: center !important
+	.order__contacts
+		text-align: center !important
+		align-items: center !important
+		flex-direction: column !important
+	.order__contacts-item a
+		font-size: 20px !important
+
+	.view__info-event .top
+		flex-direction: column !important
+	.quantity__form
+		justify-content: flex-start !important
+	.delivery
+		display: flex !important
+		justify-content: space-between !important
+	.view__info-event .delivery__info
+		margin-top: -30px
+	.view__info-event
+		.buttons
+			.btn, .btn-brown
+				padding: 0 15px !important
+				font-size: 14px !important
+	.size
+		font-size: 12px !important
+	.help
+		padding: 10px !important
+		height: 390px !important
+		position: relative !important
+		&__avatar
+			position: absolute !important
+			top: 32% !important
+			left: 29% !important
+			transform: scale(0.8) !important
+			&-name
+				font-size: 19px !important
+		&__title
+			font-size: 20px !important
+		&__text
+			margin-left: 0 !important
+		.btn
+			margin-bottom: 5px
 
 // TABS
 .tabs
@@ -1073,6 +1411,9 @@ body
 	&__item
 		+col()
 		+size(2)
+		+size-sm(2)
+		+size-xs(6)
+
 		display: flex
 		flex-direction: column
 		justify-content: center
@@ -1086,7 +1427,7 @@ body
 			
 		&-img
 			margin-top: 15px
-			height: 80px
+			height: 100%
 			@extend .img-responsive
 
 // SIZE
@@ -1116,6 +1457,8 @@ body
 	color: #fff
 	height: 380px
 	margin-bottom: 30px
+	+sm(height, 250px)
+
 	&__buttons
 		text-align: center
 		.btn
@@ -1125,16 +1468,22 @@ body
 		line-height: 1.3
 		font-weight: 400
 		margin: 15px 0 auto 40px
+		+sm(font-size, 14px)
+		+sm(margin, 15px 0 auto 0)
 	&__title
 		font-size: 34px
 		font-weight: 700
 		line-height: 1.3
+		+sm(font-size, 26px)
 	&__info
 		display: flex
 		height: 100%
+
 	&__text
 		display: flex
 		flex-direction: column
+		+sm(margin-left, 50px)
+
 
 
 	&__avatar
@@ -1144,12 +1493,17 @@ body
 		&-img
 			height: 210px
 			width: 210px
+			+sm-block()
+				height: 150px
+				width: 150px
+
 			border-radius: 50%
 			background-position: center
 			background-size: cover
 		&-name
 			text-align: center
 			font-size: 26px
+			+sm(font-size, 24px)
 			font-weight: 700
 			margin-top: 10px
 
@@ -1184,6 +1538,15 @@ body
 				padding: 3px 0
 
 // CONVECTORS
+.cart__table
+	+xs-block()
+		.table
+			width: max-content
+		.btn
+			padding: 0 10px !important
+.convectors
+	.table
+		width: max-content
 .convectors, .cart__table
 	font-size: 14px
 	font-weight: 400
@@ -1278,7 +1641,10 @@ body
 .my-order
 	+col()
 	+size(4)
+	+size-xs(12)
 	order: 2
+	+xs-block()
+		order: 1
 	&__info
 		margin-bottom: 30px
 		.button
@@ -1288,6 +1654,7 @@ body
 		&-col, &-big
 			+col()
 			+size(6)
+			+size-xs(12)
 			textarea
 				width: 100%
 				padding: 
@@ -1449,14 +1816,10 @@ body
 .wrapper__left
 	+col()
 	+size(8)
-
-
-
-
-
-
-
-
+	+size-xs(12)
+	+xs-block()
+		margin-top: 30px
+		order: 2
 
 .logo
 	+col()
@@ -1467,8 +1830,10 @@ body
 			height: 30px
 
 .slider
-	// background-color: blue
+	margin-top: -30px
 	max-height: 400px
+	+sm-block()
+		height: 320px
 	&__item
 		background-color: green
 		height: 100%
@@ -1498,6 +1863,8 @@ body
 	
 	.cardslider__cards
 		height: 250px
+		+sm-block()
+			height: 180px
 		width: 85%
 		z-index: 2
 	
@@ -1505,6 +1872,8 @@ body
 		background-color: red
 		border-radius: 0
 		height: 250px
+		+sm-block()
+			height: 180px
 		overflow: hidden
 	.cardslider__direction-nav
 		position: absolute
@@ -1512,6 +1881,7 @@ body
 		height: 100%
 		display: flex
 		justify-content: space-between
+		flex-direction: row-reverse
 		align-items: center
 		right: 0
 		bottom: 0
@@ -1550,12 +1920,135 @@ body
 			transition: all .15s ease-in-out
 			width: 10px
 	.cardslider__nav-next
-		left: 45px
-	.cardslider__nav-prev
-		right: 45px
+		left: -45px
+		+sm-block()
+			left: -15px
 		&::after
 			transform: rotate(-45deg)
+	.cardslider__nav-prev
+		right: -45px
+		+sm-block()
+			right: -15px
 .cardslider--direction-up .cardslider__card--index-1
 	transform: scale(.95) translate3d(0,7.91%,3px)!important
 .cardslider--direction-up .cardslider__card--index-2
 	transform: scale(.90) translate3d(0,15.91%,3px)!important
+
+// MODAL
+.modal
+	display: none
+	&__callback
+		.button
+			text-align: right
+			margin-top: 30px
+		.h2
+			margin-bottom: 20px
+		.p
+			font-size: 14px
+			font-weight: 400
+			a
+				color: $green
+		.btn-close
+			position: absolute
+			background: transparent
+			top: 15px
+			right: 0px
+			&::before, &::after
+				background-color: $green
+
+
+.tingle-modal-box__content
+	padding: 25px
+.tingle-modal
+	background: rgba(0, 0, 0, 0.1)
+	&::before
+		backdrop-filter: blur(3px)
+.tingle-modal-box
+	max-width: 400px
+	width: 100%
+	box-shadow: 0px 0px 10px 0px rgba(237,238,240,1)
+
+// SUBMENU
+.multilevel
+	position: absolute
+	top: 37px
+	min-width: max-content
+	background-color: #fff
+	display: none
+	padding: 10px 0
+	box-shadow: 0 0 10px rgba(21,21,21,.1)
+	&__item
+		position: relative
+		border-left: 10px solid #fff
+		border-right: 10px solid #fff
+		border-bottom: 1px solid rgba(#151515, .05)
+		&:last-child
+			border-bottom: 0
+		+trans()
+		&:hover
+			background-color: rgba(#151515, .05)
+		&:hover &-link
+			color: $green
+
+		&-submenu
+			display: none
+		&:hover &-submenu
+			display: block
+		&:hover &-submenu
+			.multilevel__item
+				&-submenu
+					display: none
+		&-submenu
+			position: absolute
+			top: 0
+			left: calc(100% + 10px)
+			background-color: #fff
+			min-width: max-content
+			padding: 10px 0
+			box-shadow: 0 0 10px rgba(21,21,21,.1)
+
+		&-link
+			display: flex
+			align-items: center
+			font-size: 14px
+			font-weight: 400
+			color: $black
+			padding: 3px 15px
+
+		&-arrow
+			position: relative
+			padding-right: 25px
+			&::after
+				border-bottom: 1px solid $black
+				border-right: 1px solid $black
+				content: ''
+				display: block
+				height: 7px
+				margin-top: -4px
+				pointer-events: none
+				position: absolute
+				right: 10px
+				top: 50%
+				transform: rotate(-45deg)
+				transition: all .15s ease-in-out
+				width: 7px
+
+
+
+
+
+
+			
+.multilevel__item .multilevel__item-submenu .multilevel__item:hover .multilevel__item-submenu
+	display: block
+.multilevel__item .multilevel__item-submenu .multilevel__item .multilevel__item-link
+	color: $black
+.multilevel__item .multilevel__item-submenu .multilevel__item:hover .multilevel__item-link
+	color: $green
+.multilevel__item .multilevel__item-submenu .multilevel__item .multilevel__item-submenu .multilevel__item-link
+	color: $black
+.multilevel__item .multilevel__item-submenu .multilevel__item .multilevel__item-submenu .multilevel__item-link:hover
+	color: $green
+.nav__item-catalog
+	.humburger-catalog.open + .text + .multilevel
+		display: block
