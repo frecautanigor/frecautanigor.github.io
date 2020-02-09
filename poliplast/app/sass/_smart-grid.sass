@@ -7,6 +7,9 @@ $break_md_1044: 1044px
 $break_sm: 825px
 $break_xs: 783px
 $break_sm_768: 768px
+$break_s_500: 500px
+$break_xxs: 414px
+$break_s_400: 400px
 
 $offset: 30px
 $offset_lg: $offset
@@ -15,6 +18,9 @@ $offset_md_1044: $offset
 $offset_sm: $offset
 $offset_xs: $offset
 $offset_sm_768: $offset
+$offset_s_500: $offset
+$offset_xxs: $offset
+$offset_s_400: $offset
 
 $offset_one_side: ($offset / 2)
 $offset_lg_one_side: ($offset_lg / 2)
@@ -23,6 +29,9 @@ $offset_md_1044_one_side: ($offset_md_1044 / 2)
 $offset_sm_one_side: ($offset_sm / 2)
 $offset_xs_one_side: ($offset_xs / 2)
 $offset_sm_768_one_side: ($offset_sm_768 / 2)
+$offset_s_500_one_side: ($offset_s_500 / 2)
+$offset_xxs_one_side: ($offset_xxs / 2)
+$offset_s_400_one_side: ($offset_s_400 / 2)
 
 $fields: 15px
 $fields_sm: 15px
@@ -103,6 +112,18 @@ $fields_sm: 15px
 =size-sm_768($n)
     $val: 100% / $columns * $n
     +sm_768(width, #{calc(#{$val} - #{$offset_sm_768})})
+
+=size-s_500($n)
+    $val: 100% / $columns * $n
+    +s_500(width, #{calc(#{$val} - #{$offset_s_500})})
+
+=size-xxs($n)
+    $val: 100% / $columns * $n
+    +xxs(width, #{calc(#{$val} - #{$offset_xxs})})
+
+=size-s_400($n)
+    $val: 100% / $columns * $n
+    +s_400(width, #{calc(#{$val} - #{$offset_s_400})})
 
 =shift($n)
     $val: 100% / $columns * $n
@@ -286,6 +307,84 @@ $fields_sm: 15px
     $val: 100% / $columns * $n
     +sm_768(padding-right, #{calc(#{$val} + #{$offset_sm_768_one_side})})
 
+=shift-s_500($n)
+    $val: 100% / $columns * $n
+    +s_500(margin-left, #{calc(#{$val} + #{$offset_s_500_one_side})})
+    +s_500(margin-right, #{calc(#{$val} + #{$offset_s_500_one_side})})
+
+=shift-s_500-left($n)
+    $val: 100% / $columns * $n
+    +s_500(margin-left, #{calc(#{$val} + #{$offset_s_500_one_side})})
+
+=shift-s_500-right($n)
+    $val: 100% / $columns * $n
+    +s_500(margin-right, #{calc(#{$val} + #{$offset_s_500_one_side})})
+
+=shift-s_500-padding($n)
+    $val: 100% / $columns * $n
+    +s_500(padding-left, #{calc(#{$val} + #{$offset_s_500_one_side})})
+    +s_500(padding-right, #{calc(#{$val} + #{$offset_s_500_one_side})})
+
+=shift-s_500-padding-left($n)
+    $val: 100% / $columns * $n
+    +s_500(padding-left, #{calc(#{$val} + #{$offset_s_500_one_side})})
+
+=shift-s_500-padding-right($n)
+    $val: 100% / $columns * $n
+    +s_500(padding-right, #{calc(#{$val} + #{$offset_s_500_one_side})})
+
+=shift-xxs($n)
+    $val: 100% / $columns * $n
+    +xxs(margin-left, #{calc(#{$val} + #{$offset_xxs_one_side})})
+    +xxs(margin-right, #{calc(#{$val} + #{$offset_xxs_one_side})})
+
+=shift-xxs-left($n)
+    $val: 100% / $columns * $n
+    +xxs(margin-left, #{calc(#{$val} + #{$offset_xxs_one_side})})
+
+=shift-xxs-right($n)
+    $val: 100% / $columns * $n
+    +xxs(margin-right, #{calc(#{$val} + #{$offset_xxs_one_side})})
+
+=shift-xxs-padding($n)
+    $val: 100% / $columns * $n
+    +xxs(padding-left, #{calc(#{$val} + #{$offset_xxs_one_side})})
+    +xxs(padding-right, #{calc(#{$val} + #{$offset_xxs_one_side})})
+
+=shift-xxs-padding-left($n)
+    $val: 100% / $columns * $n
+    +xxs(padding-left, #{calc(#{$val} + #{$offset_xxs_one_side})})
+
+=shift-xxs-padding-right($n)
+    $val: 100% / $columns * $n
+    +xxs(padding-right, #{calc(#{$val} + #{$offset_xxs_one_side})})
+
+=shift-s_400($n)
+    $val: 100% / $columns * $n
+    +s_400(margin-left, #{calc(#{$val} + #{$offset_s_400_one_side})})
+    +s_400(margin-right, #{calc(#{$val} + #{$offset_s_400_one_side})})
+
+=shift-s_400-left($n)
+    $val: 100% / $columns * $n
+    +s_400(margin-left, #{calc(#{$val} + #{$offset_s_400_one_side})})
+
+=shift-s_400-right($n)
+    $val: 100% / $columns * $n
+    +s_400(margin-right, #{calc(#{$val} + #{$offset_s_400_one_side})})
+
+=shift-s_400-padding($n)
+    $val: 100% / $columns * $n
+    +s_400(padding-left, #{calc(#{$val} + #{$offset_s_400_one_side})})
+    +s_400(padding-right, #{calc(#{$val} + #{$offset_s_400_one_side})})
+
+=shift-s_400-padding-left($n)
+    $val: 100% / $columns * $n
+    +s_400(padding-left, #{calc(#{$val} + #{$offset_s_400_one_side})})
+
+=shift-s_400-padding-right($n)
+    $val: 100% / $columns * $n
+    +s_400(padding-right, #{calc(#{$val} + #{$offset_s_400_one_side})})
+
 =lg($name, $value)
     @media screen and (max-width: $break_lg)
         #{$name}: $value
@@ -332,6 +431,30 @@ $fields_sm: 15px
 
 =sm_768-block()
     @media screen and (max-width: $break_sm_768)
+        @content
+
+=s_500($name, $value)
+    @media screen and (max-width: $break_s_500)
+        #{$name}: $value
+
+=s_500-block()
+    @media screen and (max-width: $break_s_500)
+        @content
+
+=xxs($name, $value)
+    @media screen and (max-width: $break_xxs)
+        #{$name}: $value
+
+=xxs-block()
+    @media screen and (max-width: $break_xxs)
+        @content
+
+=s_400($name, $value)
+    @media screen and (max-width: $break_s_400)
+        #{$name}: $value
+
+=s_400-block()
+    @media screen and (max-width: $break_s_400)
         @content
 
 =from($min_width)

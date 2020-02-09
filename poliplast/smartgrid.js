@@ -27,6 +27,15 @@ module.exports = {
             },
             xs: {
                 width: '783px'
+            },
+            xxs: {
+                width: '414px'
+            },
+            s_500: {
+                width: '500px'
+            },
+            s_400: {
+                width: '400px'
             }
             /* 
             We can create any quantity of break points.
