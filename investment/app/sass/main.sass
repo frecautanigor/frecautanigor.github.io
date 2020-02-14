@@ -1,0 +1,524 @@
+@import import
+*
+	font-weight: normal
+
+::placeholder
+	color: #b3b3b3
+
+::selection
+	background-color: $green
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 13px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'Geometria', sans-serif
+	overflow-x: hidden
+	background: $gray
+	font-weight: normal
+// PAGE
+.page
+	display: flex
+
+// WRAPPER
+.wrapper
+	padding-top: $p75
+	width: 100%
+	background-image: url(../img/wrapper.jpg)
+	background-size: cover
+	background-position: top center
+	background-repeat: no-repeat
+	&__black
+		background-color: $b
+	&__container
+		+wrapper()
+	&__row
+		+row-flex()
+	&__col
+		+col()
+		+size(12)
+
+// HEADER
+.header
+	.title__line
+		margin-bottom: 100px
+	&__search
+		display: flex
+		margin-bottom: 50px
+
+		&--input
+			width: 100%
+			padding: 0
+			font-size: 13px
+			&:nth-child(2)
+				margin: 0 5px
+				max-width: 200px
+			&:first-child
+				height: 50px
+				width: 100%
+				border: 0
+				padding: 5px 15px
+			
+	&__filter
+		&--top
+			display: flex
+			align-items: center
+			margin-bottom: 25px
+			&::after
+				content: ''
+				display: inline-block
+				height: 2px
+				width: 100%
+				background-color: $dark_green
+			.checkbox + label
+				width: 100%
+				margin-right: 20px
+
+		&--items
+			+row-flex()
+			margin-bottom: 20px
+
+		&--item
+			+col()
+			+size(3)
+			.select .dk-selected
+				height: 30px
+				line-height: 30px
+				background-color: $w
+				border: 0
+				color: $b
+			.dk-selected:before
+				opacity: 1
+			.dk-select, .dk-select-multi
+				width: 100%
+			
+			.text
+				color: $w
+				margin-left: 15px
+
+			.inputs
+				display: flex
+				.input:first-child
+					margin-right: 5px
+
+		&--checkbox
+			+row-flex()
+		&--check
+			+col()
+
+		&.disabled
+			.header__filter--item
+				pointer-events: none
+				.select .dk-selected
+					color: $g6
+					background-color: transparent
+					border: 1px solid $g6
+				.dk-selected:before
+					opacity: 0
+				.text
+					color: $g6
+				.inputs
+					.input
+						background-color: transparent
+						border: 1px solid $g6
+						&::placeholder
+							color: $g6
+
+	&__buttons
+		display: flex
+		margin-bottom: $p75
+		margin-top: 50px
+		.star
+			margin-left: 30px
+
+// POSITIONS
+.positions
+	margin-bottom: 50px
+	.wrapper__black
+		padding: 90px 0
+	&__slider
+		position: relative
+		&--next, &--previous
+			position: absolute
+			font-size: 20px
+			top: 108.5px
+			color: $w
+			outline: 0
+			cursor: pointer
+			@extend .trans
+			&:hover
+				color: $green
+		&--next
+			right: -30px
+		&--previous
+			left: -30px
+		&--title
+			display: flex
+			align-items: center
+			justify-content: space-between
+			margin: 10px 0
+			.like
+				&::before
+					font-size: 13px
+			
+		&--img
+			height: 250px
+			max-width: 250px
+			display: block
+			position: relative
+			background-color: $gray
+			background-position: center
+			background-size: cover
+			background-repeat: no-repeat
+			overflow: hidden
+			@extend .trans
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				right: 0
+				bottom: 0
+				left: 0
+				background: inherit
+				transition: inherit
+			&:hover::before
+				transform: scale(1.05)
+
+			.price
+				background-color: $b
+				height: 40px
+				line-height: 40px
+				padding: 0 15px
+				color: $w
+				font-size: 15px
+				position: absolute
+				bottom: 35px
+				left: 0
+
+	&__links
+		display: flex
+		flex-wrap: wrap
+		margin: 30px 0 !important
+		&--li
+			&:not(:last-child)
+				&::after
+					content: '/'
+					padding: 0 5px
+					color: $w
+		
+		&--link
+			color: $w
+			@extend .trans
+			&:hover, &.active
+				color: $green
+
+	&__tags
+		margin: 0 !important
+		&__links--link
+			text-decoration: underline
+
+// NOTIFICATION
+.notification
+	.wrapper__black
+		padding: 50px 0
+	&__title
+		color: $w
+		margin-bottom: 5px
+	&__input
+		display: flex
+		justify-content: space-between
+		align-items: center
+		max-width: 470px
+		width: 100%
+		.input
+			height: 50px
+			width: 280px
+			margin-right: 5px
+
+// SELLERS
+.sellers
+	margin: 85px 0
+	&__list
+		display: flex
+		flex-wrap: wrap
+		margin-left: -10px
+		margin-right: -10px
+		margin-top: 50px
+		margin-bottom: 25px
+		&--item
+			box-sizing: border-box
+			word-wrap: break-word
+			margin-left: 10px
+			margin-right: 10px
+			width: calc(20% - 20px)
+			&:hover
+				.sellers__list--img
+					&::before
+						background-color: $green
+		&--name
+			color: $w
+			margin-top: -5px
+
+
+		&--img
+			background-color: $w
+			height: 110px
+			display: flex
+			align-items: center
+			justify-content: center
+			position: relative
+			margin-bottom: 30px
+			&::before
+				content: ''
+				width: 100%
+				height: 1px
+				background-color: #999999
+				display: block
+				position: absolute
+				bottom: -15px
+				@extend .trans
+			img
+				@extend .img_resp
+
+// NEWS
+.news
+	.title__line
+		margin-bottom: 60px
+	&__row
+		margin-bottom: 85px
+		.wrapper__col
+			+size(6)
+	&__images
+		&--item
+			height: 550px
+			width: 100%
+			background-repeat: no-repeat
+			background-size: cover
+			background-position: center
+			display: none
+	&__item
+		&--desc
+			color: $w
+			margin-top: 10px
+			line-height: 17px
+			margin-bottom: 30px
+
+// FOOTER
+.footer
+	background-color: $b
+	padding: 35px 0
+	&__top, &__bottom
+		display: flex
+		flex-wrap: wrap
+		margin-left: -11px
+		margin-right: -11px
+	&__bottom
+		border-top: 1px solid $dark_green
+		padding: 40px 0
+		margin-top: 40px
+	&__item
+		box-sizing: border-box
+		word-wrap: break-word
+		margin-left: 11px
+		margin-right: 11px
+		width: calc(25% - 22px)
+
+		&--title
+			color: $green
+			font-size: 20px
+			line-height: 22px
+			max-width: 175px
+			width: 100%
+			margin-bottom: 15px
+		&--link
+			color: $w
+			@extend .trans
+			&:hover
+				color: $green
+		&--social
+			display: flex
+			align-items: center
+			.footer__item--link
+				font-size: 20px
+				margin: 0 7px
+				line-height: 0
+				padding: 0
+				.icon-vk
+					font-size: 30px
+
+
+// VERTICAL SCROLL MENU
+.vertical
+	position: fixed
+	right: 30px
+
+.no-touch #cd-vertical-nav .cd-dot
+	position: relative
+	top: 8px
+	height: 18px
+	width: 18px
+	border-radius: 50%
+	background-color: transparent
+	border: 1px solid $w
+	transform: none
+	position: relative
+	margin: 45px 0
+	&::before
+		content: ''
+		height: 50px
+		width: 1px
+		background-color: $w
+		display: block
+		position: absolute
+		top: 16px
+		right: 50%
+		margin-right: -1px
+	&::after
+		content: ''
+		height: 50px
+		width: 1px
+		background-color: $w
+		display: block
+		position: absolute
+		top: -51px
+		left: 50%
+	&.first-dot
+		&::after
+			display: none
+	&.last-dot
+		&::before
+			display: none
+
+.no-touch #cd-vertical-nav a.is-selected .cd-dot
+	background-color: $green
+	border: 1px solid $green
+.no-touch #cd-vertical-nav .cd-label
+	margin-top: 54px
+	position: relative
+	margin-right: 10px
+	padding: 0
+	color: #fff
+	font-size: 10px
+	opacity: 0
+	// transform: none
+	&::after
+		content: '—'
+		margin-left: 5px
+.no-touch #cd-vertical-nav a:hover .cd-label
+	color: $green
+.no-touch #cd-vertical-nav a:hover .cd-dot
+	background-color: $green
+	border: 1px solid $green
+	&::before
+		background-color: $green
+	&.last-dot
+		&::after
+			background-color: $green
+.no-touch #cd-vertical-nav
+	position: static
+	right: auto 
+	top: auto 
+	bottom: auto
+	transform: none
+	z-index: 1
+#cd-vertical-nav ul
+	list-style: none
+
+// NAV
+.nav
+	position: relative
+	max-width: 240px
+	width: 100%
+
+	&__container
+		position: fixed
+		height: 100vh
+		max-width: 240px
+		width: 100
+		background-color: $gray
+		padding-top: $p75
+	&__header
+		padding: 0 30px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

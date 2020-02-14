@@ -1,0 +1,320 @@
+// CLASS for repeat
+.trans
+    transition: all ease-in-out 0.3s
+
+.img_resp
+	display: block
+	max-width: 100%
+	height: auto
+
+// CHECKBOX
+.checkbox
+    position: absolute
+    opacity: 0
+
+    & + label
+        position: relative
+        cursor: pointer
+        padding: 0
+        display: flex
+        align-items: center
+        max-width: max-content
+        color: $w
+        font-size: 13px
+
+    & + label:before
+        content: ''
+        margin-right: 10px
+        display: inline-block
+        vertical-align: text-top
+        width: 31px
+        height: 31px
+        background: $w
+        @extend .trans
+
+    &:checked + label:before
+        background: $green
+  
+    &:disabled + label
+        color: $g6
+        cursor: auto
+
+    &:disabled + label:before
+        background: transparent
+        border: 1px solid $g6
+
+
+    &:checked + label:after
+        content: '\e900'
+        font-family: 'icomoon'
+        color: $w
+        font-size: 7px
+        position: absolute
+        left: 15px
+        top: 50%
+        transform: translate(-50%, -50%)
+
+    &-transparent
+        & + label:before
+            background: transparent
+            border: 1px solid $green
+
+// BUTTON
+.btn
+    height: 50px
+    line-height: 50px
+    min-width: 180px
+    padding: 0 15px
+    display: inline-block
+    border: none
+    color: #fff
+    text-decoration: none
+    background-color: $green
+    font-size: 13px
+    text-align: center
+    position: relative
+    outline: none
+    cursor: pointer
+    @extend .trans
+    &:focus
+        outline: none
+    &:focus, &:hover
+        text-decoration: none
+        color: #fff
+
+    &:hover
+        background-color: $dark_green
+    &:active
+        background-color: darken($dark_green, 5%)
+
+// TITLE
+.news__item.active .title
+    &__link
+        &::before
+            width: 15px
+            margin-right: 5px
+.title
+    max-width: 525px
+    font-size: 64.35px
+    line-height: 69.22px
+    color: $w
+    font-weight: normal
+    &__line
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &__link
+        font-size: 20px
+        color: $green
+        display: flex
+        align-items: center
+        &::before
+            content: ''
+            height: 2px
+            width: 0
+            background-color: $green
+            display: block
+            margin-right: 0
+            @extend .trans
+        &:hover::before
+            width: 15px
+            margin-right: 5px
+
+// SUBTITLE
+.subtitle
+    max-width: 450px
+    font-size: 20px
+    color: $w
+    font-weight: normal
+    text-align: center
+    display: flex
+    align-items: center
+    line-height: 25px
+    &::after
+        content: '»'
+        font-size: 60px
+        color: $green
+    &::before
+        content: '«'
+        font-size: 60px
+        color: $green
+
+// SELECT
+.select
+    .dk-selected
+        padding: 0 15px
+        height: 100%
+        line-height: 50px
+        border: 0
+        border-radius: 0
+        &:after
+            border: 0
+        &:before
+            margin: 0px 10px 0px 0px
+            border-top-color: $b !important
+            border-width: 5px 4px 0
+    .dk-selected:focus:before, .dk-selected:hover:before
+        border-top-color: $green !important
+.dk-select-multi:focus .dk-select-options, .dk-select-open-down .dk-select-options, .dk-select-open-up .dk-select-options
+	border-color: transparent
+	border: 0
+	border-left: 2px solid $green
+	border-radius: 0 !important
+.dk-select-open-down .dk-select-options
+	border-radius: 0 !important
+.dk-option-selected
+	color: $b
+	background-color: #b3b3b3
+.dk-option
+	padding: 6px 15px
+.dk-select-options .dk-option-highlight
+	background-color: #b3b3b3
+	color: $b
+.dk-select-disabled
+    color: $g6
+    opacity: 1
+    .dk-selected
+        background-color: transparent
+        border: 1px solid $g6
+    .dk-selected:before
+        opacity: 0
+
+// INPUT
+.input
+    width: 100%
+    border: 0
+    height: 30px
+    padding: 5px 15px
+    display: block
+
+// STAR
+.star, .like
+    background: transparent
+    border: 0
+    display: flex
+    align-items: center
+    color: $g6
+    max-width: max-content
+    cursor: pointer
+    outline: 0
+    &:hover::before
+        color: $green
+    &::before
+        @extend .trans
+        font-family: 'icomoon'
+        content: '\e902'
+        color: $w
+        font-size: 18px
+        margin-right: 10px
+    &.gray
+        &:hover::before
+            color: $w
+        &::before
+            color: $g6
+
+.like
+    &::before
+        @extend .trans
+        font-family: 'icomoon'
+        content: '\e901'
+        color: $w
+        font-size: 18px
+        margin-right: 10px
+
+// MORE link
+.more
+    display: flex
+    align-items: center
+    color: $w
+    @extend .trans
+    &::after
+        font-family: 'icomoon'
+        content: '\e903'
+        margin-left: 10px
+        font-size: 10px
+    &:hover
+        color: $green
+        
+// MOUSE
+.mouse
+  width: 15px
+  height: 25px
+  border: 1px solid #ecf0f1
+  margin-left: auto
+  border-radius: 30px 30px 10px 10px
+  .mouse-text
+      font-size: 10px
+      color: $w
+      transform: rotate(90deg)
+      margin-top: 10px
+  .mouse-wheel
+    overflow: hidden
+    margin-top: 2px
+
+    span
+      display: block
+      margin: 1px auto
+      width: 3px
+      height: 3px
+
+      &.wheel
+        border-radius: 1px
+        width: 3px
+        height: 5px
+        display: block
+        background-color: $w
+
+      &.arrow
+        border-bottom: 1px solid #ecf0f1
+        border-right: 1px solid #ecf0f1
+        transform: rotate(45deg)
+        animation: scrollDown
+        animation-duration: 1.7s
+        animation-iteration-count: infinite
+        animation-timing-function: ease-in-out
+
+@keyframes scrollDown
+  0%
+    opacity: 1
+    transform: translateY(0) rotate(45deg)
+
+  50%
+    opacity: 0
+    transform: translateY(5px) rotate(45deg)
+
+  75%
+    opacity: 0
+    transform: translateY(0) rotate(45deg)
+
+  100%
+    opacity: 1
+    transform: translateY(0) rotate(45deg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
