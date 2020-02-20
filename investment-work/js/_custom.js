@@ -11,6 +11,7 @@ function showImageNews(evt, cityName) {
 	document.getElementById(cityName).style.display = "block";
 	evt.currentTarget.className += " active";
   }
+  
 
 document.addEventListener("DOMContentLoaded", function() {
 	
@@ -47,43 +48,37 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 
-	var contentSections = $('.cd-section'),
-		navigationItems = $('#cd-vertical-nav a');
-
+	var contentSections = $('.section');
+	var navigationItems = $('.scrollmenu .scrollmenu__li');
+	var contentSectionsActive = $('.section.active');
+	var navigationLinks = $('.scrollmenu .scrollmenu__link');
+	
 	updateNavigation();
 	$(window).on('scroll', function(){
 		updateNavigation();
 	});
 
 	//smooth scroll to the section
-	navigationItems.on('click', function(event){
+	navigationLinks.on('click', function(event){
         event.preventDefault();
         smoothScroll($(this.hash));
-    });
-    //smooth scroll to second section
-    $('.cd-scroll-down').on('click', function(event){
-        event.preventDefault();
-        smoothScroll($(this.hash));
-    });
-
-    //open-close navigation on touch devices
-    $('.touch .cd-nav-trigger').on('click', function(){
-    	$('.touch #cd-vertical-nav').toggleClass('open');
-  
-    });
-    //close navigation on touch devices when selectin an elemnt from the list
-    $('.touch #cd-vertical-nav a').on('click', function(){
-    	$('.touch #cd-vertical-nav').removeClass('open');
     });
 
 	function updateNavigation() {
 		contentSections.each(function(){
 			$this = $(this);
-			var activeSection = $('#cd-vertical-nav a[href="#'+$this.attr('id')+'"]').data('number') - 1;
-			if ( ( $this.offset().top - $(window).height()/2 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/2 > $(window).scrollTop() ) ) {
-				navigationItems.eq(activeSection).addClass('is-selected');
-			}else {
-				navigationItems.eq(activeSection).removeClass('is-selected');
+			var activeSection = $('.scrollmenu__ul .scrollmenu__link[href="#'+$this.attr('id')+'"]').data('number') - 1;
+			if ( ( $this.offset().top - $(window).height()/4 < $(window).scrollTop() ) && ( $this.offset().top + $this.height() - $(window).height()/4 > $(window).scrollTop() ) ) {
+				navigationItems.eq(activeSection).addClass('active');
+				$this.addClass('active');
+				navigationLinks.eq(activeSection).addClass('active');
+			} else {
+				navigationItems.eq(activeSection).removeClass('active');
+				$this.removeClass('active');
+			}
+			if ( ( $this.offset().top - $(window).height()/4 > $(window).scrollTop() ) ) {
+				$this.removeClass('active');
+				navigationLinks.eq(activeSection).removeClass('active');
 			}
 		});
 	}
@@ -94,5 +89,49 @@ document.addEventListener("DOMContentLoaded", function() {
         	600
         );
 	}
+
+
+	function percent() {
+		contentSections.each(function(){
+			var contentSectionsActive = $('.section.active');
+			var height = contentSectionsActive.height();
+			var offset = 0;
+			var scroll = $(window).scrollTop();
+			if ($('.section.active').length != 0) {
+				offset = contentSectionsActive.offset().top;
+
+				var per =  (scroll - offset) / height * 100;
+				per += per;
+				if (per < 45) {
+					document.querySelectorAll('.scrollmenu .scrollmenu__li.active')[0].style.setProperty("--height", per+"%");
+				} else {
+					document.querySelectorAll('.scrollmenu .scrollmenu__li.active')[0].style.setProperty("--height", "100%");
+				}
+
+				if (per < -0) {
+					document.querySelectorAll('.scrollmenu .scrollmenu__li.active')[0].style.setProperty("--height", "0%");
+				}
+			}
+
+		});
+	}
+
+	percent();
+	$(window).on('scroll', function(){
+		percent();
+	});
+
+	$(window).scroll(function () {
+		$(".wrapper").css("background-position","50% " + ($(this).scrollTop() / 2) + "px");
+	});
+
+	$('.nav__footer--contact .open-message').click(function() {
+		$('.nav__footer--contact .button').toggleClass('active');
+	});
+
+	$('.nav__footer--contact .close-submenu').click(function() {
+		$('.nav__footer--contact .button').removeClass('active');
+	});
+
 
 });
