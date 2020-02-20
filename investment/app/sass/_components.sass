@@ -7,6 +7,19 @@
 	max-width: 100%
 	height: auto
 
+.padding-nav
+    padding: 0 30px
+
+
+.line_hover
+	&::after
+        content: ''
+        display: block
+        width: 20px
+        height: 1px
+        background-color: $green
+        position: absolute
+
 // CHECKBOX
 .checkbox
     position: absolute
@@ -21,6 +34,8 @@
         max-width: max-content
         color: $w
         font-size: 13px
+        @extend .trans
+
 
     & + label:before
         content: ''
@@ -60,7 +75,7 @@
             border: 1px solid $green
 
 // BUTTON
-.btn
+.btn, .btn-small
     height: 50px
     line-height: 50px
     min-width: 180px
@@ -86,6 +101,12 @@
         background-color: $dark_green
     &:active
         background-color: darken($dark_green, 5%)
+.btn-small
+    height: 30px
+    line-height: 30px
+    padding: 0 10px
+    min-width: auto
+    width: max-content
 
 // TITLE
 .news__item.active .title
@@ -186,6 +207,7 @@
     height: 30px
     padding: 5px 15px
     display: block
+    @extend .trans
 
 // STAR
 .star, .like
@@ -206,11 +228,12 @@
         color: $w
         font-size: 18px
         margin-right: 10px
-    &.gray
+    &.gray, &.not-active
         &:hover::before
             color: $w
         &::before
             color: $g6
+            
 
 .like
     &::before
@@ -240,7 +263,7 @@
   width: 15px
   height: 25px
   border: 1px solid #ecf0f1
-  margin-left: auto
+  margin: 30px 2px 0 auto
   border-radius: 30px 30px 10px 10px
   .mouse-text
       font-size: 10px
@@ -290,9 +313,52 @@
     opacity: 1
     transform: translateY(0) rotate(45deg)
 
+// HAMBURGER
+.humburger
+    width: 20px
+    height: 10px
+    position: relative
+    transform: rotate(0deg)
+    cursor: pointer
+    &:hover span
+        background: $w
 
 
+.humburger span
+    @extend .trans
+    display: block
+    position: absolute
+    height: 1px
+    width: 100%
+    background: $g6
+    opacity: 1
+    left: 0
+    transform: rotate(0deg)
 
+.humburger span:nth-child(1)
+    top: 0px
+
+.humburger span:nth-child(2),.humburger span:nth-child(3)
+    top: 4px
+
+.humburger span:nth-child(4)
+    top: 8px
+
+.humburger.open span:nth-child(1)
+    top: 4px
+    width: 0%
+    left: 50%
+
+.humburger.open span:nth-child(2)
+    transform: rotate(45deg)
+
+.humburger.open span:nth-child(3)
+    transform: rotate(-45deg)
+
+.humburger.open span:nth-child(4)
+    top: 4px
+    width: 0%
+    left: 50%
 
 
 
