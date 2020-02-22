@@ -9,33 +9,27 @@ module.exports = {
             fields: '20px' /* side fields */
         },
         breakPoints: {
-            lg: {
+            xl: {
                 width: '1100px',
             },
-            md: {
-                width: '1107px'
+            lg: {
+                width: '992px',
+                fields: '60px'
             },
-            md_1044: {
-                width: '1044px'
+            md: {
+                width: '768px',
+                fields: '50px'
             },
             sm: {
-                width: '825px',
-                fields: '15px' /* set fields only if you want to change container.fields */
-            },
-            sm_768: {
-                width: '768px',
+                width: '576px',
+                fields: '40px'
             },
             xs: {
-                width: '783px'
+                width: '320px'
             },
-            xxs: {
-                width: '414px'
-            },
-            s_500: {
-                width: '500px'
-            },
-            s_400: {
-                width: '400px'
+            bp_1366: {
+                width: '1366px',
+                fields: '100px'
             }
             /* 
             We can create any quantity of break points.

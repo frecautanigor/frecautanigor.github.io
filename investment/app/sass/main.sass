@@ -33,15 +33,26 @@ body
 .wrapper
 	padding-top: $p75
 	width: 100%
-	background-image: url(../img/wrapper.jpg)
 	background-size: cover
 	background-position: 50% 0%
 	background-repeat: no-repeat
+	background-image: url(../img/wrapper.jpg)
+	+md-block()
+		padding-top: calc( #{$p75} + 60px )
+	+sm-block()
+		background-image: url(../img/wrapper-mobile.jpg)
 
 	&__black
 		background-color: $b
 	&__container
 		+wrapper()
+		padding-right: calc( #{$fields} + 85px )
+		+bp_1366-block()
+			padding-right: calc( #{$fields_bp_1366} + 60px )
+		+lg-block()
+			padding-right: $fields_lg
+		+md-block()
+			padding-right: $fields_md
 	&__row
 		+row-flex()
 	&__col
@@ -91,6 +102,8 @@ body
 		&--item
 			+col()
 			+size(3)
+			+size-md(6)
+			+md(margin-bottom, 15px)
 			.select .dk-selected
 				height: 30px
 				line-height: 30px
@@ -110,6 +123,8 @@ body
 
 			.inputs
 				display: flex
+				.input
+					width: 50%
 				.input:first-child
 					margin-right: 5px
 
@@ -117,7 +132,7 @@ body
 			+row-flex()
 		&--check
 			+col()
-
+			+lg(margin-bottom, 15px)
 		&.disabled
 			.header__filter--item
 				pointer-events: none
@@ -175,7 +190,7 @@ body
 			
 		&--img
 			height: 250px
-			max-width: 250px
+			// max-width: 250px
 			display: block
 			position: relative
 			background-color: $gray
@@ -242,10 +257,16 @@ body
 		align-items: center
 		max-width: 470px
 		width: 100%
+		+bp_1366-block()
+			max-width: 400px
+			margin-right: 50px
+			.btn
+				min-width: 120px
 		.input
 			height: 50px
 			width: 280px
 			margin-right: 5px
+			+md(width, 100%)
 
 // SELLERS
 .sellers
@@ -257,12 +278,19 @@ body
 		margin-right: -10px
 		margin-top: 50px
 		margin-bottom: 25px
+		+md-block()
+			width: 100%
+			justify-content: center
+			margin: 50px auto 25px auto
 		&--item
 			box-sizing: border-box
 			word-wrap: break-word
 			margin-left: 10px
 			margin-right: 10px
 			width: calc(20% - 20px)
+			+md-block()
+				width: calc(33.33333333333333% - 20px)
+				margin-bottom: 30px
 			&:hover
 				.sellers__list--img
 					&::before
@@ -308,7 +336,18 @@ body
 			background-size: cover
 			background-position: center
 			display: none
+			+lg-block()
+				height: 350px
+			+bp_1366-block()
+				height: 450px
 	&__item
+		&:nth-child(4),
+		&:nth-child(3)
+			+lg-block()
+				display: none
+		&:nth-child(4)
+			+bp_1366-block()
+				display: none
 		&--desc
 			color: $w
 			margin-top: 10px
@@ -334,6 +373,9 @@ body
 		margin-left: 11px
 		margin-right: 11px
 		width: calc(25% - 22px)
+		+md-block()
+			width: calc(50% - 22px)
+			margin-bottom: 30px
 
 		&--title
 			color: $green
@@ -364,8 +406,13 @@ body
 	position: fixed
 	right: 0
 	top: 0
-	margin: 30px
 	z-index: 2
+	margin: 30px 65px 30px 0
+	+bp_1366-block()
+		margin: 30px 40px 30px 0
+	+lg-block()
+		display: none
+	
 	&__ul
 		display: flex
 		flex-direction: column
@@ -450,23 +497,12 @@ body
 // NAV
 .nav
 	position: relative
+	min-width: 240px
 	max-width: 240px
 	width: 100%
 	color: $w
 	z-index: 2
-	::-webkit-scrollbar
-		display: none
-	::-webkit-scrollbar-button
-		display: none
-	::-webkit-scrollbar-track
-		display: none
-	::-webkit-scrollbar-track-piece
-		display: none
-	::-webkit-scrollbar-thumb
-		display: none
-	::-webkit-scrollbar-corner
-		display: none
-	::-webkit-resizer
+	+md-block()
 		display: none
 
 	&__submenu
@@ -609,7 +645,7 @@ body
 				min-height: 100%
 				border: 1px solid $g6
 				padding: 10px
-				overflow-y: scroll
+				width: 100%
 				&__item
 					margin: 5px 0
 					&--time
@@ -852,8 +888,360 @@ body
 			width: 95%
 			position: relative
 
+// mobile-menu
+.messages-mobile
+	position: fixed
+	background-color: rgba($b, .8)
+	padding: 30px
+	z-index: 99999
+	height: 100%
+	width: 100%
+	overflow-y: auto
+	display: none
+	.form
+		.textarea
+			display: block
+			height: 120px
+			padding: 15px
+			width: 100%
+			background-color: $gray
+			color: $w
+			border: 0
+			margin-top: 15px
+		.mobile-message-btn
+			width: 100%
+			text-align: left
+			display: flex
+			align-items: center
+			height: 40px
+			&::after
+				font-family: 'icomoon'
+				content: '\e908'
+				font-size: 18px
+				margin-left: auto
+	.close-mobile-message
+		width: 100%
+		text-align: left
+		display: flex
+		align-items: center
+		font-size: 17px
+		height: 40px
+		background-color: $b
+		color: $green
+		&::after
+			font-family: 'icomoon'
+			content: '\e900'
+			font-size: 14px
+			margin-left: auto
+	&__content
+		border: 2px solid $green
+		background-color: $b
+	.messages
+		max-height: 280px
+		height: 100%
+		background-color: $b
+		width: 100%
+		padding: 10px
+		overflow-y: scroll
+		
+		&__item
+			margin: 10px 0
+			&--time
+				color: $g6
+				font-size: 9px
+				margin-bottom: 5px
+			&--text
+				position: relative
+				padding: 5px 10px
+				background-color: $gray
+				border-radius: 5px
+				color: $w
+				line-height: 17px
+			&.left
+				margin-left: 10px
+				.messages__item--text
+					&::before
+						content: ''
+						display: block
+						width: 0
+						height: 0
+						border-top: 10px solid transparent
+						border-bottom: 10px solid transparent
+						border-left: 10px solid $gray
+						position: absolute
+						left: -1px
+						transform: rotate(-45deg)
+			&.right
+				margin-right: 10px
+				.messages__item--time
+					text-align: right
+				.messages__item--text
+					&::before
+						content: ''
+						display: block
+						width: 0
+						height: 0
+						border-top: 10px solid transparent
+						border-bottom: 10px solid transparent
+						border-right: 10px solid $gray
+						position: absolute
+						right: -1px
+						transform: rotate(45deg)
+		
 
+.mobile-menu
+	display: none
+	height: 100%
+	+md-block()
+		display: block
+	&__header
+		position: fixed
+		z-index: 99999
+		height: 60px
+		width: 100%
+		background-color: $gray
+		padding: 0 20px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		.btn_menu
+			display: flex
+			align-items: center
+		.message_count
+			background-color: $green
+			color: $w
+			padding: 0 7px
+			height: 20px
+			position: relative
+			margin-right: 10px
+			&::before
+				content: ''
+				display: block
+				width: 0
+				height: 0
+				border-top: 4px solid transparent
+				border-bottom: 4px solid transparent
+				border-left: 4px solid $green
+				position: absolute
+				top: 50%
+				transform: translate(0%, -50%)
+				left: calc( 100% - 1px )
+		.humburger
+			width: 30px
+			height: 20px
+			&:hover span
+				background: $green
+		.humburger span
+			@extend .trans
+			display: block
+			position: absolute
+			height: 2px
+			width: 100%
+			background: $w
+		.humburger span:nth-child(1)
+			top: 0px
+		.humburger span:nth-child(2), .humburger span:nth-child(3)
+			top: 9px
+		.humburger span:nth-child(4)
+			top: 18px
+		.logo
+			display: block
+			max-width: 100px
+		.lang
+			position: relative
+			cursor: pointer
+			@extend .trans
+			display: flex
+			align-items: center
+			padding: 5px 10px
+			border: 1px solid $g6
+			color: $w
+			background-color: $gray
+			
+			.lang__items
+				position: absolute
+				left: 0
+				top: calc( 100% + 1px )
+				transform: translate(0, -100%) scale(0)
+				display: flex
+				flex-direction: column
+				align-items: center
+				width: 100%
+				background-color: $b
+				padding: 1px 5px
+				border-left: 2px solid $green
+				opacity: 1
+				z-index: -1
+				@extend .trans
+				&--link
+					@extend .trans
+					&:hover
+						color: $w
+			&:hover .lang__items
+				opacity: 1
+				transform: translate(0, 0) scale(1)
 
+	&__content.active
+		display: block
+		padding-bottom: 100px
+
+	&__content
+		display: none
+		position: fixed
+		top: 60px
+		background-color: $b
+		width: 100%
+		z-index: 999
+		overflow-y: auto
+		height: 100%		
+		.contacts
+			padding-top: $fields_md/2
+			padding-left: $fields_md/2
+			padding-right: $fields_md/2
+			width: 100%
+			background-color: $b
+			.text
+				color: $w
+				margin-bottom: 15px
+			.btn-small
+				width: 100%
+				text-align: left
+				display: flex
+				align-items: center
+				margin-bottom: 20px
+				&::after
+					font-family: 'icomoon'
+					content: '\e908'
+					font-size: 15px
+					margin-left: auto
+			&__social
+				display: flex
+				align-items: center
+				justify-content: space-between
+				&--link
+					color: $w
+					font-size: 25px
+					@extend .trans
+					&:hover
+						color: $green
+		.cabinet
+			padding-top: $fields_md/2
+			padding-left: $fields_md/2
+			padding-right: $fields_md/2
+			display: flex
+			color: $w
+			.link
+				@extend .trans
+				margin-left: 10px
+				text-decoration: underline
+				&:hover
+					color: $green
+		.chosen
+			padding-left: $fields_md/2
+			padding-right: $fields_md/2
+			padding-bottom: $fields_md/2
+			.link
+				display: flex
+				align-items: center
+				color: $w
+				max-width: max-content
+				&:first-child
+					margin: 15px 0
+				.text
+					text-decoration: underline
+			.icon
+				margin-right: 20px
+				color: $w
+				&::before
+					color: $green
+					font-size: 12px
+			&.not-active
+				.link
+					pointer-events: none
+					color: $g6
+				.icon
+					color: $g6
+					&::before
+						color: $g6
+
+		.navigation
+			.submenu
+				display: none
+				&__item
+					padding: 10px 0
+				&__link
+					color: $w
+					display: flex
+					align-items: center
+					@extend .trans
+					&::before
+						content: ''
+						display: block
+						width: 20px
+						height: 1px
+						background-color: $green
+						margin-left: 5px
+						margin-right: 10px
+					&:hover
+						color: $green
+			&__item
+				padding-left: $fields_md/2
+				padding-right: $fields_md/2
+				background-color: $gray
+				border-top: 1px solid #888889
+				border-bottom: 1px solid #888889
+				min-height: 35px
+				position: relative
+				margin-top: -1px
+				&--arrow
+					&::before
+						content: ''
+						display: block
+						height: 1px
+						background-color: #888889
+						position: absolute
+						top: 35px
+						left: 0
+						right: 0
+					.navigation__link
+						&::after
+							content: ''
+							display: block
+							width: 0
+							height: 0
+							border-top: 4px solid transparent
+							border-bottom: 4px solid transparent
+							border-left: 4px solid $w
+							position: absolute
+							top: 50%
+							transform: translate(0,-50%) rotate(90deg)
+							left: calc(100% - 1px)
+					&.active
+						background-color: $b
+						.navigation__link
+							&::after
+								border-left: 4px solid $green
+								transform: translate(0,-50%) rotate(-90deg)
+						.submenu
+							display: block
+			&__link
+				display: block
+				height: 35px
+				line-height: 35px
+				position: relative
+				padding-left: 7px
+				color: $w
+				&::before
+					content: ''
+					height: 5px
+					width: 5px
+					display: block
+					background-color: $green
+					border-radius: 50%
+					position: absolute
+					left: 0
+					top: 50%
+					transform: translate(-50%, -50%)
 
 
 

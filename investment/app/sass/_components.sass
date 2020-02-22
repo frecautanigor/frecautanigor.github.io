@@ -1,3 +1,26 @@
+.nav,
+.nav__submenu,
+.nav__container,
+.messages-mobile,
+.mobile-menu__content,
+.messages-mobile .messages
+    ::-webkit-scrollbar
+        display: none !important
+    ::-webkit-scrollbar-button
+        display: none !important
+    ::-webkit-scrollbar-track
+        display: none !important
+    ::-webkit-scrollbar-track-piece
+        display: none !important
+    ::-webkit-scrollbar-thumb
+        display: none !important
+    ::-webkit-scrollbar-corner
+        display: none !important
+    ::-webkit-resizer
+        display: none !important
+    scrollbar-color: transparent transparent !important
+    scrollbar-width: none !important
+
 // CLASS for repeat
 .trans
     transition: all ease-in-out 0.3s
@@ -120,10 +143,25 @@
     line-height: 69.22px
     color: $w
     font-weight: normal
+    +bp_1366-block()
+        max-width: 425px
+        line-height: 55px
+        font-size: 50px
+    +xl-block()
+        max-width: 410px
+    +lg-block()
+        max-width: 490px
+    +md-block()
+        text-align: center
+        font-size: 38px
+        max-width: 100%
+
     &__line
         display: flex
         justify-content: space-between
         align-items: center
+        +md-block()
+            flex-direction: column
     &__link
         font-size: 20px
         color: $green
@@ -151,14 +189,28 @@
     display: flex
     align-items: center
     line-height: 25px
+    +xl-block()
+        margin-left: 50px
+        max-width: 400px
+        font-size: 16px
+    +md-block()
+        margin-left: 0
+        font-size: 14px
+        margin-top: 30px
     &::after
         content: '»'
         font-size: 60px
         color: $green
+        +xl-block()
+            font-size: 40px
+
     &::before
         content: '«'
         font-size: 60px
         color: $green
+        +xl-block()
+            font-size: 40px
+
 
 // SELECT
 .select
@@ -249,6 +301,7 @@
     display: flex
     align-items: center
     color: $w
+    max-width: max-content
     @extend .trans
     &::after
         font-family: 'icomoon'

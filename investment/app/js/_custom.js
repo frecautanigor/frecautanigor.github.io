@@ -31,6 +31,33 @@ document.addEventListener("DOMContentLoaded", function() {
 			nextEl: '.positions__slider--next',
 			prevEl: '.positions__slider--previous',
 		},
+		breakpoints: {
+			// when window width is >= 0px
+			0: {
+			  slidesPerView: 1,
+			  spaceBetween: 20
+			},
+			// when window width is >= 576px
+			576: {
+			  slidesPerView: 2,
+			  spaceBetween: 40
+			},
+			// when window width is >= 640px
+			768: {
+			  slidesPerView: 2,
+			  spaceBetween: 40
+			},
+			// when window width is >= 992px
+			992: {
+			  slidesPerView: 3,
+			  spaceBetween: 20
+			},
+			// when window width is >= 1100px
+			1100: {
+			  slidesPerView: 4,
+			  spaceBetween: 20
+			}
+		  }
 	});
 
 	// Search filter
@@ -131,6 +158,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	$('.nav__footer--contact .close-submenu').click(function() {
 		$('.nav__footer--contact .button').removeClass('active');
+	});
+	
+	// Submenu mobile
+	$('.navigation .navigation__item .submenu').parent().addClass('navigation__item--arrow');
+
+	$('.navigation__item--arrow').click(function() {
+		$(this).toggleClass('active');
+	});
+
+	$('.mobile-menu .humburger').click(function() {
+		$('.mobile-menu__content').toggleClass('active');
+		$(this).toggleClass('open');
+	});
+
+	$('.open-message-block').click(function() {
+		$('.messages-mobile').css('display', 'block');
+	});
+
+	$('.close-mobile-message').click(function() {
+		$('.messages-mobile').css('display', 'none');
 	});
 
 
