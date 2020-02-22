@@ -73,6 +73,12 @@ document.addEventListener("DOMContentLoaded", function() {
 			$(".header__filter--item .select").prop("disabled", true);
 		}
 	});
+   $(".mobile-additionally").on("click", function(){
+		$(".header__filter").toggleClass('disabled');
+		$(".header__filter--item .dk-select").toggleClass('dk-select-disabled');
+		$(".header__buttons").toggleClass('hidden');
+		$(".header__filter--checkbox .checkbox").prop("disabled", false);
+	});
 
 
 	var contentSections = $('.section');

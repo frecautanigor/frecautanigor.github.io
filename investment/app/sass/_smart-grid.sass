@@ -29,6 +29,7 @@ $fields_bp_1366: 100px
 $fields_lg: 60px
 $fields_md: 50px
 $fields_sm: 40px
+$fields_xs: 20px
 
 =wrapper-full()
     padding-left: $fields
@@ -49,6 +50,10 @@ $fields_sm: 40px
     +sm-block()
         padding-left: $fields_sm
         padding-right: $fields_sm
+
+    +xs-block()
+        padding-left: $fields_xs
+        padding-right: $fields_xs
 
 =row-offsets()
     margin-left: ($offset_one_side * -1)

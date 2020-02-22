@@ -41,6 +41,8 @@ body
 		padding-top: calc( #{$p75} + 60px )
 	+sm-block()
 		background-image: url(../img/wrapper-mobile.jpg)
+	+sm-block()
+		padding-top: 90px
 
 	&__black
 		background-color: $b
@@ -53,6 +55,10 @@ body
 			padding-right: $fields_lg
 		+md-block()
 			padding-right: $fields_md
+		+sm-block()
+			padding-left: $fields_sm/2
+			padding-right: $fields_sm/2
+		
 	&__row
 		+row-flex()
 	&__col
@@ -63,37 +69,108 @@ body
 .header
 	.title__line
 		margin-bottom: 100px
+		+sm(margin-bottom, 20px)
+	.subtitle
+		+sm(display, none)
 	&__search
 		display: flex
 		margin-bottom: 50px
+		+sm-block()
+			flex-wrap: wrap
 
 		&--input
 			width: 100%
 			padding: 0
 			font-size: 13px
+			+sm-block()
+				width: 49%
+				height: 30px !important
 			&:nth-child(2)
 				margin: 0 5px
 				max-width: 200px
+				+sm-block()
+					margin: 0 auto 0 0
+
 			&:first-child
 				height: 50px
 				width: 100%
 				border: 0
 				padding: 5px 15px
+				+sm-block()
+					margin-bottom: 15px
+
 			
 	&__filter
+		position: relative
+		z-index: 1
+		&::after
+			content: ''
+			display: none
+			position: absolute
+			top: 0
+			left: -$fields_sm/2
+			right: -$fields_sm/2
+			bottom: 0
+			background-color: #1f3254
+			z-index: -1
+			+sm(display, block)
+		&--button
+			display: none
+			text-align: center
+			padding-bottom: 30px
+			margin-top: 20px
+			+sm(display, block)
+			.btn-small
+				max-width: 200px
+				width: 100%
+
 		&--top
 			display: flex
 			align-items: center
 			margin-bottom: 25px
+
 			&::after
 				content: ''
 				display: inline-block
 				height: 2px
 				width: 100%
 				background-color: $dark_green
+				margin-left: 10px
+			&::before
+				content: ''
+				display: none
+				height: 2px
+				width: 100%
+				background-color: $dark_green
+				margin-right: 10px
+				+sm(display, inline-block)
+
 			.checkbox + label
 				width: 100%
 				margin-right: 20px
+				+sm(display, none)
+
+			.mobile-additionally
+				display: none
+				border: 1px solid $green
+				padding: 2px 7px
+				padding-right: 30px
+				position: relative
+				cursor: pointer
+				color: $w
+				&::before
+					content: ''
+					display: block
+					width: 0
+					height: 0
+					border-top: 4px solid transparent
+					border-bottom: 4px solid transparent
+					border-left: 4px solid #29ba00
+					position: absolute
+					top: 50%
+					transform: translate(0,-50%) rotate(-90deg)
+					right: 12px
+				+sm(display, block)
 
 		&--items
 			+row-flex()
@@ -103,6 +180,7 @@ body
 			+col()
 			+size(3)
 			+size-md(6)
+			+size-sm(12)
 			+md(margin-bottom, 15px)
 			.select .dk-selected
 				height: 30px
@@ -134,7 +212,19 @@ body
 			+col()
 			+lg(margin-bottom, 15px)
 		&.disabled
+			+sm-block()
+				&::after
+					display: none
+				.mobile-additionally
+					&::before
+						transform: translate(0,-50%) rotate(90deg)
+						
+			.header__filter--button
+				+sm(display, none)
 			.header__filter--item
+				+sm(display, none)
+			.header__filter--check
+				+sm(display, none)
 				pointer-events: none
 				.select .dk-selected
 					color: $g6
@@ -151,12 +241,28 @@ body
 						&::placeholder
 							color: $g6
 
+	&__buttons.hidden
+		display: none
 	&__buttons
 		display: flex
 		margin-bottom: $p75
 		margin-top: 50px
+		+sm-block()
+			flex-direction: column
+			align-items: center
+			margin-top: -20px
+			margin-bottom: 30px
+			.btn
+				height: 30px
+				line-height: 30px
+				max-width: 200px
+				width: 100%
 		.star
 			margin-left: 30px
+			+sm-block()
+				margin-left: 0px
+				color: $w
+				margin-top: 15px
 
 // POSITIONS
 .positions
@@ -358,6 +464,8 @@ body
 .footer
 	background-color: $b
 	padding: 35px 0
+	+md-block()
+		display: none
 	&__top, &__bottom
 		display: flex
 		flex-wrap: wrap
@@ -987,7 +1095,6 @@ body
 						position: absolute
 						right: -1px
 						transform: rotate(45deg)
-		
 
 .mobile-menu
 	display: none
@@ -1242,6 +1349,120 @@ body
 					left: 0
 					top: 50%
 					transform: translate(-50%, -50%)
+
+.mobile-footer
+	display: none
+	+md-block()
+		display: block
+	.contacts
+		padding-top: $fields_md/2
+		padding-left: $fields_md/2
+		padding-right: $fields_md/2
+		width: 100%
+		background-color: $b
+		.text
+			color: $w
+			margin-bottom: 15px
+		.btn-small
+			width: 100%
+			text-align: left
+			display: flex
+			align-items: center
+			margin-bottom: 20px
+			&::after
+				font-family: 'icomoon'
+				content: '\e908'
+				font-size: 15px
+				margin-left: auto
+		&__social
+			display: flex
+			align-items: center
+			justify-content: space-between
+			padding-bottom: 20px
+			&--link
+				color: $w
+				font-size: 25px
+				@extend .trans
+				&:hover
+					color: $green
+	.navigation
+		.submenu
+			display: none
+			&__item
+				padding: 10px 0
+			&__link
+				color: $w
+				display: flex
+				align-items: center
+				@extend .trans
+				&::before
+					content: ''
+					display: block
+					width: 20px
+					height: 1px
+					background-color: $green
+					margin-left: 5px
+					margin-right: 10px
+				&:hover
+					color: $green
+		&__item
+			padding-left: $fields_md/2
+			padding-right: $fields_md/2
+			background-color: $gray
+			border-top: 1px solid #888889
+			border-bottom: 1px solid #888889
+			min-height: 35px
+			position: relative
+			margin-top: -1px
+			&--arrow
+				&::before
+					content: ''
+					display: block
+					height: 1px
+					background-color: #888889
+					position: absolute
+					top: 35px
+					left: 0
+					right: 0
+				.navigation__link
+					&::after
+						content: ''
+						display: block
+						width: 0
+						height: 0
+						border-top: 4px solid transparent
+						border-bottom: 4px solid transparent
+						border-left: 4px solid $w
+						position: absolute
+						top: 50%
+						transform: translate(0,-50%) rotate(90deg)
+						left: calc(100% - 1px)
+				&.active
+					background-color: $b
+					.navigation__link
+						&::after
+							border-left: 4px solid $green
+							transform: translate(0,-50%) rotate(-90deg)
+					.submenu
+						display: block
+		&__link
+			display: block
+			height: 35px
+			line-height: 35px
+			position: relative
+			padding-left: 7px
+			color: $w
+			&::before
+				content: ''
+				height: 5px
+				width: 5px
+				display: block
+				background-color: $green
+				border-radius: 50%
+				position: absolute
+				left: 0
+				top: 50%
+				transform: translate(-50%, -50%)
 
 
 

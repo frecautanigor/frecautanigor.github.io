@@ -25,7 +25,8 @@ module.exports = {
                 fields: '40px'
             },
             xs: {
-                width: '320px'
+                width: '320px',
+                fields: '20px'
             },
             bp_1366: {
                 width: '1366px',

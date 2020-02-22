@@ -155,13 +155,21 @@
         text-align: center
         font-size: 38px
         max-width: 100%
-
+    +sm-block()
+        font-size: 23px
+        text-align: left
+        color: $green
+        line-height: 26px
+        max-width: 100%
     &__line
         display: flex
         justify-content: space-between
         align-items: center
         +md-block()
             flex-direction: column
+        +sm-block()
+            align-items: flex-start
+        
     &__link
         font-size: 20px
         color: $green
@@ -197,6 +205,11 @@
         margin-left: 0
         font-size: 14px
         margin-top: 30px
+    +sm-block()
+        font-size: 13px
+        text-align: left
+        max-width: 100%
+        line-height: 18px
     &::after
         content: '»'
         font-size: 60px
@@ -210,6 +223,9 @@
         color: $green
         +xl-block()
             font-size: 40px
+        +sm-block()
+            display: none
+        
 
 
 // SELECT
@@ -220,6 +236,8 @@
         line-height: 50px
         border: 0
         border-radius: 0
+        +sm-block()
+            line-height: 30px
         &:after
             border: 0
         &:before
