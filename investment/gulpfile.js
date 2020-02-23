@@ -13,6 +13,7 @@ var gulp         = require('gulp'),
 	smartGrid 	 = require('smart-grid');
 	path 		 = require('path');
 	gridOptPath  = './smartgrid.js';
+	gcmq 		 = require('gulp-group-css-media-queries');
 
 // Local Server
 gulp.task('browser-sync', function() {
@@ -35,6 +36,7 @@ gulp.task('styles', function() {
 		includePaths: [__dirname + '/node_modules']
 	}))
 	.pipe(concat('styles.min.css'))
+	.pipe(gcmq())
 	.pipe(autoprefixer({
 		grid: true,
 		overrideBrowserslist: ['last 10 versions']

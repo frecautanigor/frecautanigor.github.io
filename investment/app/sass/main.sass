@@ -51,8 +51,14 @@ body
 		padding-right: calc( #{$fields} + 85px )
 		+bp_1366-block()
 			padding-right: calc( #{$fields_bp_1366} + 60px )
+			padding-left: calc( #{$fields_bp_1366} + 240px )
+
+		+xl-block()
+			padding-right: calc( #{$fields_xl} + 60px )
+			padding-left: calc( #{$fields_xl} + 240px )
 		+lg-block()
 			padding-right: $fields_lg
+			padding-left: calc( #{$fields_lg} + 240px )
 		+md-block()
 			padding-right: $fields_md
 		+sm-block()
@@ -179,9 +185,9 @@ body
 		&--item
 			+col()
 			+size(3)
-			+size-md(6)
+			+size-lg(6)
 			+size-sm(12)
-			+md(margin-bottom, 15px)
+			+lg(margin-bottom, 15px)
 			.select .dk-selected
 				height: 30px
 				line-height: 30px
@@ -210,7 +216,7 @@ body
 			+row-flex()
 		&--check
 			+col()
-			+lg(margin-bottom, 15px)
+			margin-bottom: 15px
 		&.disabled
 			+sm-block()
 				&::after
@@ -226,20 +232,23 @@ body
 			.header__filter--check
 				+sm(display, none)
 				pointer-events: none
-				.select .dk-selected
-					color: $g6
+			.dk-select, .dk-select-multi
+				pointer-events: none !important
+			.select .dk-selected
+				color: $g6
+				background-color: transparent
+				border: 1px solid $g6
+			.dk-selected:before
+				opacity: 0
+			.text
+				color: $g6
+			.inputs
+				.input
 					background-color: transparent
 					border: 1px solid $g6
-				.dk-selected:before
-					opacity: 0
-				.text
-					color: $g6
-				.inputs
-					.input
-						background-color: transparent
-						border: 1px solid $g6
-						&::placeholder
-							color: $g6
+					pointer-events: none
+					&::placeholder
+						color: $g6
 
 	&__buttons.hidden
 		display: none
@@ -264,11 +273,74 @@ body
 				color: $w
 				margin-top: 15px
 
+.recent-searches.hidden
+	display: none
+.recent-searches
+	+sm(display, block)
+	display: none
+	.text
+		padding-left: $fields_sm/2
+		padding-right: $fields_sm/2
+		color: $w
+		margin-bottom: 10px
+	&__item
+		border-top: 1px solid $g6
+		border-bottom: 1px solid $g6
+		margin-top: -1px
+		
+	&__link
+		padding-left: $fields_sm/2
+		padding-right: $fields_sm/2
+		color: $w
+		display: block
+		padding-top: 7px
+		padding-bottom: 7px
+		display: flex
+		align-items: center
+		&::before
+			content: ''
+			display: block
+			height: 1px
+			width: 25px
+			background-color: $green
+			margin-right: 10px
+		&:hover
+			background-color: $b
+
+
 // POSITIONS
+.positions-mobile
+	+sm(display, block)
+	display: none
+	.select
+		width: 80%
+		margin-bottom: 20px
+		.dk-option-selected
+			background-color: #e3e3e3
+		&.dk-select-open-down
+			background-color: $green
+			.dk-selected
+				&:before
+					border-top-color: $w !important
+		.dk-selected
+			padding: 0 15px
+			height: 30px
+			line-height: 30px
+			border: 1px solid $green
+			color: $w
+			background-color: transparent
+			border-radius: 0
+			&:before
+				border-top-color: $green !important
 .positions
 	margin-bottom: 50px
+	+sm(max-width, 90%)
+
 	.wrapper__black
 		padding: 90px 0
+		+sm-block()
+			padding: 40px 0
+			background-color: transparent
 	&__slider
 		position: relative
 		&--next, &--previous
@@ -279,12 +351,15 @@ body
 			outline: 0
 			cursor: pointer
 			@extend .trans
+			z-index: 9
 			&:hover
 				color: $green
 		&--next
 			right: -30px
 		&--previous
 			left: -30px
+			+sm(display, none)
+
 		&--title
 			display: flex
 			align-items: center
@@ -332,6 +407,7 @@ body
 		display: flex
 		flex-wrap: wrap
 		margin: 30px 0 !important
+		+sm(display, none)
 		&--li
 			&:not(:last-child)
 				&::after
@@ -347,13 +423,19 @@ body
 
 	&__tags
 		margin: 0 !important
+		+sm(display, flex)
+
 		&__links--link
 			text-decoration: underline
 
 // NOTIFICATION
 .notification
+	.subtitle
+		+sm(display, none)
 	.wrapper__black
 		padding: 50px 0
+		+sm(padding, 20px 0)
+
 	&__title
 		color: $w
 		margin-bottom: 5px
@@ -368,15 +450,26 @@ body
 			margin-right: 50px
 			.btn
 				min-width: 120px
+		+sm(display, block)
 		.input
 			height: 50px
 			width: 280px
 			margin-right: 5px
 			+md(width, 100%)
+			+sm(height, 30px)
+		.btn
+			+sm-block()
+				height: 30px
+				line-height: 30px
+				min-width: 180px
+				margin-top: 20px
+
 
 // SELLERS
 .sellers
 	margin: 85px 0
+	+sm(margin, 30px 0)
+
 	&__list
 		display: flex
 		flex-wrap: wrap
@@ -384,19 +477,58 @@ body
 		margin-right: -10px
 		margin-top: 50px
 		margin-bottom: 25px
-		+md-block()
+		+lg-block()
 			width: 100%
 			justify-content: center
 			margin: 50px auto 25px auto
+		+sm-block()
+			margin-left: -10px
+			margin-right: -10px
+			margin-top: 25px
+			margin-bottom: 25px
 		&--item
 			box-sizing: border-box
 			word-wrap: break-word
 			margin-left: 10px
 			margin-right: 10px
 			width: calc(20% - 20px)
-			+md-block()
+			+lg-block()
 				width: calc(33.33333333333333% - 20px)
 				margin-bottom: 30px
+			+sm-block()
+				width: 100%
+				display: flex
+				margin-bottom: 20px
+				.sellers__list--img
+					height: 100%
+					max-height: 65px
+					max-width: 120px
+					width: 100%
+					margin: 0
+					overflow: hidden
+					&::before
+						display: none
+				.sellers__list--name
+					margin-left: 15px
+					.objects
+						display: flex
+						align-items: center
+						&::before
+							content: ''
+							display: block
+							height: 3px
+							width: 3px
+							background-color: $w
+							border-radius: 50%
+							margin-right: 5px
+					.link
+						display: block
+						text-decoration: underline
+						margin-bottom: 8px
+						margin-top: 3px
+						&:hover
+							color: $green
+
 			&:hover
 				.sellers__list--img
 					&::before
@@ -427,11 +559,36 @@ body
 				@extend .img_resp
 
 // NEWS
+.mobile-news
+	display: none
+	+sm(display, block)
+	&__item
+		margin-bottom: 20px
+
+	&__image
+		width: 100%
+		background-color: $w
+		img
+			width: 100%
+	&__title
+		padding: 15px
+		text-decoration: underline
+		background-color: $b
+		font-size: 17px
+		color: $w
+		@extend .trans
+		&:hover
+			background-color: $green
+	.more
+		margin-bottom: 30px
 .news
 	.title__line
 		margin-bottom: 60px
+		+sm(margin-bottom, 30px)
+
 	&__row
 		margin-bottom: 85px
+		+sm(display, none)
 		.wrapper__col
 			+size(6)
 	&__images
@@ -481,7 +638,7 @@ body
 		margin-left: 11px
 		margin-right: 11px
 		width: calc(25% - 22px)
-		+md-block()
+		+lg-block()
 			width: calc(50% - 22px)
 			margin-bottom: 30px
 
@@ -518,6 +675,8 @@ body
 	margin: 30px 65px 30px 0
 	+bp_1366-block()
 		margin: 30px 40px 30px 0
+	+xl-block()
+		margin: 15px 20px 15px 0
 	+lg-block()
 		display: none
 	
@@ -605,11 +764,12 @@ body
 // NAV
 .nav
 	position: relative
-	min-width: 240px
+	// min-width: 240px
 	max-width: 240px
 	width: 100%
 	color: $w
 	z-index: 2
+	+bp_1366(width, auto)
 	+md-block()
 		display: none
 

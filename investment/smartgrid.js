@@ -11,6 +11,8 @@ module.exports = {
         breakPoints: {
             xl: {
                 width: '1100px',
+                fields: '40px'
+
             },
             lg: {
                 width: '992px',
@@ -30,7 +32,7 @@ module.exports = {
             },
             bp_1366: {
                 width: '1366px',
-                fields: '100px'
+                fields: '20px'
             }
             /* 
             We can create any quantity of break points.
