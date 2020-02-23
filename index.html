@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио - Igor Frecautan</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" href="logo_iF.png" type="image/x-icon">
+    <style>
+        body{
+           
+        position: relative;
+        z-index:1;
+}
+       
+        body::before{
+            content: '';
+            z-index:-1;
+            position:absolute;
+            left:0;
+            top:0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('dot-grid.png');
+            opacity:0.7;
+        }
+        h2 {
+            text-align: center;
+            margin: 50px 0;
+            color: #777;
+        }
+        h6 {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 45px;
+        }
+
+        .social__link {
+			margin: 5px;
+			padding: 5px;
+            text-decoration: none;
+		}
+        .social__link:hover {
+			opacity: 0.7;
+            text-decoration: none;
+		}
+		.social__link img {
+			height: 25px;
+		}
+        .p {
+            color: rgb(255, 35, 35);
+            margin-top: 50px;
+        }
+        .social {
+            margin-bottom: 50px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h2>Страница находится в разработке!</h2>
+                <hr>
+                <h5>Привет, меня зовут Игорь. Я предлагаю свои услуги в сфере веб-разработки.</h5>
+                <h6>Пока я разрабатываю страницу своего портфолио,<br> Вы можете ознакомиться с тем, что я умею:</h6>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-3 col-sm-6">
+                <h4>Design</h4>
+                <ul>
+                    <li>Figma</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Adobe XD</li>
+                    <li>Corel Draw</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Google Web Designer</li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h4>Front-End</h4>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>Vanilla JavaScript</li>
+                    <li>jQuery</li>
+                    <li>Bootstrap 4</li>
+                    <li>Smart-Grid</li>
+                    <li>HTML Email</li>
+                    <li>GULP</li>
+                    <li>SASS & SCSS / LESS / Stylus</li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <h4>Back-End</h4>
+                <ul>
+                    <li>PHP</li>
+                    <li>SQL</li>
+                    <li>Laravel</li>
+                    <li>October CMS</li>
+                    <li>WordPress</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center">
+                <p class="p">Связаться со мной можно через:</p>
+                <div class="social">
+                    <a href="https://vk.com/igorsw" target="_blank" class="social__link">
+                        <img src="img/vk.svg" alt="">
+                    </a>
+                    <a href="https://msng.link/o/?frecautanigor=fm" target="_blank" class="social__link">
+                        <img src="img/fb.svg" alt="">
+                    </a>
+                    <a href="mailto:frecautan.work@gmail.com" target="_blank" class="social__link">
+                        <img src="img/gmail.svg" alt="">
+                    </a>
+                    <a href="viber://chat?number=+37369995882" target="_blank" class="social__link">
+                        <img src="img/viber.svg" alt="">
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=+37369995882" target="_blank" class="social__link">
+                        <img src="img/whatsapp.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
