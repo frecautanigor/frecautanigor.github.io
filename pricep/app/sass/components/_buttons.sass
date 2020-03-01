@@ -1,0 +1,46 @@
+.btn, .btn-small, .btn-dark
+    font-family: 'SourceSansPro', sans-serif
+    font-style: normal
+    font-weight: 600
+    font-size: 14px
+    height: 50px
+    padding: 0 35px
+    line-height: 50px
+    display: block
+    width: max-content
+    border: none
+    color: $w
+    text-decoration: none
+    background-color: $blue
+    text-align: center
+    position: relative
+    outline: none
+    cursor: pointer
+    box-shadow: 0px 10px 20px rgba(59, 198, 228, 0.5)
+    +transition()
+    &:focus, &:hover
+        text-decoration: none
+        color: $w
+        box-shadow: none
+        background-color: $blue-light
+    &:active
+        background-color: $blue-dark
+    &_disabled
+        pointer-events: none
+        background-color: $blue
+        opacity: .3
+
+.btn-small, .btn-dark
+    height: 40px
+    line-height: 40px
+    padding: 0 15px
+
+.btn-dark
+    background-color: $dark
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15)
+    &:focus, &:hover
+        color: $w
+        box-shadow: none
+        background-color: #404040
+    &:active
+        background-color: $dark

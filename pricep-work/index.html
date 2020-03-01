@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Каталог</title>
+	<meta name="description" content="content">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="img/favicon.ico">
+	
+	<link rel="stylesheet" href="css/styles.min.css">
+	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/fcd1b53c03/Pricep/style.css">
+</head>
+
+<body>
+
+	<div id="feedback" class="modal">
+
+		<div class="feedback-modal">
+
+			<div class="feedback-modal__title">Напишите нам</div>
+			<div class="feedback-modal__message">Есть вопросы? Отправьте сообщение и мы ответим вам в ближайжее время.</div>
+
+			<div class="feedback-modal__form">
+				<div class="feedback-modal__text">Ваше сообщение</div>
+				<textarea class="feedback-modal__textarea"></textarea>
+			</div>
+
+			<button class="btn">Отправить</button>
+
+		</div>
+
+	</div>
+
+	<div id="modal" class="modal">
+
+		<div class="product">
+
+			<div class="product__top">
+
+				<div class="product__slider">
+
+					<div class="product__slider-top swiper-container">
+						<div class="swiper-wrapper">
+							<div class="product__slider-top-item swiper-slide">
+								<img src="img/product.jpg" alt="Slide">
+							</div>
+							<div class="product__slider-top-item swiper-slide">
+								<img src="img/product.jpg" alt="Slide">
+							</div>
+							<div class="product__slider-top-item swiper-slide">
+								<img src="img/product.jpg" alt="Slide">
+							</div>
+							<div class="product__slider-top-item swiper-slide">
+								<img src="img/product.jpg" alt="Slide">
+							</div>
+						</div>
+					</div>
+					
+					<div class="product__slider-thumbs swiper-container">
+						<div class="swiper-wrapper">
+							<div class="product__slider-thumbs-item swiper-slide">
+								<img src="img/product.jpg" alt="Slide">
+							</div>
+							<div class="product__slider-thumbs-item swiper-slide">
+								<img src="img/product.jpg" alt="Slide">
+							</div>
+							<div class="product__slider-thumbs-item swiper-slide">
+								<img src="img/product.jpg" alt="Slide">
+							</div>
+							<div class="product__slider-thumbs-item swiper-slide">
+								<img src="img/product.jpg" alt="Slide">
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="product__info">
+
+					<div class="product__info-title">Прицеп бортовой 7161-04 (без тента)</div>
+					<div class="product__info-code">716100</div>
+					<div class="product__info-basket">
+						<div class="product__info-price">34 000 ₽</div>
+						<div class="product__info-buttons">
+
+							<div class="product__counter">
+								<input class="product__counter-input" type="text" value="1">
+								<div class="product__counter-buttons">
+									<button class="product__counter-plus"></button>
+									<button class="product__counter-minus"></button>
+								</div>
+							</div>
+
+							<a href="" class="btn">Добавить к заказу</a>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="tabs">
+
+				<ul class="tabs-caption">
+					<li class="tabs-caption__item tabs-caption__item_active">1-я вкладка</li>
+					<li class="tabs-caption__item">2-я вкладка</li>
+					<li class="tabs-caption__item">3-я вкладка</li>
+					<li class="tabs-caption__item">4-я вкладка</li>
+				</ul>
+
+				<div class="tabs-content tabs-content_active">
+					<p>Содержимое 1 блока</p>
+					<br>
+					<p>Прицеп бортовой с самосвальной платформой, одноосный. Предназначен для перевозки грузов общего назначения, мототехники, снегоходов, квадроциклов.</p>
+					<br>
+
+					<ul class="simple-ul">
+						<li class="simple-ul__item">Рама прицепа оцинкована методом горячего цинкования, с самосвальной системой.</li>
+						<li class="simple-ul__item">Борта прицепа выполнены из оцинкованного листа толщиной 1 мм. Передний и задний борта прицепа открываются.</li>
+						<li class="simple-ul__item">Подвеска прицепа рессорная c гидравлическими амортизаторами.</li>
+						<li class="simple-ul__item">Прицеп комплектуется подкатным колесом.</li>
+					</ul>
+
+				</div>
+
+				<div class="tabs-content">
+					Содержимое 2 блока
+				</div>
+
+				<div class="tabs-content">
+					Содержимое 3 блока
+				</div>
+
+				<div class="tabs-content">
+					Содержимое 4 блока
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="page">
+
+		<nav class="nav">
+
+			<div class="nav-container">
+
+				<div class="nav-top">
+					<a class="logo" href="">
+						<img class="logo__img" src="img/logo.png" alt="">
+					</a>
+					<div class="nav-close"><i class="icon-delete"></i></div>
+				</div>
+	
+				<ul class="nav-menu">
+					<li class="nav-menu__item nav-menu__item_active">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-catalog"></i>
+							Каталог
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-order"></i>
+							Заказы
+							<span class="nav-menu__counter">5</span>
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-profile"></i>
+							Профиль
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link nav-menu__link-basket" href="">
+							<i class="nav-menu__icon icon-basket"></i>
+							<span class="nav-menu__basket">
+								Корзина
+								<span class="nav-menu__price">340 000 ₽</span>
+							</span>
+							<span class="nav-menu__counter">12</span>
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-users"></i>
+							Пользователи
+						</a>
+					</li>
+				</ul>
+	
+				<div class="nav__callback">
+					<div class="nav__callback-text">Есть вопросы?</div>
+					<a class="nav__callback-phone" href="">7 (3412) 90-62-80</a>
+					<a class="nav__callback-message" href="#feedback" rel="modal:open">Напишите нам</a>
+				</div>
+
+			</div>
+
+		</nav>
+	
+		<main class="main">
+
+			<header class="header">
+
+				<div class="header__hamburger"><i class="icon-hamburger"></i></div>
+
+				<div class="header__title">Каталог</div>
+
+				<a class="header__phone" href="">7 (3412) 90-62-80</a>
+
+				<div class="header__notifications">
+
+					<div class="header__notifications-button header__notifications-button_true"><i class="header__notifications-icon icon-bell"></i></div>
+					
+					<ul class="header__notifications-list">
+
+						<li class="header__notifications-top">
+							<div class="header__notifications-top-title">Уведомления</div>	
+							<a class="header__notifications-top-delete" href="">Удалить все</a>	
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_invoice">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">По заказу № 23416 выставлен счет</span>
+								<a class="header__notifications-link" href="">Перейти к заказу</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_stock">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Товар “Прицеп бортовой 7161-00 ИЖ” появился в наличии</span>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_sent">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Заказ № 23410 отправлен</span>
+								<a class="header__notifications-link" href="">Перейти к заказу</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_profile">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Необходимо заполнить профиль</span>
+								<a class="header__notifications-link" href="">Перейти в профиль</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+					</ul>
+
+				</div>
+
+				<a class="header__basket" href="">
+					<i class="header__basket-icon icon-basket"></i>
+					<div class="header__basket-price">340 000 ₽</div>
+					<div class="header__basket-counter">12</div>
+				</a>
+
+				<!-- <a class="header__basket header__basket_disabled" href="">
+					<i class="header__basket-icon icon-basket"></i>
+					<div class="header__basket-empty">Корзина пуста</div>
+				</a> -->
+
+			</header>
+
+			<section class="search">
+				<div class="search__input-block">
+					<input class="search__input" type="text" placeholder="Введите наименование или артикул...">
+					<div class="search__input-reset"></div>
+				</div>
+				<button class="search__button btn">Найти</button>
+			</section>
+
+			<section class="catalog">
+
+				<ul class="catalog-tabs">
+					<li class="catalog-tabs__item" data-filter="all">
+						<img class="catalog-tabs__item-image" src="img/catalog-filter-icons/catalog-all-icon.svg" alt="Icon">
+						<div class="catalog-tabs__item-text">Все</div>
+					</li>
+					<li class="catalog-tabs__item" data-filter=".catalog-trailer">
+						<img class="catalog-tabs__item-image" src="img/catalog-filter-icons/catalog-trailer-icon.svg" alt="Icon">
+						<div class="catalog-tabs__item-text">Легковые прицепы</div>
+					</li>
+					<li class="catalog-tabs__item" data-filter=".catalog-boat-trailer">
+						<img class="catalog-tabs__item-image" src="img/catalog-filter-icons/catalog-boat-trailer-icon.svg" alt="Icon">
+						<div class="catalog-tabs__item-text">Лодочные прицепы</div>
+					</li>
+					<li class="catalog-tabs__item" data-filter=".catalog-wheel">
+						<img class="catalog-tabs__item-image" src="img/catalog-filter-icons/catalog-wheel-icon.svg" alt="Icon">
+						<div class="catalog-tabs__item-text">Дополнительное оборудование</div>
+					</li>
+					<li class="catalog-tabs__item" data-filter=".catalog-new">
+						<img class="catalog-tabs__item-image" src="img/catalog-filter-icons/catalog-new-icon.svg" alt="Icon">
+						<div class="catalog-tabs__item-text">Новинки</div>
+					</li>
+				</ul>
+
+				<!-- Catalog-tabs for Mobile -- when window width is <= 000px -->
+				<div class="catalog-tabs-responsive">
+					<select class="catalog-tabs-select">
+						<option value="all" data-left="img/catalog-filter-icons/catalog-all-icon.svg" selected>Все</option>
+						<option value=".catalog-trailer" data-left="img/catalog-filter-icons/catalog-trailer-icon.svg">Легковые прицепы</option>
+						<option value=".catalog-boat-trailer" data-left="img/catalog-filter-icons/catalog-boat-trailer-icon.svg">Лодочные прицепы</option>
+						<option value=".catalog-wheel" data-left="img/catalog-filter-icons/catalog-wheel-icon.svg">Дополнительное оборудование</option>
+						<option value=".catalog-new" data-left="img/catalog-filter-icons/catalog-new-icon.svg">Новинки</option>
+					</select>
+				</div>
+
+				<ul class="table-headings">
+					<li class="table-headings__item table-headings__item-photo">Фото</li>
+					<li class="table-headings__item table-headings__item-title">Наименование</li>
+					<li class="table-headings__item table-headings__item-code">Артикул</li>
+					<li class="table-headings__item table-headings__item-availability">Наличие</li>
+					<li class="table-headings__item table-headings__item-price">Цена за шт.</li>
+					<li class="table-headings__item table-headings__item-counter">Кол-во</li>
+					<li class="table-headings__item table-headings__item-total">Сумма</li>
+					<li class="table-headings__item table-headings__item-basket">Заказать</li>
+				</ul>
+
+				<ul class="table-list" id="table-catalog">
+
+					<li class="table-list__item catalog-trailer" data-order="1">
+
+						<div class="table-list__item-element">
+							<div class="table-list__item-block">
+								<a class="table-list__image" href="#modal" data-modal>
+									<img class="table-list__img" src="img/product.jpg" alt="Product">
+								</a>
+		
+								<a class="table-list__title" href="#modal" data-modal>Прицеп 716100 (Без тента)</a>
+							</div>
+	
+							<div class="table-list__item-block">
+	
+								<ul class="table-list__info table-list__info-code">
+									<li class="table-list__info-item">Артикул</li>
+									<li class="table-list__info-item">716100</li>
+								</ul>
+	
+								<ul class="table-list__info table-list__info-availability">
+									<li class="table-list__info-item">Наличие</li>
+									<li class="table-list__info-item">
+										<div class="not-available">
+											<div class="not-available__text">Нет в наличии</div>
+											<a class="not-available__notification" href="javascript:void(0);">Уведомить о поступлении</a>
+										</div>
+									</li>
+								</ul>
+	
+								<ul class="table-list__info table-list__info-price">
+									<li class="table-list__info-item">Цена за шт.</li>
+									<li class="table-list__info-item">
+										<div class="table-list__price">34 000 ₽</div>
+									</li>
+								</ul>
+							
+								
+							</div>
+	
+							<div class="table-list__item-block">
+								<div class="table-list__counter">
+									<input class="table-list__counter-input" type="text" value="1">
+									<div class="table-list__counter-buttons">
+										<button class="table-list__counter-plus"></button>
+										<button class="table-list__counter-minus"></button>
+									</div>
+								</div>
+		
+								<div class="table-list__total">34 000 ₽</div>
+		
+								<a class="table-list__btn-detail btn-dark" href="#modal" data-modal>Подробнее</a>
+								<a class="btn-small btn_disabled" href=""><i class="icon-basket"></i></a>
+							</div>
+						</div>
+
+					</li>
+
+					<li class="table-list__item boat-trailer" data-order="2">
+
+						<div class="table-list__item-element">
+							<div class="table-list__item-block">
+								<a class="table-list__image" href="#modal" data-modal>
+									<img class="table-list__img" src="img/product.jpg" alt="Product">
+								</a>
+		
+								<a class="table-list__title" href="#modal" data-modal>Прицеп 716100 (Без тента)</a>
+							</div>
+	
+							<div class="table-list__item-block">
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Артикул</li>
+									<li class="table-list__info-item">716100</li>
+								</ul>
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Наличие</li>
+									<li class="table-list__info-item">Менее 10</li>
+								</ul>
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Цена за шт.</li>
+									<li class="table-list__info-item">
+										<div class="table-list__price-admin">
+											<input class="table-list__price-admin-input" type="text" value="34 000 ₽">
+											<button class="table-list__price-admin-save"></button>
+										</div>
+									</li>
+								</ul>
+							
+								
+							</div>
+	
+							<div class="table-list__item-block">
+								<div class="table-list__counter">
+									<input class="table-list__counter-input" type="text" value="1">
+									<div class="table-list__counter-buttons">
+										<button class="table-list__counter-plus"></button>
+										<button class="table-list__counter-minus"></button>
+									</div>
+								</div>
+		
+								<div class="table-list__total">34 000 ₽</div>
+		
+								<a class="table-list__btn-detail btn-dark" href="#modal" data-modal>Подробнее</a>
+								<a class="btn-small" href=""><i class="icon-basket"></i></a>
+							</div>
+						</div>
+
+					</li>
+
+					<li class="table-list__item catalog-trailer" data-order="3">
+
+						<div class="table-list__item-element">
+							<div class="table-list__item-block">
+								<a class="table-list__image" href="#modal" data-modal>
+									<img class="table-list__img" src="img/product.jpg" alt="Product">
+								</a>
+		
+								<a class="table-list__title" href="#modal" data-modal>Прицеп 716100 (Без тента)</a>
+							</div>
+	
+							<div class="table-list__item-block">
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Артикул</li>
+									<li class="table-list__info-item">716100</li>
+								</ul>
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Наличие</li>
+									<li class="table-list__info-item">Менее 10</li>
+								</ul>
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Цена за шт.</li>
+									<li class="table-list__info-item">
+										<div class="table-list__price">34 000 ₽</div>
+									</li>
+								</ul>
+							
+								
+							</div>
+	
+							<div class="table-list__item-block">
+								<div class="table-list__counter">
+									<input class="table-list__counter-input" type="text" value="1">
+									<div class="table-list__counter-buttons">
+										<button class="table-list__counter-plus"></button>
+										<button class="table-list__counter-minus"></button>
+									</div>
+								</div>
+		
+								<div class="table-list__total">34 000 ₽</div>
+		
+								<a class="table-list__btn-detail btn-dark" href="#modal" data-modal>Подробнее</a>
+								<a class="btn-small" href=""><i class="icon-basket"></i></a>
+							</div>
+						</div>
+
+					</li>
+
+					<li class="table-list__item catalog-wheel" data-order="4">
+
+						<div class="table-list__item-element">
+							<div class="table-list__item-block">
+								<a class="table-list__image" href="#modal" data-modal>
+									<img class="table-list__img" src="img/product.jpg" alt="Product">
+								</a>
+		
+								<a class="table-list__title" href="#modal" data-modal>Прицеп 716100 (Без тента)</a>
+							</div>
+	
+							<div class="table-list__item-block">
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Артикул</li>
+									<li class="table-list__info-item">716100</li>
+								</ul>
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Наличие</li>
+									<li class="table-list__info-item">
+										<div class="not-available">
+											<div class="not-available__text">Нет в наличии</div>
+											<a class="not-available__notification not-available__notification_check" href="javascript:void(0);">Уведомить о поступлении</a>
+										</div>
+									</li>
+								</ul>
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Цена за шт.</li>
+									<li class="table-list__info-item">
+										<div class="table-list__price">34 000 ₽</div>
+									</li>
+								</ul>
+							
+								
+							</div>
+	
+							<div class="table-list__item-block">
+								<div class="table-list__counter">
+									<input class="table-list__counter-input" type="text" value="1">
+									<div class="table-list__counter-buttons">
+										<button class="table-list__counter-plus"></button>
+										<button class="table-list__counter-minus"></button>
+									</div>
+								</div>
+		
+								<div class="table-list__total">34 000 ₽</div>
+		
+								<a class="table-list__btn-detail btn-dark" href="#modal" data-modal>Подробнее</a>
+								<a class="btn-small btn_disabled" href=""><i class="icon-basket"></i></a>
+							</div>
+						</div>
+
+					</li>
+
+					<li class="table-list__item catalog-new" data-order="5">
+
+						<div class="table-list__item-element">
+							<div class="table-list__item-block">
+								<a class="table-list__image" href="#modal" data-modal>
+									<img class="table-list__img" src="img/product.jpg" alt="Product">
+								</a>
+		
+								<a class="table-list__title" href="#modal" data-modal>Прицеп 716100 (Без тента)</a>
+							</div>
+	
+							<div class="table-list__item-block">
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Артикул</li>
+									<li class="table-list__info-item">716100</li>
+								</ul>
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Наличие</li>
+									<li class="table-list__info-item">Менее 10</li>
+								</ul>
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Цена за шт.</li>
+									<li class="table-list__info-item">
+										<div class="table-list__price">34 000 ₽</div>
+									</li>
+								</ul>
+							
+								
+							</div>
+	
+							<div class="table-list__item-block">
+								<div class="table-list__counter">
+									<input class="table-list__counter-input" type="text" value="1">
+									<div class="table-list__counter-buttons">
+										<button class="table-list__counter-plus"></button>
+										<button class="table-list__counter-minus"></button>
+									</div>
+								</div>
+		
+								<div class="table-list__total">34 000 ₽</div>
+		
+								<a class="table-list__btn-detail btn-dark" href="#modal" data-modal>Подробнее</a>
+								<a class="btn-small" href=""><i class="icon-basket"></i></a>
+							</div>
+						</div>
+
+					</li>
+
+					<li class="table-list__item catalog-boat-trailer" data-order="6">
+
+						<div class="table-list__item-element">
+							<div class="table-list__item-block">
+								<a class="table-list__image" href="#modal" data-modal>
+									<img class="table-list__img" src="img/product.jpg" alt="Product">
+								</a>
+		
+								<a class="table-list__title" href="#modal" data-modal>Прицеп 716100 (Без тента)</a>
+							</div>
+	
+							<div class="table-list__item-block">
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Артикул</li>
+									<li class="table-list__info-item">716100</li>
+								</ul>
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Наличие</li>
+									<li class="table-list__info-item">Менее 10</li>
+								</ul>
+	
+								<ul class="table-list__info">
+									<li class="table-list__info-item">Цена за шт.</li>
+									<li class="table-list__info-item">
+										<div class="table-list__price">34 000 ₽</div>
+									</li>
+								</ul>
+							
+								
+							</div>
+	
+							<div class="table-list__item-block">
+								<div class="table-list__counter">
+									<input class="table-list__counter-input" type="text" value="1">
+									<div class="table-list__counter-buttons">
+										<button class="table-list__counter-plus"></button>
+										<button class="table-list__counter-minus"></button>
+									</div>
+								</div>
+		
+								<div class="table-list__total">34 000 ₽</div>
+		
+								<a class="table-list__btn-detail btn-dark" href="#modal" data-modal>Подробнее</a>
+								<a class="btn-small" href=""><i class="icon-basket"></i></a>
+							</div>
+						</div>
+
+					</li>
+
+				</ul>
+
+			</section>
+
+		</main>
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
