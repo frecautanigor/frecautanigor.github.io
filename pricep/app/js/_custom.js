@@ -220,7 +220,8 @@ $(document).ready(function() {
 
 	
 	$('.date__input').datepick({
-		dateFormat: 'dd/mm/yy'
+		dateFormat: 'dd/mm/yy',
+		showOptions: 'blind'
 	});
 
 	
