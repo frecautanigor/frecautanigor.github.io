@@ -1,0 +1,43 @@
+.line-link,
+.line-link-inversion
+    max-width: max-content
+    color: $blue
+    &::after
+        content: ''
+        display: block
+        height: 1px
+        width: 100%
+        margin: 0 auto
+        background-color: $blue
+        +transition()
+    &:hover
+        color: $blue
+        &::after
+            width: 0
+.line-link-inversion
+    &::after
+        width: 0
+    &:hover
+        &::after
+            width: 100%
+
+.padding-margin
+    padding: 0 30px
+
+.scrollbar-hidden
+    ::-webkit-scrollbar
+        display: none !important
+    ::-webkit-scrollbar-button
+        display: none !important
+    ::-webkit-scrollbar-track
+        display: none !important
+    ::-webkit-scrollbar-track-piece
+        display: none !important
+    ::-webkit-scrollbar-thumb
+        display: none !important
+    ::-webkit-scrollbar-corner
+        display: none !important
+    ::-webkit-resizer
+        display: none !important
+    scrollbar-color: transparent transparent !important
+    scrollbar-width: none !important

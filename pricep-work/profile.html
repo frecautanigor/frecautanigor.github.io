@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Заказы</title>
+	<meta name="description" content="content">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="img/favicon.ico">
+	
+	<link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+
+	<div id="feedback" class="modal">
+
+		<div class="feedback-modal">
+
+			<div class="feedback-modal__title">Напишите нам</div>
+			<div class="feedback-modal__message">Есть вопросы? Отправьте сообщение и мы ответим вам в ближайжее время.</div>
+
+			<div class="feedback-modal__form">
+				<div class="feedback-modal__text">Ваше сообщение</div>
+				<textarea class="feedback-modal__textarea"></textarea>
+			</div>
+
+			<button class="btn">Отправить</button>
+
+		</div>
+
+	</div>
+
+	<div class="page">
+
+		<nav class="nav">
+
+			<div class="nav-container">
+
+				<div class="nav-top">
+					<a class="logo" href="">
+						<img class="logo__img" src="img/logo.png" alt="">
+					</a>
+					<div class="nav-close"><i class="icon-delete"></i></div>
+				</div>
+	
+				<ul class="nav-menu">
+					<li class="nav-menu__item nav-menu__item_active">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-catalog"></i>
+							Каталог
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-order"></i>
+							Заказы
+							<span class="nav-menu__counter">5</span>
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-profile"></i>
+							Профиль
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link nav-menu__link-basket" href="">
+							<i class="nav-menu__icon icon-basket"></i>
+							<span class="nav-menu__basket">
+								Корзина
+								<span class="nav-menu__price">340 000 ₽</span>
+							</span>
+							<span class="nav-menu__counter">12</span>
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-users"></i>
+							Пользователи
+						</a>
+					</li>
+				</ul>
+	
+				<div class="nav__callback">
+					<div class="nav__callback-text">Есть вопросы?</div>
+					<a class="nav__callback-phone" href="">7 (3412) 90-62-80</a>
+					<a class="nav__callback-message" href="#feedback" rel="modal:open">Напишите нам</a>
+				</div>
+
+			</div>
+
+		</nav>
+	
+		<main class="main">
+
+			<header class="header">
+
+				<div class="header__hamburger"><i class="icon-hamburger"></i></div>
+
+				<div class="header__title">Профиль</div>
+
+				<a class="header__phone" href="">7 (3412) 90-62-80</a>
+
+				<div class="header__notifications">
+
+					<div class="header__notifications-button header__notifications-button_true"><i class="header__notifications-icon icon-bell"></i></div>
+					
+					<ul class="header__notifications-list">
+
+						<li class="header__notifications-top">
+							<div class="header__notifications-top-title">Уведомления</div>	
+							<a class="header__notifications-top-delete" href="">Удалить все</a>	
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_invoice">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">По заказу № 23416 выставлен счет</span>
+								<a class="header__notifications-link" href="">Перейти к заказу</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_stock">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Товар “Прицеп бортовой 7161-00 ИЖ” появился в наличии</span>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_sent">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Заказ № 23410 отправлен</span>
+								<a class="header__notifications-link" href="">Перейти к заказу</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_profile">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Необходимо заполнить профиль</span>
+								<a class="header__notifications-link" href="">Перейти в профиль</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+					</ul>
+
+				</div>
+
+				<a class="header__basket" href="">
+					<i class="header__basket-icon icon-basket"></i>
+					<div class="header__basket-price">340 000 ₽</div>
+					<div class="header__basket-counter">12</div>
+				</a>
+
+				<!-- <a class="header__basket header__basket_disabled" href="">
+					<i class="header__basket-icon icon-basket"></i>
+					<div class="header__basket-empty">Корзина пуста</div>
+				</a> -->
+
+			</header>
+
+			<section class="profile">
+
+				<div class="profile__wrapper">
+
+					<div class="profile__left">
+
+						<div class="input">
+							<div class="input__text">Ф.И.О.</div>
+							<input class="input__field" type="text" id="input_1">
+							<label class="input__error" for="input_1">Необходимо заполнить это поле</label>
+						</div>
+
+						<div class="input">
+							<div class="input__text">Номер телефона</div>
+							<input class="input__field" type="text" id="input_2">
+							<label class="input__error" for="input_2">Необходимо заполнить это поле</label>
+						</div>
+
+						<div class="input">
+							<div class="input__text">Город</div>
+							<input class="input__field" type="text" id="input_3">
+							<label class="input__error" for="input_3">Необходимо заполнить это поле</label>
+						</div>
+
+						<div class="input">
+							<div class="input__text">ИНН организации</div>
+							<input class="input__field" type="text" id="input_4">
+							<label class="input__error" for="input_4">Необходимо заполнить это поле</label>
+						</div>
+
+						<div class="input">
+							<div class="input__text">Наименование организации или ФИО ИП</div>
+							<input class="input__field" type="text" id="input_5">
+							<label class="input__error" for="input_5">Необходимо заполнить это поле</label>
+						</div>
+
+						<div class="input">
+							<div class="input__text">Адрес доставки</div>
+							<input class="input__field" type="text" id="input_6">
+							<label class="input__error" for="input_6">Необходимо заполнить это поле</label>
+						</div>
+
+						<div class="input">
+							<div class="input__text">Адрес регистрации</div>
+							<input class="input__field" type="text" id="input_7">
+							<label class="input__error" for="input_7">Необходимо заполнить это поле</label>
+						</div>
+
+						<button class="btn">Сохранить</button>
+
+					</div>
+
+					<div class="profile__right">
+
+						<div class="profile__right-block">
+							<div class="upload">
+
+								<div class="upload__title">Загрузить документы</div>
+	
+								<div class="upload__dropzone">
+									<div class="upload__dropzone-content">
+										<i class="icon-doc upload__dropzone-icon"></i>
+										<div class="upload__dropzone-text">Перенесите файл в эту область, или <b class="text-blue">выберите вручную</b></div>
+									</div>
+								</div>
+	
+								<form action="/download" class="dropzone" id="dropzone">
+									<input class="upload__input" type="file" name="file">
+								</form>
+	
+								<div class="upload__progress">
+	
+									<div class="upload__progress-title">
+										
+										<div class="upload__progress-name">
+											<div class="upload__progress-check"><i class="icon-check"></i></div>
+											Загрузка scan.jpg
+										</div>
+										<button class="upload__progress-cancel"><i class="icon-delete"></i>Отмена</button>
+									</div>
+	
+									<div class="upload__progress-bar">
+										<div class="upload__progress-percent">51%</div>
+										<div class="upload__progress-loading">
+											<div class="loading" style="width: 51%;"></div>
+										</div>
+									</div>
+	
+	
+								</div>
+	
+								<div class="upload__progress">
+	
+									<div class="upload__progress-title">
+										<div class="upload__progress-name">
+											<div class="upload__progress-check" style="display: block;"><i class="icon-check"></i></div>
+											Test__001_2143234.docx
+										</div>
+										<button class="upload__progress-delete"><i class="icon-recycle-bin"></i>Удалить</button>
+									</div>
+	
+								</div>
+	
+								<div class="upload__progress">
+	
+									<div class="upload__progress-title">
+										<div class="upload__progress-name">
+											<div class="upload__progress-check" style="display: block;"><i class="icon-check"></i></div>
+											Реквизиты_2143234.pdf
+										</div>
+										<button class="upload__progress-delete"><i class="icon-recycle-bin"></i>Удалить</button>
+									</div>
+	
+								</div>
+	
+							</div>
+						</div>
+
+						<div class="profile__right-block">
+							
+							<div class="profile__title">Загрузить документы</div>
+
+							<div class="input">
+								<div class="input__text">Скидка</div>
+								<input class="input__field" type="text">
+							</div>
+
+							<div class="input">
+								<div class="input__text">Стоимость доставки</div>
+								<input class="input__field" type="text">
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="profile__buttons">
+					<a href="" class="btn">Сохранить</a>
+					<a href="" class="btn-dark">Сохранить и запретить изменения</a>
+				</div>
+
+			</section>
+
+		</main>
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

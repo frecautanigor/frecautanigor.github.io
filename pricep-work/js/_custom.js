@@ -1,3 +1,4 @@
+Dropzone.autoDiscover = false;
 $(document).ready(function() {
 	
 	// NAV
@@ -14,6 +15,10 @@ $(document).ready(function() {
 	// NOTIFICATIONS
 	$('.header__notifications-button').click(function () {
 		$(this).toggleClass('header__notifications-button_active');
+		$('.header__notifications-list').fadeToggle();
+	});
+	$('.header__notifications-top-close').click(function () {
+		$('.header__notifications-button').toggleClass('header__notifications-button_active');
 		$('.header__notifications-list').fadeToggle();
 	});
 
@@ -119,6 +124,35 @@ $(document).ready(function() {
 		$(this).addClass('not-available__notification_check');
 	});
 
+	
+
+// 	var mh = 0;
+//    $(".table-list__title").each(function () {
+//        var h_block = $(this).offset().left;
+//        if(h_block > mh) {
+//           mh = h_block;
+// 	   };
+// 	   console.log( $( this ).text() + " - height = " + mh);
+	   
+
+//    });
+//    $(".table-list__title").height(mh);
+
+	$(function() {
+	var mh = 0;
+
+		$( ".table-list__title" ).each(function( index ) {
+			console.log( index + ": " + $( this ).text() );
+			console.log( $(this).offset().left );
+			
+			var h_block = $(this).offset().left;
+			if(h_block > mh) {
+				mh = h_block;
+			}
+	
+		  });
+	});
+
 	// TABS-TITLE
 	function tabsTitle() {
 		$(function() {
@@ -188,6 +222,42 @@ $(document).ready(function() {
 		 
 		});
 		})(jQuery);
+		
+	(function($) {
+		$(function() {
+		 
+		  $('.tabs-caption').on('click', '.tabs-caption__item:not(.tabs-caption__item_active)', function() {
+			$(this)
+			  .addClass('tabs-caption__item_active').siblings().removeClass('tabs-caption__item_active')
+			  .closest('.tabs').find('div.tabs-content').removeClass('tabs-content_active').eq($(this).index()).addClass('tabs-content_active');
+		  });
+		 
+		});
+		})(jQuery);
+
+	
+	$('.date__input').datepick({
+		dateFormat: 'dd/mm/yy',
+		showOptions: 'blind'
+	});
+
+
+	$('.datepick').on("DOMNodeInserted", function (event) { 
+		$('.date__button').appendTo('.datepick');
+	 });
+
+	 if ($('#dropzone').length) {
+		 var dropzone = new Dropzone("#dropzone", {
+        addRemoveLinks: true,
+        dictRemoveFile: "",
+		url: "/download",
+		dictDefaultMessage: 'Перенесите файл в эту область, или <b style="color: #3BC6E4; font-weight: 600;">выберите вручную</b>',
+		dictCancelUploadConfirmation: 'Вы уверены что хотите отменить загрузку?'
+      });
+	 }
+
+	 
+
 
 	
 

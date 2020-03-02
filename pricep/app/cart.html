@@ -13,7 +13,6 @@
 	<link rel="icon" href="img/favicon.ico">
 	
 	<link rel="stylesheet" href="css/styles.min.css">
-	<link rel="stylesheet" href="https://i.icomoon.io/public/temp/692858d770/Pricep/style.css">
 </head>
 
 <body>
@@ -22,7 +21,10 @@
 
 		<div class="feedback-modal">
 
-			<div class="feedback-modal__title">Напишите нам</div>
+			<div class="feedback-modal__title">
+				<a href="#" class="back-and-close" rel="modal:close"><i class="icon-arrow-left"></i></a>
+				Напишите нам
+			</div>
 			<div class="feedback-modal__message">Есть вопросы? Отправьте сообщение и мы ответим вам в ближайжее время.</div>
 
 			<div class="feedback-modal__form">
@@ -31,117 +33,6 @@
 			</div>
 
 			<button class="btn">Отправить</button>
-
-		</div>
-
-	</div>
-
-	<div id="modal" class="modal">
-
-		<div class="product">
-
-			<div class="product__top">
-
-				<div class="product__slider">
-
-					<div class="product__slider-top swiper-container">
-						<div class="swiper-wrapper">
-							<div class="product__slider-top-item swiper-slide">
-								<img src="img/product.jpg" alt="Slide">
-							</div>
-							<div class="product__slider-top-item swiper-slide">
-								<img src="img/product.jpg" alt="Slide">
-							</div>
-							<div class="product__slider-top-item swiper-slide">
-								<img src="img/product.jpg" alt="Slide">
-							</div>
-							<div class="product__slider-top-item swiper-slide">
-								<img src="img/product.jpg" alt="Slide">
-							</div>
-						</div>
-					</div>
-					
-					<div class="product__slider-thumbs swiper-container">
-						<div class="swiper-wrapper">
-							<div class="product__slider-thumbs-item swiper-slide">
-								<img src="img/product.jpg" alt="Slide">
-							</div>
-							<div class="product__slider-thumbs-item swiper-slide">
-								<img src="img/product.jpg" alt="Slide">
-							</div>
-							<div class="product__slider-thumbs-item swiper-slide">
-								<img src="img/product.jpg" alt="Slide">
-							</div>
-							<div class="product__slider-thumbs-item swiper-slide">
-								<img src="img/product.jpg" alt="Slide">
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="product__info">
-
-					<div class="product__info-title">Прицеп бортовой 7161-04 (без тента)</div>
-					<div class="product__info-code">716100</div>
-					<div class="product__info-basket">
-						<div class="product__info-price">34 000 ₽</div>
-						<div class="product__info-buttons">
-
-							<div class="product__counter">
-								<input class="product__counter-input" type="text" value="1">
-								<div class="product__counter-buttons">
-									<button class="product__counter-plus"></button>
-									<button class="product__counter-minus"></button>
-								</div>
-							</div>
-
-							<a href="" class="btn">Добавить к заказу</a>
-
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="tabs">
-
-				<ul class="tabs-caption">
-					<li class="tabs-caption__item tabs-caption__item_active">1-я вкладка</li>
-					<li class="tabs-caption__item">2-я вкладка</li>
-					<li class="tabs-caption__item">3-я вкладка</li>
-					<li class="tabs-caption__item">4-я вкладка</li>
-				</ul>
-
-				<div class="tabs-content tabs-content_active">
-					<p>Содержимое 1 блока</p>
-					<br>
-					<p>Прицеп бортовой с самосвальной платформой, одноосный. Предназначен для перевозки грузов общего назначения, мототехники, снегоходов, квадроциклов.</p>
-					<br>
-
-					<ul class="simple-ul">
-						<li class="simple-ul__item">Рама прицепа оцинкована методом горячего цинкования, с самосвальной системой.</li>
-						<li class="simple-ul__item">Борта прицепа выполнены из оцинкованного листа толщиной 1 мм. Передний и задний борта прицепа открываются.</li>
-						<li class="simple-ul__item">Подвеска прицепа рессорная c гидравлическими амортизаторами.</li>
-						<li class="simple-ul__item">Прицеп комплектуется подкатным колесом.</li>
-					</ul>
-
-				</div>
-
-				<div class="tabs-content">
-					Содержимое 2 блока
-				</div>
-
-				<div class="tabs-content">
-					Содержимое 3 блока
-				</div>
-
-				<div class="tabs-content">
-					Содержимое 4 блока
-				</div>
-
-			</div>
 
 		</div>
 
@@ -224,8 +115,11 @@
 					
 					<ul class="header__notifications-list">
 
-						<li class="header__notifications-top">
-							<div class="header__notifications-top-title">Уведомления</div>	
+						<li class="header__notifications-top">		
+							<div class="header__notifications-top-title">
+								<div class="header__notifications-top-close back-and-close"><i class="icon-arrow-left"></i></div>
+								Уведомления
+							</div>	
 							<a class="header__notifications-top-delete" href="">Удалить все</a>	
 						</li>
 
