@@ -51,6 +51,9 @@ gulp.task('scripts', function() {
 		'app/libs/jquery.modal/jquery.modal.min.js',
 		'app/libs/jquery.selectator/fm.selectator.jquery.js',
 		'app/libs/jquery.mixitup/jquery.mixitup.min.js',
+		'app/libs/jquery.datepick/js/jquery.plugin.min.js',
+		'app/libs/jquery.datepick/js/jquery.datepick.min.js',
+		'app/libs/jquery.datepick/js/jquery.datepick-ru.js',
 		// 'app/libs/lightslider/master/dist/js/lightslider.min.js',
 		
 		'app/js/_libs.js', // JS libraries (all in one)

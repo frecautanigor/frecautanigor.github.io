@@ -1,4 +1,4 @@
-.btn, .btn-small, .btn-dark
+.btn, .btn-small, .btn-dark, .btn-delete
     font-family: 'SourceSansPro', sans-serif
     font-style: normal
     font-weight: 600
@@ -30,7 +30,7 @@
         background-color: $blue
         opacity: .3
 
-.btn-small, .btn-dark
+.btn-small, .btn-dark, .btn-delete
     height: 40px
     line-height: 40px
     padding: 0 15px
@@ -44,3 +44,14 @@
         background-color: #404040
     &:active
         background-color: $dark
+
+.btn-delete
+    color: $red
+    background-color: rgba($red, 0.1)
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.015)
+    &:focus, &:hover
+        color: $w
+        box-shadow: none
+        background-color: $red
+    &:active
+        background-color: #EA3C3C
