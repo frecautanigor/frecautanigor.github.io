@@ -127,12 +127,10 @@ button.datepick-cmd
 .datepick-month
   float: left
   width: 100%
-  border: 1px solid #444
   text-align: center
 
 .datepick-month-header
   height: 1.5em
-  background-color: #444
   color: #fff
   font-weight: bold
 
@@ -179,7 +177,7 @@ button.datepick-cmd
       color: #fff
 
   td
-    background-color: #eee
+    // background-color: #eee
 
     &.datepick-week
 
@@ -204,17 +202,19 @@ button.datepick-cmd
     span
       color: #888
 
+    .datepick-weekend
+      background-color: rgba($blue, .1)
+
     .datepick-other-month
       background-color: transparent
 
-    .datepick-weekend
-      background-color: rgba($blue, .1)
+    
 
     .datepick-today
       background-color: #f0c0c0
 
     .datepick-highlight
-      background-color: #f08080
+      background-color: $blue
 
     .datepick-selected
       background-color: #777
