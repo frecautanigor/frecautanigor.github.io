@@ -362,6 +362,9 @@ body
 	// .header__notifications
 	&__notifications
 		position: relative
+		+media-breakpoint-down(sm)
+			margin-left: auto
+			margin-right: 20px
 		+media-breakpoint-down(xs)
 			position: static
 
@@ -525,6 +528,11 @@ body
 			box-shadow: none
 		+media-breakpoint-down(lg)
 			height: 34px
+		+media-breakpoint-down(xs)
+			width: 34px
+			padding: 0
+			justify-content: center
+			margin-left: 0
 
 		// .header__basket_active
 		&_active
@@ -541,11 +549,16 @@ body
 		font-size: 17px
 		color: $blue
 		margin-right: 10px
+		+media-breakpoint-down(xs)
+			margin-right: 0
 
 	// .header__basket-price
 	&__basket-price
 		font-size: 14px
 		min-width: max-content
+		+media-breakpoint-down(xs)
+			display: none
+
 
 	// .header__basket-empty
 	&__basket-empty
@@ -576,9 +589,16 @@ body
 			color: $blue
 
 .search
+	position: relative
 	display: flex
 	@extend .padding-margin
 	margin-top: 30px
+	+media-breakpoint-down(sm)
+		margin: 15px
+		padding: 0
+	+media-breakpoint-down(xs)
+		margin: 0
+		padding: 0
 
 	// .search__input-block
 	&__input-block
@@ -607,6 +627,32 @@ body
 			border-right: none
 			.search__input-reset
 				opacity: 1
+		+media-breakpoint-down(xs)
+			padding-right: 70px
+			&:focus-within
+				border: 1px solid transparent
+
+	// .search__button
+	&__button
+		+media-breakpoint-down(xs)
+			position: absolute
+			padding: 0
+			right: 15px
+			top: 8px
+			&.btn
+				min-width: 34px
+				max-width: 34px
+				height: 34px
+				line-height: 34px
+				width: 100%
+				padding: 0
+		.icon-search
+			display: none
+			+media-breakpoint-down(xs)
+				display: block
+		.text
+			+media-breakpoint-down(xs)
+				display: none
 
 	// .search__input
 	&__input
@@ -637,18 +683,26 @@ body
 // CATALOG
 .catalog
 	@extend .padding-margin
+	+media-breakpoint-down(sm)
+		padding: 0
+		margin: 15px
 
 
 // CATALOG-SELECT
 .catalog-tabs-responsive
 	margin: 20px 0
 	display: none
+	+media-breakpoint-down(sm)
+		display: block
+		margin: 15px 0
 
 // TABS
 .catalog-tabs
 	display: flex
 	align-items: center
 	margin: 20px 0
+	+media-breakpoint-down(sm)
+		display: none
 
 	// .catalog-tabs__item
 	&__item
@@ -1738,16 +1792,43 @@ body
 
 .profile
 	margin: 30px
+	+media-breakpoint-down(sm)
+		margin: 15px
+	.tabs-content
+		display: block
+		+media-breakpoint-down(sm)
+			max-width: 100%
+			display: none
+			&.tabs-content_active
+				display: block
+	.tabs-caption
+		display: none
+		+media-breakpoint-down(sm)
+			display: flex
+			.tabs-caption__item
+				margin-right: 30px
+		+media-breakpoint-down(xs)
+			.tabs-caption__item
+				margin-right: auto
 
 	// .profile__buttons
 	&__buttons
 		display: flex
+		+media-breakpoint-down(xs)
+			flex-direction: column
 		.btn,
 		.btn-dark
 			margin-right: 20px
 			margin-top: 20px
 			height: 50px
 			line-height: 50px
+			+media-breakpoint-down(xs)
+				width: 100%
+				height: 40px
+				margin-right: 0
+				margin-top: 10px
+				line-height: 40px
+
 
 
 	// .profile__title
@@ -1761,32 +1842,38 @@ body
 		display: flex
 		justify-content: space-between
 		margin-top: 30px
+		+media-breakpoint-down(sm)
+			margin-top: 15px
+
 
 	// .profile__left, .profile__right
-	&__left
-		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05)
-		background-color: $w
-		padding: 30px
+	&__left, &__right
 		height: 100%
 		width: 100%
-
 
 	// .profile__left
 	&__left
 		margin-right: 20px
+		+media-breakpoint-down(sm)
+			margin-right: 0
 
-	// .profile__right
-	&__right
-		height: 100%
-		width: 100%
 
 	// .profile__right-blcok
-	&__right-block
+	&__right-block, &__left-block
 		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05)
 		background-color: $w
 		padding: 30px
 		width: 100%
 		margin-bottom: 20px
+
+	&__left-block.profile__discount
+		display: none
+	+media-breakpoint-down(sm)
+		&__left-block.profile__discount
+			display: block
+		&__right-block.profile__discount
+			display: none
+
 
 .input
 	margin-bottom: 20px
@@ -1850,6 +1937,8 @@ body
 		flex-direction: column
 		justify-content: center
 		align-items: center
+		padding: 10px
+		text-align: center
 		
 	// .upload__dropzone-icon
 	&__dropzone-icon
@@ -1974,6 +2063,11 @@ body
 
 .users
 	margin: 30px
+	+media-breakpoint-down(sm)
+		.search__input
+			padding-right: 0
+		.search__input-block
+			padding-right: 18px
 
 	.search
 		margin: 0
@@ -1987,6 +2081,8 @@ body
 	&__top
 		display: flex
 		justify-content: space-between
+		+media-breakpoint-down(sm)
+			flex-direction: column
 
 	// .users__top-block
 	&__top-block
@@ -1994,6 +2090,8 @@ body
 		&:first-child
 			width: 100%
 			margin-right: 20px
+		+media-breakpoint-down(sm)
+			margin-bottom: 15px
 			
 
 	// .users__top-text
@@ -2001,8 +2099,17 @@ body
 		color: rgba($dark, .5)
 		margin-bottom: 5px
 
-
-	.selectator
+	.single .selectator_selected_items .selectator_selected_item .selectator_selected_item_left img
+		height: 15px
+		margin-top: 5px
+	.single .selectator_selected_items .selectator_selected_item .selectator_selected_item_title
+		margin-left: 5px
+	.single .selectator_selected_items .selectator_selected_item .selectator_selected_item_left
+		width: auto
+	.selectator_options .selectator_option .selectator_option_left
+		width: auto
+	.selectator_options .selectator_option .selectator_option_left
+		margin-top: 5px
 
 
 

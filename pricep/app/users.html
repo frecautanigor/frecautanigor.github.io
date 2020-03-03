@@ -21,7 +21,10 @@
 
 		<div class="feedback-modal">
 
-			<div class="feedback-modal__title">Напишите нам</div>
+			<div class="feedback-modal__title">
+				<a href="#" class="back-and-close" rel="modal:close"><i class="icon-arrow-left"></i></a>
+				Напишите нам
+			</div>
 			<div class="feedback-modal__message">Есть вопросы? Отправьте сообщение и мы ответим вам в ближайжее время.</div>
 
 			<div class="feedback-modal__form">
@@ -112,8 +115,11 @@
 					
 					<ul class="header__notifications-list">
 
-						<li class="header__notifications-top">
-							<div class="header__notifications-top-title">Уведомления</div>	
+						<li class="header__notifications-top">		
+							<div class="header__notifications-top-title">
+								<div class="header__notifications-top-close back-and-close"><i class="icon-arrow-left"></i></div>
+								Уведомления
+							</div>	
 							<a class="header__notifications-top-delete" href="">Удалить все</a>	
 						</li>
 
@@ -154,14 +160,10 @@
 
 				<a class="header__basket" href="">
 					<i class="header__basket-icon icon-basket"></i>
-					<div class="header__basket-price">340 000 ₽</div>
-					<div class="header__basket-counter">12</div>
+					<div class="header__basket-price">
+						<div class="header__basket-empty">Корзина пуста</div>
+					</div>
 				</a>
-
-				<!-- <a class="header__basket header__basket_disabled" href="">
-					<i class="header__basket-icon icon-basket"></i>
-					<div class="header__basket-empty">Корзина пуста</div>
-				</a> -->
 
 			</header>
 
@@ -176,7 +178,6 @@
 						<div class="search">
 							<div class="search__input-block">
 								<input class="search__input" type="text" placeholder="Начните вводить Ф.И.О.">
-								<div class="search__input-reset"></div>
 							</div>
 						</div>
 						

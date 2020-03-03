@@ -21,7 +21,10 @@
 
 		<div class="feedback-modal">
 
-			<div class="feedback-modal__title">Напишите нам</div>
+			<div class="feedback-modal__title">
+				<a href="#" class="back-and-close" rel="modal:close"><i class="icon-arrow-left"></i></a>
+				Напишите нам
+			</div>
 			<div class="feedback-modal__message">Есть вопросы? Отправьте сообщение и мы ответим вам в ближайжее время.</div>
 
 			<div class="feedback-modal__form">
@@ -112,8 +115,11 @@
 					
 					<ul class="header__notifications-list">
 
-						<li class="header__notifications-top">
-							<div class="header__notifications-top-title">Уведомления</div>	
+						<li class="header__notifications-top">		
+							<div class="header__notifications-top-title">
+								<div class="header__notifications-top-close back-and-close"><i class="icon-arrow-left"></i></div>
+								Уведомления
+							</div>	
 							<a class="header__notifications-top-delete" href="">Удалить все</a>	
 						</li>
 
@@ -154,70 +160,91 @@
 
 				<a class="header__basket" href="">
 					<i class="header__basket-icon icon-basket"></i>
-					<div class="header__basket-price">340 000 ₽</div>
-					<div class="header__basket-counter">12</div>
+					<div class="header__basket-price">
+						<div class="header__basket-empty">Корзина пуста</div>
+					</div>
 				</a>
-
-				<!-- <a class="header__basket header__basket_disabled" href="">
-					<i class="header__basket-icon icon-basket"></i>
-					<div class="header__basket-empty">Корзина пуста</div>
-				</a> -->
 
 			</header>
 
-			<section class="profile">
+			<section class="profile tabs">
+
+				<ul class="tabs-caption">
+					<li class="tabs-caption__item tabs-caption__item_active">Личная информация</li>
+					<li class="tabs-caption__item">Документы</li>
+				</ul>
 
 				<div class="profile__wrapper">
 
-					<div class="profile__left">
+					<div class="profile__left tabs-content tabs-content_active">
 
-						<div class="input">
-							<div class="input__text">Ф.И.О.</div>
-							<input class="input__field" type="text" id="input_1">
-							<label class="input__error" for="input_1">Необходимо заполнить это поле</label>
+						<div class="profile__left-block">
+
+							<div class="input">
+								<div class="input__text">Ф.И.О.</div>
+								<input class="input__field" type="text" id="input_1">
+								<label class="input__error" for="input_1">Необходимо заполнить это поле</label>
+							</div>
+	
+							<div class="input">
+								<div class="input__text">Номер телефона</div>
+								<input class="input__field" type="text" id="input_2">
+								<label class="input__error" for="input_2">Необходимо заполнить это поле</label>
+							</div>
+	
+							<div class="input">
+								<div class="input__text">Город</div>
+								<input class="input__field" type="text" id="input_3">
+								<label class="input__error" for="input_3">Необходимо заполнить это поле</label>
+							</div>
+	
+							<div class="input">
+								<div class="input__text">ИНН организации</div>
+								<input class="input__field" type="text" id="input_4">
+								<label class="input__error" for="input_4">Необходимо заполнить это поле</label>
+							</div>
+	
+							<div class="input">
+								<div class="input__text">Наименование организации или ФИО ИП</div>
+								<input class="input__field" type="text" id="input_5">
+								<label class="input__error" for="input_5">Необходимо заполнить это поле</label>
+							</div>
+	
+							<div class="input">
+								<div class="input__text">Адрес доставки</div>
+								<input class="input__field" type="text" id="input_6">
+								<label class="input__error" for="input_6">Необходимо заполнить это поле</label>
+							</div>
+	
+							<div class="input">
+								<div class="input__text">Адрес регистрации</div>
+								<input class="input__field" type="text" id="input_7">
+								<label class="input__error" for="input_7">Необходимо заполнить это поле</label>
+							</div>
+
+							<button class="btn">Сохранить</button>
+
 						</div>
 
-						<div class="input">
-							<div class="input__text">Номер телефона</div>
-							<input class="input__field" type="text" id="input_2">
-							<label class="input__error" for="input_2">Необходимо заполнить это поле</label>
-						</div>
+						<div class="profile__left-block profile__discount">
 
-						<div class="input">
-							<div class="input__text">Город</div>
-							<input class="input__field" type="text" id="input_3">
-							<label class="input__error" for="input_3">Необходимо заполнить это поле</label>
-						</div>
+							<div class="profile__title">Скидка и стоимость доставки</div>
 
-						<div class="input">
-							<div class="input__text">ИНН организации</div>
-							<input class="input__field" type="text" id="input_4">
-							<label class="input__error" for="input_4">Необходимо заполнить это поле</label>
-						</div>
+							<div class="input">
+								<div class="input__text">Скидка</div>
+								<input class="input__field" type="text">
+							</div>
 
-						<div class="input">
-							<div class="input__text">Наименование организации или ФИО ИП</div>
-							<input class="input__field" type="text" id="input_5">
-							<label class="input__error" for="input_5">Необходимо заполнить это поле</label>
-						</div>
+							<div class="input">
+								<div class="input__text">Стоимость доставки</div>
+								<input class="input__field" type="text">
+							</div>
 
-						<div class="input">
-							<div class="input__text">Адрес доставки</div>
-							<input class="input__field" type="text" id="input_6">
-							<label class="input__error" for="input_6">Необходимо заполнить это поле</label>
 						</div>
-
-						<div class="input">
-							<div class="input__text">Адрес регистрации</div>
-							<input class="input__field" type="text" id="input_7">
-							<label class="input__error" for="input_7">Необходимо заполнить это поле</label>
-						</div>
-
-						<button class="btn">Сохранить</button>
 
 					</div>
 
-					<div class="profile__right">
+					<div class="profile__right tabs-content">
 
 						<div class="profile__right-block">
 							<div class="upload">
@@ -283,9 +310,9 @@
 							</div>
 						</div>
 
-						<div class="profile__right-block">
+						<div class="profile__right-block profile__discount">
 							
-							<div class="profile__title">Загрузить документы</div>
+							<div class="profile__title">Скидка и стоимость доставки</div>
 
 							<div class="input">
 								<div class="input__text">Скидка</div>

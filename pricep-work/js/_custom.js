@@ -235,6 +235,12 @@ $(document).ready(function() {
 		});
 		})(jQuery);
 
+		$('.tabs-caption').on('click', '.tabs-caption__item:not(.tabs-caption__item_active)', function() {
+			$(this)
+			  .addClass('tabs-caption__item_active').siblings().removeClass('tabs-caption__item_active')
+			  .closest('.tabs').find('div.tabs-content').removeClass('tabs-content_active').eq($(this).index()).addClass('tabs-content_active');
+		  });
+
 	
 	$('.date__input').datepick({
 		dateFormat: 'dd/mm/yy',
