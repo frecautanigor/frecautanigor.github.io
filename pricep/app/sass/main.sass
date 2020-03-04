@@ -277,6 +277,8 @@ body
 				font-size: 19px
 			&.icon-basket
 				font-size: 18px
+			&.icon-sign-out
+				font-size: 20px
 
 		// .nav-menu__counter
 		&__counter
@@ -689,10 +691,97 @@ body
 
 // CATALOG
 .catalog
-	@extend .padding-margin
+	margin: 30px
 	+media-breakpoint-down(sm)
 		padding: 0
 		margin: 15px
+
+.catalog__table-mobile
+	display: none
+	+media-breakpoint-down(lg)
+		display: flex
+		justify-content: space-between
+
+	+media-breakpoint-down(sm)
+		flex-direction: column
+	.table-mobile
+		+media-breakpoint-down(lg)
+			display: block
+			width: 49%
+		+media-breakpoint-down(sm)
+			width: 100%
+
+.catalog
+	.catalog-mobile__item
+		display: none
+	
+
+	// .catalog__table-mobile
+	&__table-mobile
+		.table-list
+
+			// .table-list__image
+			&__image
+				min-width: 73px
+				max-width: 73px
+				margin-right: 15px
+
+			// .table-list__title
+			&__title
+				min-width: auto
+				max-width: 100%
+				text-align: left
+
+			// .table-list__counter
+			&__counter
+				margin-top: 5px
+
+
+		.not-available
+			min-width: 100%
+			max-width: 100%
+			// .not-available__text
+			&__text
+
+			// .not-available__notification
+			&__notification
+				margin-right: 0
+				margin-left: auto
+
+
+	.table-mobile
+
+		// .table-mobile__link
+		&__link
+			display: flex
+
+		// .table-mobile__buttons
+		&__buttons
+			display: flex
+			justify-content: flex-end
+			.btn,
+			.btn-dark
+				height: 40px
+				line-height: 40px
+				width: 50px
+				padding: 0
+			.btn-dark
+				font-size: 10px
+				margin-left: 20px
+	
+.text-sum
+	display: none
+	color: rgba($dark, .5)
+	+media-breakpoint-down(sm)
+		display: block
+		
+
+
+	
+
+
+
+
 
 
 // CATALOG-SELECT
@@ -745,10 +834,57 @@ body
 //TABLE-LIST
 .table-list
 
+	+media-breakpoint-down(lg)
+		display: none
+
+	.table__col
+		padding: 0 5px
+		text-align: left
+	th.table__col
+		white-space: nowrap
+		text-align: left
+		color: rgba($dark, .5)
+		padding: 10px 5px
+
 	// .table-list__item
 	&__item
 		width: 100%
+		height: 70px
+		position: relative
+		border-top: 1px solid #ececec
+		border-bottom: 1px solid #ececec
+		margin-bottom: -1px
 		display: none
+		&::after
+			content: ''
+			position: absolute
+			width: calc( 100% + 30px )
+			height: 70px
+			left: -15px
+			right: 0
+			background-color: $w
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05)
+			z-index: -1
+			opacity: 0
+			+transition()
+		&:hover
+			&::after
+				opacity: 1
+			.btn-dark
+				opacity: 1
+				pointer-events: auto
+
+	// .table-list__buttons
+	&__buttons
+		width: 100%
+		display: flex
+		justify-content: flex-end
+
+	// .table-list__code
+	&__code
+		min-width: 65px
+		max-width: 65px
+		width: 100%
 
 	// .table-list__item-element
 	&__item-element
@@ -798,8 +934,9 @@ body
 		height: 50px
 		width: 73px
 		overflow: hidden
-		background-color: red
-
+		display: block
+		margin-right: -10px
+		padding-right: 5px 
 	// .table-list__img
 	&__img
 		height: 100%
@@ -809,10 +946,10 @@ body
 	// .table-list__title
 	&__title
 		max-width: 155px
+		min-width: 155px
 		width: 100%
-		margin-left: 20px
-		margin-right: auto
 		line-height: 18px
+		display: block
 		+transition
 		&:hover
 			color: $blue
@@ -959,6 +1096,9 @@ body
 // NOT-AVAILABLE
 .not-available
 	font-size: 12px
+	min-width: 160px
+	max-width: 160px
+	width: 100%
 
 	// .not-available__text
 	&__text

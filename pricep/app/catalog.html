@@ -350,7 +350,246 @@
 					</select>
 				</div>
 
-				<ul class="table-headings">
+				<!-- id="table-catalog" -->
+				<table class="table table-list" id="table-catalog">
+					<tr class="table__row">
+						<th class="table__col">Фото</th>
+						<th class="table__col">Наименование</th>
+						<th class="table__col">Артикул</th>
+						<th class="table__col">Наличие</th>
+						<th class="table__col">Цена за шт.</th>
+						<th class="table__col">Кол-во</th>
+						<th class="table__col">Сумма</th>
+						<th class="table__col" style="text-align: right;">Заказать</th>
+					</tr>
+					
+					<tr class="table__row table-list__item catalog-trailer" data-order="1">
+
+						<td class="table__col">
+							<a class="table-list__image" href="#product" data-modal>
+								<img class="table-list__img" src="img/product.jpg" alt="Product">
+							</a>
+						</td>
+
+						<td class="table__col">
+							<a class="table-list__title" href="#product" data-modal>Прицеп 716100 (Без тента)</a>
+						</td>
+
+						<td class="table__col">
+							<div class="table-list__code">716100</div>
+						</td>
+
+						<td class="table__col">
+							<div class="not-available">
+								<div class="not-available__text">Нет в наличии</div>
+								<a class="not-available__notification" href="javascript:void(0);">Уведомить о поступлении</a>
+							</div>
+						</td>
+
+						<td class="table__col">34 000 ₽</td>
+
+						<td class="table__col">
+							<div class="table-list__counter">
+								<input class="table-list__counter-input" type="text" value="1">
+								<div class="table-list__counter-buttons">
+									<button class="table-list__counter-plus"></button>
+									<button class="table-list__counter-minus"></button>
+								</div>
+							</div>	
+						</td>
+
+						<td class="table__col">
+							<div class="table-list__total">34 000 ₽</div>
+						</td>
+
+						<td class="table__col">
+							<div class="table-list__buttons">
+								<a class="table-list__btn-detail btn-dark" href="#product" data-modal>Подробнее</a>
+								<a class="btn-small btn_disabled" href=""><i class="icon-basket"></i></a>
+							</div>
+						</td>
+
+					</tr>
+
+					<tr class="table__row table-list__item catalog-boat-trailer" data-order="2">
+
+						<td class="table__col">
+							<a class="table-list__image" href="#product" data-modal>
+								<img class="table-list__img" src="img/product.jpg" alt="Product">
+							</a>
+						</td>
+
+						<td class="table__col">
+							<a class="table-list__title" href="#product" data-modal>Прицеп 716100 (Без тента)</a>
+						</td>
+
+						<td class="table__col">
+							<div class="table-list__code">716100</div>
+						</td>
+
+						<td class="table__col">Более 10</td>
+
+						<td class="table__col">34 000 ₽</td>
+
+						<td class="table__col">
+							<div class="table-list__counter">
+								<input class="table-list__counter-input" type="text" value="1">
+								<div class="table-list__counter-buttons">
+									<button class="table-list__counter-plus"></button>
+									<button class="table-list__counter-minus"></button>
+								</div>
+							</div>	
+						</td>
+
+						<td class="table__col">
+							<div class="table-list__total">34 000 ₽</div>
+						</td>
+
+						<td class="table__col">
+							<div class="table-list__buttons">
+								<a class="table-list__btn-detail btn-dark" href="#product" data-modal>Подробнее</a>
+								<a class="btn-small" href=""><i class="icon-basket"></i></a>
+							</div>
+						</td>
+
+					</tr>
+
+				</table>
+
+				<!-- Catalog table for Mobile -- when window width is <= 768px -->
+				<div class="catalog__table-mobile" id="table-catalog-mobile">
+
+					<div class="table-mobile catalog-mobile__item catalog-trailer" data-order="1">
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__link">
+								<a class="table-list__image" href="#product" data-modal>
+									<img class="table-list__img" src="img/product.jpg" alt="Product">
+								</a>
+								<a class="table-list__title" href="#product" data-modal>Прицеп 716100 (Без тента)</a>
+							</div>
+						</div>
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Артикул</div>
+							<div class="table-mobile__col table-mobile__col-right">716100</div>
+						</div>
+						
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Наличие</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								<div class="not-available">
+									<div class="not-available__text">Нет в наличии</div>
+									<a class="not-available__notification" href="javascript:void(0);">Уведомить о поступлении</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Цена за шт.</div>
+							<div class="table-mobile__col table-mobile__col-right">34 000 ₽</div>
+						</div>
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col">
+								<div class="table-list__counter">
+									<input class="table-list__counter-input" type="text" value="1">
+									<div class="table-list__counter-buttons">
+										<button class="table-list__counter-plus"></button>
+										<button class="table-list__counter-minus"></button>
+									</div>
+								</div>	
+							</div>
+							<div class="table-mobile__col table-mobile__col-sum">
+								<div class="text-sum">Сумма</div>
+								<div class="table-list__total">34 000 ₽</div>	
+							</div>
+							<div class="table-mobile__col table-mobile__buttons">
+								<a href="" class="btn"><i class="icon-basket"></i></a>
+								<a href="#product" data-modal class="btn-dark"><i class="icon-arrow-view"></i></a>
+							</div>
+						</div>
+	
+					</div>
+					
+					<div class="table-mobile catalog-mobile__item catalog-boat-trailer"" data-order="2">
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__link">
+								<a class="table-list__image" href="#product" data-modal>
+									<img class="table-list__img" src="img/product.jpg" alt="Product">
+								</a>
+								<a class="table-list__title" href="#product" data-modal>Прицеп 716100 (Без тента)</a>
+							</div>
+						</div>
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Артикул</div>
+							<div class="table-mobile__col table-mobile__col-right">716100</div>
+						</div>
+						
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Наличие</div>
+							<div class="table-mobile__col table-mobile__col-right">Более 10</div>
+						</div>
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Цена за шт.</div>
+							<div class="table-mobile__col table-mobile__col-right">34 000 ₽</div>
+						</div>
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col">
+								<div class="table-list__counter">
+									<input class="table-list__counter-input" type="text" value="1">
+									<div class="table-list__counter-buttons">
+										<button class="table-list__counter-plus"></button>
+										<button class="table-list__counter-minus"></button>
+									</div>
+								</div>	
+							</div>
+							<div class="table-mobile__col table-mobile__col-sum">
+								<div class="text-sum">Сумма</div>
+								<div class="table-list__total">34 000 ₽</div>	
+							</div>
+							<div class="table-mobile__col table-mobile__buttons">
+								<a href="" class="btn"><i class="icon-basket"></i></a>
+								<a href="#product" data-modal class="btn-dark"><i class="icon-arrow-view"></i></a>
+							</div>
+						</div>
+	
+					</div>
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<!-- <ul class="table-headings">
 					<li class="table-headings__item table-headings__item-photo">Фото</li>
 					<li class="table-headings__item table-headings__item-title">Наименование</li>
 					<li class="table-headings__item table-headings__item-code">Артикул</li>
@@ -682,7 +921,7 @@
 
 					</li>
 
-				</ul>
+				</ul> -->
 
 			</section>
 
