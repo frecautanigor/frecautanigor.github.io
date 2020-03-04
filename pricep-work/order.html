@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Заказы</title>
+	<meta name="description" content="content">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="img/favicon.ico">
+	
+	<link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+
+	<div id="feedback" class="modal">
+
+		<div class="feedback-modal">
+
+			<div class="feedback-modal__title">
+				<a href="#" class="back-and-close" rel="modal:close"><i class="icon-arrow-left"></i></a>
+				Напишите нам
+			</div>
+			<div class="feedback-modal__message">Есть вопросы? Отправьте сообщение и мы ответим вам в ближайжее время.</div>
+
+			<div class="feedback-modal__form">
+				<div class="feedback-modal__text">Ваше сообщение</div>
+				<textarea class="feedback-modal__textarea"></textarea>
+			</div>
+
+			<button class="btn">Отправить</button>
+
+		</div>
+
+	</div>
+
+	<div class="page">
+
+		<nav class="nav">
+
+			<div class="nav-container">
+
+				<div class="nav-top">
+					<a class="logo" href="">
+						<img class="logo__img" src="img/logo.png" alt="">
+					</a>
+					<div class="nav-close"><i class="icon-delete"></i></div>
+				</div>
+	
+				<ul class="nav-menu">
+					<li class="nav-menu__item nav-menu__item_active">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-catalog"></i>
+							Каталог
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-order"></i>
+							Заказы
+							<span class="nav-menu__counter">5</span>
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-profile"></i>
+							Профиль
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link nav-menu__link-basket" href="">
+							<i class="nav-menu__icon icon-basket"></i>
+							<span class="nav-menu__basket">
+								Корзина
+								<span class="nav-menu__price">340 000 ₽</span>
+							</span>
+							<span class="nav-menu__counter">12</span>
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-users"></i>
+							Пользователи
+						</a>
+					</li>
+				</ul>
+	
+				<div class="nav__callback">
+					<div class="nav__callback-text">Есть вопросы?</div>
+					<a class="nav__callback-phone" href="">7 (3412) 90-62-80</a>
+					<a class="nav__callback-message" href="#feedback" rel="modal:open">Напишите нам</a>
+				</div>
+
+			</div>
+
+		</nav>
+	
+		<main class="main">
+
+			<header class="header">
+
+				<div class="header__hamburger"><i class="icon-hamburger"></i></div>
+
+				<div class="header__title order-header__title">
+					<a href="" class="header__link-back"><i class="icon-arrow-left"></i></a>
+					Заказ № 23416
+				</div>
+				
+				<div class="header__title order-header__title-base">Заказы</div>
+
+				<a class="header__phone" href="">7 (3412) 90-62-80</a>
+
+				<div class="header__notifications">
+
+					<div class="header__notifications-button header__notifications-button_true"><i class="header__notifications-icon icon-bell"></i></div>
+					
+					<ul class="header__notifications-list">
+
+						<li class="header__notifications-top">		
+							<div class="header__notifications-top-title">
+								<div class="header__notifications-top-close back-and-close"><i class="icon-arrow-left"></i></div>
+								Уведомления
+							</div>	
+							<a class="header__notifications-top-delete" href="">Удалить все</a>	
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_invoice">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">По заказу № 23416 выставлен счет</span>
+								<a class="header__notifications-link" href="">Перейти к заказу</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_stock">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Товар “Прицеп бортовой 7161-00 ИЖ” появился в наличии</span>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_sent">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Заказ № 23410 отправлен</span>
+								<a class="header__notifications-link" href="">Перейти к заказу</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_profile">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Необходимо заполнить профиль</span>
+								<a class="header__notifications-link" href="">Перейти в профиль</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+					</ul>
+
+				</div>
+
+				<a class="header__basket" href="">
+					<i class="header__basket-icon icon-basket"></i>
+					<div class="header__basket-price">340 000 ₽</div>
+					<div class="header__basket-counter">12</div>
+				</a>
+
+				<!-- <a class="header__basket header__basket_disabled" href="">
+					<i class="header__basket-icon icon-basket"></i>
+					<div class="header__basket-empty">Корзина пуста</div>
+				</a> -->
+
+			</header>
+
+			<section class="order">
+
+				<div class="header__title">
+					<a href="" class="header__link-back"><i class="icon-arrow-left"></i></a>
+					Заказ № 23416
+				</div>
+
+				<div class="order__button-top">
+					<a href="" class="btn">Повторить заказ</a>
+					<a href="" class="btn-dark">Подтвердить получение груза</a>
+				</div>
+
+
+				<div class="order__wrapper">
+
+					<div class="order__left">
+
+						<div class="order__title">Информация о заказе</div>
+
+						<ul class="order__info">
+
+							<li class="order__info-item">
+								<div class="order__info-left">№</div>
+								<div class="order__info-right">23416</div>
+							</li>
+
+							<li class="order__info-item">
+								<div class="order__info-left">Дата</div>
+								<div class="order__info-right">20.11.2019</div>
+							</li>
+
+							<li class="order__info-item">
+								<div class="order__info-left">Статус</div>
+								<div class="order__info-right">
+									<div class="orders__text status-yellow">
+										<img src="img/status/yellow.svg" alt="Status">
+										Ждет оплаты
+									</div>
+								</div>
+							</li>
+
+							<li class="order__info-item">
+								<div class="order__info-left">Доставка</div>
+								<div class="order__info-right">Доставка наемным транспортом</div>
+							</li>
+
+							<li class="order__info-item">
+								<div class="order__info-left">Сумма</div>
+								<div class="order__info-right">
+									<div class="price">362 000 ₽</div>
+								</div>
+							</li>
+
+						</ul>
+
+						<div class="invoice__file">
+
+							<div class="invoice__file-name">Счет_№2316.pdf</div>
+							<a class="btn-small" href="download/Счет_№_001_пример.pdf" download="">Скачать</a>
+							<a class="btn-dark" href="download/Счет_№_001_пример.pdf" target="_blank">Открыть</a>
+	
+						</div>
+
+					</div>
+
+					<div class="order__right">
+
+						<div class="order__title">Содержимое заказа</div>
+
+						<ul class="product-cart">
+
+							<li class="product-cart__item">
+	
+								<div class="product-cart__block">
+	
+									<div class="product-cart__image">
+										<img src="img/product.jpg" alt="Product">
+									</div>
+		
+									<div class="product-cart__block">
+										<div class="product-cart__title">Прицеп бортовой 7161</div>
+										<div class="product-cart__code product-cart__code-secret">716100</div>
+									</div>
+		
+								</div>
+		
+								<div class="product-cart__block">
+
+									<div class="product-cart__code">716100</div>
+		
+									<div class="product__counter">
+										9 шт.
+									</div>
+		
+									<div class="product-cart__price">34 000 ₽</div>
+		
+								</div>
+	
+							</li>
+
+							<li class="product-cart__item">
+	
+								<div class="product-cart__block">
+	
+									<div class="product-cart__image">
+										<img src="img/product.jpg" alt="Product">
+									</div>
+		
+									<div class="product-cart__block">
+										<div class="product-cart__title">Прицеп бортовой 7161</div>
+										<div class="product-cart__code product-cart__code-secret">716100</div>
+									</div>
+		
+								</div>
+		
+								<div class="product-cart__block">
+
+									<div class="product-cart__code">716100</div>
+		
+									<div class="product__counter">
+										9 шт.
+									</div>
+		
+									<div class="product-cart__price">34 000 ₽</div>
+		
+								</div>
+	
+							</li>
+
+							<li class="product-cart__item">
+	
+								<div class="product-cart__block">
+	
+									<div class="product-cart__image">
+										<img src="img/product.jpg" alt="Product">
+									</div>
+		
+									<div class="product-cart__block">
+										<div class="product-cart__title">Прицеп бортовой 7161</div>
+										<div class="product-cart__code product-cart__code-secret">716100</div>
+									</div>
+		
+								</div>
+		
+								<div class="product-cart__block">
+
+									<div class="product-cart__code">716100</div>
+		
+									<div class="product__counter">
+										9 шт.
+									</div>
+		
+									<div class="product-cart__price">34 000 ₽</div>
+		
+								</div>
+	
+							</li>
+	
+						</ul>
+
+					</div>
+
+				</div>
+
+				<div class="btn-center">
+					<a href="" class="btn-dark order__button">Подтвердить получение груза</a>
+				</div>
+
+			</section>
+
+			<!-- <section class="order">
+
+				<a href="" class="btn">Повторить заказ</a>
+
+				<div class="order__wrapper">
+
+					
+					<div class="order__left">
+
+						<div class="order__title">Информация о заказе</div>
+
+						<ul class="order__info">
+
+							<li class="order__info-item">
+								<div class="order__info-left">№</div>
+								<div class="order__info-right">23416</div>
+							</li>
+
+							<li class="order__info-item">
+								<div class="order__info-left">Дата</div>
+								<div class="order__info-right">20.11.2019</div>
+							</li>
+
+							<li class="order__info-item">
+								<div class="order__info-left">Статус</div>
+								<div class="order__info-right">
+									<div class="orders__text">
+										<img src="img/status/yellow.svg" alt="Status">
+										Ждет оплаты
+									</div>
+								</div>
+							</li>
+
+							<li class="order__info-item">
+								<div class="order__info-left">Доставка</div>
+								<div class="order__info-right">Доставка наемным транспортом</div>
+							</li>
+
+							<li class="order__info-item">
+								<div class="order__info-left">Сумма</div>
+								<div class="order__info-right">
+									<div class="price">362 000 ₽</div>
+								</div>
+							</li>
+
+						</ul>
+
+						<li class="order__info-item">
+							<a href="" class="btn">Оформить заказ</a>
+						</li>
+
+						<li class="order__info-item">
+							<a href="" class="btn-delete">Удалить</a>
+						</li>
+
+					</div>
+
+					<div class="order__right">
+
+						<div class="order__title">Содержимое заказа</div>
+
+						<ul class="product-cart">
+
+							<li class="product-cart__item">
+	
+								<div class="product-cart__block">
+	
+									<div class="product-cart__image">
+										<img src="img/product.jpg" alt="Product">
+									</div>
+		
+									<div class="product-cart__block">
+										<div class="product-cart__title">Прицеп бортовой 7161</div>
+										<div class="product-cart__code product-cart__code-secret">716100</div>
+									</div>
+		
+								</div>
+		
+								<div class="product-cart__block">
+
+									<div class="product-cart__code">716100</div>
+		
+									<div class="product__counter">
+										9 шт.
+									</div>
+		
+									<div class="product-cart__price">34 000 ₽</div>
+		
+								</div>
+	
+							</li>
+	
+						</ul>
+
+					</div>
+
+				</div>
+
+				<div class="btn-center">
+					<a href="" class="btn-dark order__button">Подтвердить получение груза</a>
+				</div>
+
+			</section> -->
+
+		</main>
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

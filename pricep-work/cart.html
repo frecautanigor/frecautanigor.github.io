@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Корзина</title>
+	<meta name="description" content="content">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="icon" href="img/favicon.ico">
+	
+	<link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+
+	<div id="feedback" class="modal">
+
+		<div class="feedback-modal">
+
+			<div class="feedback-modal__title">
+				<a href="#" class="back-and-close" rel="modal:close"><i class="icon-arrow-left"></i></a>
+				Напишите нам
+			</div>
+			<div class="feedback-modal__message">Есть вопросы? Отправьте сообщение и мы ответим вам в ближайжее время.</div>
+
+			<div class="feedback-modal__form">
+				<div class="feedback-modal__text">Ваше сообщение</div>
+				<textarea class="feedback-modal__textarea"></textarea>
+			</div>
+
+			<button class="btn">Отправить</button>
+
+		</div>
+
+	</div>
+
+	<div class="page">
+
+		<nav class="nav">
+
+			<div class="nav-container">
+
+				<div class="nav-top">
+					<a class="logo" href="">
+						<img class="logo__img" src="img/logo.png" alt="">
+					</a>
+					<div class="nav-close"><i class="icon-delete"></i></div>
+				</div>
+	
+				<ul class="nav-menu">
+					<li class="nav-menu__item nav-menu__item_active">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-catalog"></i>
+							Каталог
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-order"></i>
+							Заказы
+							<span class="nav-menu__counter">5</span>
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-profile"></i>
+							Профиль
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link nav-menu__link-basket" href="">
+							<i class="nav-menu__icon icon-basket"></i>
+							<span class="nav-menu__basket">
+								Корзина
+								<span class="nav-menu__price">340 000 ₽</span>
+							</span>
+							<span class="nav-menu__counter">12</span>
+						</a>
+					</li>
+					<li class="nav-menu__item">
+						<a class="nav-menu__link" href="">
+							<i class="nav-menu__icon icon-users"></i>
+							Пользователи
+						</a>
+					</li>
+				</ul>
+	
+				<div class="nav__callback">
+					<div class="nav__callback-text">Есть вопросы?</div>
+					<a class="nav__callback-phone" href="">7 (3412) 90-62-80</a>
+					<a class="nav__callback-message" href="#feedback" rel="modal:open">Напишите нам</a>
+				</div>
+
+			</div>
+
+		</nav>
+	
+		<main class="main">
+
+			<header class="header">
+
+				<div class="header__hamburger"><i class="icon-hamburger"></i></div>
+
+				<div class="header__title">Корзина</div>
+
+				<a class="header__phone" href="">7 (3412) 90-62-80</a>
+
+				<div class="header__notifications">
+
+					<div class="header__notifications-button header__notifications-button_true"><i class="header__notifications-icon icon-bell"></i></div>
+					
+					<ul class="header__notifications-list">
+
+						<li class="header__notifications-top">		
+							<div class="header__notifications-top-title">
+								<div class="header__notifications-top-close back-and-close"><i class="icon-arrow-left"></i></div>
+								Уведомления
+							</div>	
+							<a class="header__notifications-top-delete" href="">Удалить все</a>	
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_invoice">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">По заказу № 23416 выставлен счет</span>
+								<a class="header__notifications-link" href="">Перейти к заказу</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_stock">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Товар “Прицеп бортовой 7161-00 ИЖ” появился в наличии</span>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_sent">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Заказ № 23410 отправлен</span>
+								<a class="header__notifications-link" href="">Перейти к заказу</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+						<li class="header__notifications-item header__notifications-item_profile">
+							<div class="header__notifications-info">
+								<span class="header__notifications-title">Необходимо заполнить профиль</span>
+								<a class="header__notifications-link" href="">Перейти в профиль</a>
+							</div>
+							<a class="header__notifications-delete" href="javascript:void(0);"><i class="icon-delete"></i></a>
+						</li>
+
+					</ul>
+
+				</div>
+
+			</header>
+
+			<section class="cart">
+
+				<div class="wrapper">
+
+					<ul class="product-cart">
+
+						<li class="product-cart__item">
+
+							<div class="product-cart__block">
+
+								<div class="product-cart__image">
+									<img src="img/product.jpg" alt="Product">
+								</div>
+	
+								<div class="product-cart__block">
+									<div class="product-cart__title">Прицеп бортовой 7161</div>
+									<div class="product-cart__code">716100</div>
+								</div>
+	
+							</div>
+	
+							<div class="product-cart__block">
+	
+								<div class="product__counter">
+									<input class="product__counter-input" type="text" value="1">
+									<div class="product__counter-buttons">
+										<button class="product__counter-plus"></button>
+										<button class="product__counter-minus"></button>
+									</div>
+								</div>
+	
+								<div class="product-cart__price">
+									<div class="text-sum">Сумма</div>
+									34 000 ₽
+								</div>
+								<div class="product-cart__delete"><i class="icon-delete"></i></div>
+	
+							</div>
+
+						</li>
+
+						<li class="product-cart__item">
+
+							<div class="product-cart__block">
+
+								<div class="product-cart__image">
+									<img src="img/product.jpg" alt="Product">
+								</div>
+	
+								<div class="product-cart__block">
+									<div class="product-cart__title">Прицеп бортовой 7161-04 (без тента)</div>
+									<div class="product-cart__code">716100</div>
+								</div>
+	
+							</div>
+	
+							<div class="product-cart__block">
+	
+								<div class="product__counter">
+									<input class="product__counter-input" type="text" value="1">
+									<div class="product__counter-buttons">
+										<button class="product__counter-plus"></button>
+										<button class="product__counter-minus"></button>
+									</div>
+								</div>
+	
+								<div class="product-cart__price">
+									<div class="text-sum">Сумма</div>
+									34 000 ₽
+								</div>
+								<div class="product-cart__delete"><i class="icon-delete"></i></div>
+	
+							</div>
+
+						</li>
+						
+						<li class="product-cart__item">
+
+							<div class="product-cart__block">
+
+								<div class="product-cart__image">
+									<img src="img/product.jpg" alt="Product">
+								</div>
+	
+								<div class="product-cart__block">
+									<div class="product-cart__title">Прицеп бортовой 7161-04 (без тента Прицеп)</div>
+									<div class="product-cart__code">716100</div>
+								</div>
+	
+							</div>
+	
+							<div class="product-cart__block">
+	
+								<div class="product__counter">
+									<input class="product__counter-input" type="text" value="1">
+									<div class="product__counter-buttons">
+										<button class="product__counter-plus"></button>
+										<button class="product__counter-minus"></button>
+									</div>
+								</div>
+	
+								<div class="product-cart__price">
+									<div class="text-sum">Сумма</div>
+									34 000 ₽
+								</div>
+								<button class="product-cart__delete"><i class="icon-delete"></i></button>
+	
+							</div>
+
+						</li>
+
+					</ul>
+
+					<div class="delivery-method">
+
+						<div class="delivery-method__title">Выберите способ доставки</div>
+
+						<ul class="delivery-method__list">
+
+							<li class="delivery-method__item">
+								<div class="delivery-method__check">
+									<input class="delivery-method__input-radio" type="radio" name="radio-group" id="radio_1" checked>
+									<label class="delivery-method__label" for="radio_1">
+										<img class="delivery-method__label-image" src="img/icons/pickup-icon.svg" alt="Icon">
+										<div class="delivery-method__label-text">Самовывоз</div>
+									</label>
+								</div>
+							</li>
+
+							<li class="delivery-method__item">
+								<div class="delivery-method__check">
+									<input class="delivery-method__input-radio" type="radio" name="radio-group" id="radio_2">
+									<label class="delivery-method__label" for="radio_2">
+										<img class="delivery-method__label-image" src="img/icons/truck-icon.svg" alt="Icon">
+										<div class="delivery-method__label-text">Доставка наемным транспортом</div>
+									</label>
+								</div>
+							</li>
+
+							<li class="delivery-method__item">
+								<div class="delivery-method__info">Заказ не поместится в 1 фуру.<br>Для его доставки потребуется 2 фуры</div>
+							</li>
+
+							<li class="delivery-method__item">
+								<div class="delivery-method__price">
+									<div class="delivery-method__price-title">Стоимость доставки</div>
+									<div class="delivery-method__price-total">26 000 ₽</div>
+								</div>
+							</li>
+
+						</ul>
+
+					</div>
+
+					<div class="product-final">
+
+						<div class="product-final__total">
+							<div class="product-final__total-text">Итого</div>
+							<div class="product-final__total-sum">392 000 ₽</div>
+						</div>
+
+						<a href="" class="btn">Оформить заказ</a>
+
+					</div>
+
+				</div>
+
+			</section>
+
+		</main>
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
