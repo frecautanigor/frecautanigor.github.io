@@ -51,7 +51,12 @@ body
 		padding: 0
 .modal
 	+media-breakpoint-down(xs)
-	padding: 15px
+		padding: 15px
+#product
+	+media-breakpoint-down(xs)
+		.close-modal
+			display: none
+
 
 .back-and-close
 	display: none
@@ -331,8 +336,11 @@ body
 		font-weight: 600
 		font-size: 24px
 		+media-breakpoint-down(lg)
-			font-size: 20px
+			font-size: 18px
 			color: $w
+			.header__link-back
+				color: $w
+				margin-left: 15px
 		+media-breakpoint-down(sm)
 			font-size: 16px
 			margin-right: 55px
@@ -364,7 +372,6 @@ body
 		position: relative
 		+media-breakpoint-down(sm)
 			margin-left: auto
-			margin-right: 20px
 		+media-breakpoint-down(xs)
 			position: static
 
@@ -532,7 +539,7 @@ body
 			width: 34px
 			padding: 0
 			justify-content: center
-			margin-left: 0
+			margin-left: 20px
 
 		// .header__basket_active
 		&_active
@@ -1012,6 +1019,7 @@ body
 		outline: 0
 		height: 50px
 		margin-right: 20px
+		white-space: nowrap
 
 	// .product__counter-input
 	&__counter-input
@@ -1073,28 +1081,57 @@ body
 	// .product__top
 	&__top
 		display: flex
+		flex-direction: row-reverse
+		+media-breakpoint-down(sm)
+			flex-direction: column
+
 
 	// .product__slider
 	&__slider
 		position: relative
 		width: 50%
+		+media-breakpoint-down(lg)
+			width: 45%
+		+media-breakpoint-down(sm)
+			width: 100%
 
 	// .product__info
 	&__info
 		width: 50%
 		margin-left: 45px
-
+		+media-breakpoint-down(lg)
+			margin-left: 30px
+			width: 55%
+		+media-breakpoint-down(sm)
+			margin-left: 0
+			width: 100%
 
 	// .product__info-title
 	&__info-title
 		font-weight: 600
 		font-size: 20px
 		margin-bottom: 10px
+		+media-breakpoint-down(xs)
+			position: relative
+			display: flex
+			font-size: 16px
+			.back-and-close
+				margin-top: 5px
+			&::after
+				content: ''
+				background-color: rgba($dark, .05)
+				height: 1px
+				width: calc(100% + 30px)
+				left: -15px
+				position: absolute
+				bottom: -10px
 
 	// .product__info-code
 	&__info-code
 		font-size: 14px
 		color: #8F8F8F
+		+media-breakpoint-down(xs)
+			margin-top: 20px
 
 	// .product__info-basket
 	&__info-basket
@@ -1102,7 +1139,14 @@ body
 		background-color: $w
 		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05)
 		padding: 30px
-
+		+media-breakpoint-down(sm)
+			display: none
+	// .product__info-basket-mobile
+	&__info-basket-mobile
+		display: none
+		margin-top: 15px
+		+media-breakpoint-down(sm)
+			display: block
 	// .product__info-price
 	&__info-price
 		font-size: 20px
@@ -1200,6 +1244,12 @@ body
 		height: 255px
 		width: 100%
 		margin-bottom: 20px
+		+media-breakpoint-down(sm)
+			height: 350px
+			margin-top: 20px
+		+media-breakpoint-down(xs)
+			height: 290px
+			margin-top: 15px
 
 	// .product__slider-top-item
 	&__slider-top-item
@@ -1224,6 +1274,9 @@ body
 		width: 100%
 		overflow: hidden
 		background-color: $b
+		+media-breakpoint-down(sm)
+			max-height: 90px
+
 		img
 			height: 100%
 			width: 100%
@@ -1262,7 +1315,9 @@ body
 
 	// .product-cart__image
 	&__image
-		width: 73px
+		min-width: 73px
+		max-width: 73px
+		width: 100%
 		height: 50px
 		img
 			width: 100%
@@ -1301,6 +1356,7 @@ body
 		margin-left: 55px
 		font-weight: 600
 		font-size: 14px
+		white-space: nowrap
 		+media-breakpoint-down(sm)
 			margin-left: 0
 
@@ -1563,10 +1619,62 @@ body
 	&__col
 		vertical-align: middle
 
+.table-mobile
+	padding: 5px 15px
+	background-color: $w
+	display: none
+	margin-bottom: 15px
+	+media-breakpoint-down(sm)
+		display: block
+	// .table-mobile__row
+	&__row
+		display: flex
+		justify-content: space-between
+		border-bottom: 1px solid rgba($dark, .05)
+		padding: 10px 0
+		&:last-child
+			border: none
+
+	// .table-mobile__col
+	&__col
+		width: 100%
+
+	// .table-mobile__col-left
+	&__col-left
+		color: rgba($dark, .5)
+
+	// .table-mobile__col-right
+	&__col-right
+		text-align: right
+		padding-left: 15px
+	
+	.users__buttons
+		width: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-top: 10px
+		.btn-delete
+			margin-left: 20px
+		.btn-dark
+			margin-right: 0
+			max-width: 260px
+			width: 100%
+
+	.btn-dark
+		margin-right: 0
+		max-width: 260px
+		width: 100%
+	.orders__info
+		justify-content: flex-start
+
+
+
 
 .orders
-	margin: 0 30px
-	margin-top: 30px
+	margin: 30px
+	+media-breakpoint-down(sm)
+		margin: 15px
 
 	// .orders__btn-white
 	&__btn-white
@@ -1576,7 +1684,8 @@ body
 	// .orders__table
 	&__table
 		margin-top: 30px
-
+		+media-breakpoint-down(sm)
+			display: none
 
 	// .orders__headings
 	&__headings
@@ -1602,6 +1711,21 @@ body
 			+transition()
 		&:hover::after
 			opacity: 1
+		&:hover
+			.orders__buttons
+				opacity: 1
+				pointer-events: auto
+			.orders__info-button
+				z-index: 1
+				position: absolute
+				opacity: 1
+			.orders__info-text
+				display: none
+
+		+media-breakpoint-down(md)
+			height: 80px
+			&::after
+				height: 80px
 
 	// .orders__number
 	&__number
@@ -1636,10 +1760,21 @@ body
 			font-size: 15px
 			margin-right: 5px
 
+		// .orders__info-button
+		&-button
+			z-index: -1
+			position: absolute
+			opacity: 0
+			+transition()
+	
+	// .orders__recover
+	&__recover
+		display: flex
+		justify-content: flex-end
 
 	// .orders__delivery
 	&__delivery
-
+		margin-right: 10px
 
 	// .orders__total
 	&__total
@@ -1650,12 +1785,17 @@ body
 	&__buttons
 		display: flex
 		justify-content: flex-end
-		.btn-dark
-			margin-right: 10px
+		opacity: 0
+		pointer-events: none
+		+transition()
+		.btn-delete
+			margin-left: 10px
 
 	// .orders__top
 	&__top
 		display: flex
+		+media-breakpoint-down(sm)
+			flex-direction: column
 	
 	// .orders__top-text
 	&__top-text
@@ -1668,10 +1808,16 @@ body
 		width: 100%
 		&:first-child
 			margin-right: 20px
+		+media-breakpoint-down(sm)
+			max-width: 100%
+			margin-bottom: 20px
+			margin-right: 0
 
 	.single .selectator_selected_items .selectator_selected_item .selectator_selected_item_left img
 		height: 15px
 		margin-top: 5px
+	.selectator_selected_item_left
+		display: none
 	.single .selectator_selected_items .selectator_selected_item .selectator_selected_item_title
 		margin-left: 5px
 	.single .selectator_selected_items .selectator_selected_item .selectator_selected_item_left
@@ -1717,14 +1863,99 @@ body
 		height: 28px
 		line-height: 28px
 
+.order-header__title
+	+media-breakpoint-down(sm)
+		display: none
+
+.order-header__title-base
+	display: none
+	+media-breakpoint-down(sm)
+		display: block
 
 .order
 	margin: 30px
+	+media-breakpoint-down(sm)
+		margin: 15px
+
+	.product-cart__code
+		margin: 0 40px
+		@media screen and (max-width: 850px)
+			margin: 0
+		+media-breakpoint-down(sm)
+			margin-left: 20px
+			display: none
+		
+	.product-cart__code-secret
+		display: none
+		+media-breakpoint-down(sm)
+			display: block
+			margin-top: 5px
+	.product__counter
+		+media-breakpoint-down(sm)
+			margin-left: 93px
+	.invoice__file
+		+media-breakpoint-down(sm)
+			max-width: 100%
+			.invoice__file-name
+				margin-right: auto
+	.product-cart__block:first-child
+		@media screen and (max-width: 850px)
+			margin-bottom: 5px
+	.product-cart__title
+		max-width: 290px
+		width: 100%
+	.product-cart__item
+		@media screen and (max-width: 850px)
+			flex-direction: column
+			align-items: stretch
+	.header
+		// .header__title
+		&__title
+			display: none
+			color: $dark
+			font-size: 20px
+			+media-breakpoint-down(sm)
+				display: block
+		// .header__link-back
+		&__link-back
+			color: $blue
+			margin-left: 0
+
+	// .order__button-top
+	&__button-top
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin-top: 15px
+		+media-breakpoint-down(xs)
+			flex-direction: column
+		.btn
+			+media-breakpoint-down(sm)
+				height: 40px
+				line-height: 40px
+				width: 48%
+			+media-breakpoint-down(xs)
+				width: 100%
+		.btn-dark
+			display: none
+			+media-breakpoint-down(sm)
+				display: block
+				width: 48%
+			+media-breakpoint-down(xs)
+				width: 100%
+				margin-top: 15px
+	.btn-center
+		+media-breakpoint-down(sm)
+			display: none
+			
 	// .order__wrapper
 	&__wrapper
 		display: flex
 		justify-content: space-between
 		margin-top: 30px
+		+media-breakpoint-down(sm)
+			flex-direction: column
+
 
 	// .order__left, .order__right
 	&__left, &__right
@@ -1744,12 +1975,17 @@ body
 		min-width: 300px
 		max-width: 300px
 		margin-right: 20px
+		+media-breakpoint-down(sm)
+			min-width: 100%
+			margin-bottom: 15px
+
 
 	// .order__right
 	&__right
 		width: 100%
 		.product__counter
 			height: 100%
+			
 		.product-cart__item:first-child
 			padding-top: 10px
 			border-top: 1px solid #f5f5f5
@@ -1773,6 +2009,10 @@ body
 			line-height: 50px
 			width: 100%
 			margin-top: 10px
+		+media-breakpoint-down(sm)
+			border-bottom: 1px solid rgba($dark, .05)
+			padding: 10px 0
+			margin: 0
 
 	// .order__info-left
 	&__info-left
@@ -2000,6 +2240,8 @@ body
 	&__progress-title
 		display: flex
 		justify-content: space-between
+		+media-breakpoint-down(xs)
+			flex-wrap: wrap
 
 	// .upload__progress-check
 	&__progress-check
@@ -2022,6 +2264,8 @@ body
 		font-size: 14px
 		display: flex
 		align-items: center
+		+media-breakpoint-down(xs)
+			margin: 5px 0 0 5px
 		.icon-delete
 			margin-right: 5px
 			font-size: 8px
@@ -2034,6 +2278,8 @@ body
 		font-size: 14px
 		display: flex
 		align-items: center
+		+media-breakpoint-down(xs)
+			margin: 5px 0 0 5px
 		.icon-recycle-bin
 			margin-right: 5px
 			font-size: 10px
@@ -2064,6 +2310,7 @@ body
 .users
 	margin: 30px
 	+media-breakpoint-down(sm)
+		margin: 15px
 		.search__input
 			padding-right: 0
 		.search__input-block
@@ -2092,6 +2339,7 @@ body
 			margin-right: 20px
 		+media-breakpoint-down(sm)
 			margin-bottom: 15px
+			min-width: 100%
 			
 
 	// .users__top-text
@@ -2106,6 +2354,8 @@ body
 		margin-left: 5px
 	.single .selectator_selected_items .selectator_selected_item .selectator_selected_item_left
 		width: auto
+	.selectator_selected_item_left
+		display: none
 	.selectator_options .selectator_option .selectator_option_left
 		width: auto
 	.selectator_options .selectator_option .selectator_option_left

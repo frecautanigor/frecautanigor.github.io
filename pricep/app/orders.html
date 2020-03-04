@@ -21,7 +21,10 @@
 
 		<div class="feedback-modal">
 
-			<div class="feedback-modal__title">Напишите нам</div>
+			<div class="feedback-modal__title">
+				<a href="#" class="back-and-close" rel="modal:close"><i class="icon-arrow-left"></i></a>
+				Напишите нам
+			</div>
 			<div class="feedback-modal__message">Есть вопросы? Отправьте сообщение и мы ответим вам в ближайжее время.</div>
 
 			<div class="feedback-modal__form">
@@ -112,8 +115,11 @@
 					
 					<ul class="header__notifications-list">
 
-						<li class="header__notifications-top">
-							<div class="header__notifications-top-title">Уведомления</div>	
+						<li class="header__notifications-top">		
+							<div class="header__notifications-top-title">
+								<div class="header__notifications-top-close back-and-close"><i class="icon-arrow-left"></i></div>
+								Уведомления
+							</div>	
 							<a class="header__notifications-top-delete" href="">Удалить все</a>	
 						</li>
 
@@ -192,13 +198,13 @@
 						<div class="orders__top-text">Сортировать по статусу</div>
 
 						<select class="selectator">
-							<option value="all" data-left="img/status/gray.svg" selected>Все</option>
-							<option value="" data-left="img/status/black.svg">Черновик</option>
-							<option value="" data-left="img/status/yellow.svg">Ждет оплаты</option>
-							<option value="" data-left="img/status/blue.svg">Оплачен</option>
-							<option value="" data-left="img/status/blue-light.svg">Производство</option>
-							<option value="" data-left="img/status/purple.svg">В пути</option>
-							<option value="" data-left="img/status/green.svg">Доставлен</option>
+							<option value="all" data-left="img/status/gray.svg" class="status-gray" selected>Все</option>
+							<option value="" data-left="img/status/black.svg" class="status-black">Черновик</option>
+							<option value="" data-left="img/status/yellow.svg" class="status-yellow">Ждет оплаты</option>
+							<option value="" data-left="img/status/blue.svg" class="status-blue">Оплачен</option>
+							<option value="" data-left="img/status/blue-light.svg" class="status-blue-light">Производство</option>
+							<option value="" data-left="img/status/purple.svg" class="status-purple">В пути</option>
+							<option value="" data-left="img/status/green.svg" class="status-green">Доставлен</option>
 						</select>
 					</div>
 
@@ -231,7 +237,10 @@
 						<td class="table__col">
 							<div class="orders__status">
 								<div class="orders__headings-mobile">Статус</div>
-								<div class="orders__text">Черновик</div>
+								<div class="orders__text status-black">
+									<img src="img/status/black.svg" alt="Status">
+									Черновик
+								</div>
 							</div>
 						</td>
 						<td class="table__col">
@@ -270,7 +279,7 @@
 						<td class="table__col">
 							<div class="orders__status">
 								<div class="orders__headings-mobile">Статус</div>
-								<div class="orders__text">
+								<div class="orders__text status-yellow">
 									<img src="img/status/yellow.svg" alt="Status">
 									Ждет оплаты
 								</div>
@@ -290,11 +299,13 @@
 						</td>
 						<td class="table__col">
 							<div class="orders__info">
-								<i class="icon-info-filled orders__info-icon"></i> Счет выставлен
+								<a href="" class="orders__info-button btn-dark">Подробнее</a>
+								<div class="orders__info-text">
+									<i class="icon-info-filled orders__info-icon"></i> Счет выставлен
+								</div>
 							</div>
 						</td>
 					</tr>
-	
 	
 					<tr class="table__row orders__item">
 						<td class="table__col">
@@ -312,7 +323,48 @@
 						<td class="table__col">
 							<div class="orders__status">
 								<div class="orders__headings-mobile">Статус</div>
-								<div class="orders__text">
+								<div class="orders__text status-blue-light">
+									<img src="img/status/blue-light.svg" alt="Status">
+									Производство
+								</div>
+							</div>
+						</td>
+						<td class="table__col">
+							<div class="orders__delivery">
+								<div class="orders__headings-mobile">Доставка</div>
+								<div class="orders__text">Самовывоз</div>
+							</div>
+						</td>
+						<td class="table__col">
+							<div class="orders__total">
+								<div class="orders__headings-mobile">Сумма</div>
+								<div class="orders__text">362 000 ₽</div>
+							</div>
+						</td>
+						<td class="table__col">
+							<div class="orders__buttons">
+								<a href="" class="btn-dark">Подробнее</a>
+							</div>
+						</td>
+					</tr>
+	
+					<tr class="table__row orders__item">
+						<td class="table__col">
+							<div class="orders__number">
+								<div class="orders__headings-mobile">№</div>
+								<div class="orders__text">23416</div>
+							</div>
+						</td>
+						<td class="table__col">
+							<div class="orders__date">
+								<div class="orders__headings-mobile">Дата</div>
+								<div class="orders__text">20.11.2019</div>
+							</div>
+						</td>
+						<td class="table__col">
+							<div class="orders__status">
+								<div class="orders__headings-mobile">Статус</div>
+								<div class="orders__text status-purple">
 									<img src="img/status/purple.svg" alt="Status">
 									В пути
 								</div>
@@ -333,12 +385,206 @@
 						<td class="table__col">
 							<div class="orders__buttons">
 								<a href="" class="btn-dark">Подробнее</a>
-								<a href="" class="btn-delete"><i class="icon-recycle-bin"></i></a>
 							</div>
 						</td>
 					</tr>
 	
 				</table>
+
+				<!-- Order table for Mobile -- when window width is <= 768px -->
+				<div class="order__table-mobile">
+
+					<div class="table-mobile">
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">№</div>
+							<div class="table-mobile__col table-mobile__col-right">23416</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Дата</div>
+							<div class="table-mobile__col table-mobile__col-right">20.11.2019</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Статус</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								<div class="status-black">
+									<img src="img/status/black.svg" alt="Status">
+									Черновик
+								</div>
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Доставка</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								Доставка наемным транспортом
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Сумма</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								<div class="orders__total">362 000 ₽</div>
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="users__buttons">
+								<a href="" class="btn-dark">Подробнее</a>
+								<a href="" class="btn-delete"><i class="icon-recycle-bin"></i></a>
+							</div>
+						</div>
+	
+					</div>
+
+					<div class="table-mobile">
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">№</div>
+							<div class="table-mobile__col table-mobile__col-right">23416</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Дата</div>
+							<div class="table-mobile__col table-mobile__col-right">20.11.2019</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Статус</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								<div class="status-yellow">
+									<img src="img/status/yellow.svg" alt="Status">
+									Ждет оплаты
+								</div>
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Доставка</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								Доставка наемным транспортом
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Сумма</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								<div class="orders__total">362 000 ₽</div>
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col">
+
+								<div class="orders__info">
+									<div class="orders__info-text">
+										<i class="icon-info-filled orders__info-icon"></i> Счет выставлен
+									</div>
+								</div>
+								<div class="users__buttons">
+									<a href="" class="btn-dark">Подробнее</a>
+								</div>
+
+							</div>
+						</div>
+	
+					</div>
+
+					<div class="table-mobile">
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">№</div>
+							<div class="table-mobile__col table-mobile__col-right">23416</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Дата</div>
+							<div class="table-mobile__col table-mobile__col-right">20.11.2019</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Статус</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								<div class="status-blue-light">
+									<img src="img/status/blue-light.svg" alt="Status">
+									Производство
+								</div>
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Доставка</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								Самовывоз
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Сумма</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								<div class="orders__total">362 000 ₽</div>
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col">
+								<div class="users__buttons">
+									<a href="" class="btn-dark">Подробнее</a>
+								</div>
+							</div>
+						</div>
+	
+					</div>
+
+					<div class="table-mobile">
+
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">№</div>
+							<div class="table-mobile__col table-mobile__col-right">23416</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Дата</div>
+							<div class="table-mobile__col table-mobile__col-right">20.11.2019</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Статус</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								<div class="status-purple">
+									<img src="img/status/purple.svg" alt="Status">
+									В пути
+								</div>
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Доставка</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								Доставка наемным транспортом
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col table-mobile__col-left">Сумма</div>
+							<div class="table-mobile__col table-mobile__col-right">
+								<div class="orders__total">362 000 ₽</div>
+							</div>
+						</div>
+	
+						<div class="table-mobile__row">
+							<div class="table-mobile__col">
+								<div class="users__buttons">
+									<a href="" class="btn-dark">Подробнее</a>
+								</div>
+							</div>
+						</div>
+	
+					</div>
+					
+				</div>
 
 				<a href="" class="btn-white orders__btn-white">Загрузить еще</a>
 

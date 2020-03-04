@@ -190,7 +190,15 @@ $(document).ready(function() {
 		spaceBetween: 20,
 		slidesPerView: 4,
 		watchSlidesVisibility: true,
-		watchSlidesProgress: true
+		watchSlidesProgress: true,
+		breakpoints: {
+			320: {
+			  spaceBetween: 15
+			},
+			577: {
+			  spaceBetween: 20
+			}
+		  }
 	});
 	var galleryTop = new Swiper('.product__slider-top', {
 		loop: true,
