@@ -1,0 +1,640 @@
+@import vars
+@import fonts
+@import libs
+@import smart-grid
+
++reset()
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $green
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-family: 'Montserrat', sans-serif
+	overflow-x: hidden
+	color: $b
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+.transition
+	transition: all .3s ease-in-out
+.slider
+	height: 1050px
+	width: 100%
+	background-color: $green
+	background-image: url(../img/slider/business-man.jpeg)
+	background-size: cover
+	background-position: top center
+	background-repeat: no-repeat
+
+.wrapper
+	+wrapper()
+
+.row
+	+row-flex()
+
+.col
+	+col()
+	+size(12)
+
+.nav
+	display: flex
+	align-items: center
+	height: 125px
+
+.nav-logo
+	&__img
+		max-width: 160px
+		min-width: 160px
+
+
+.nav-menu
+	display: flex
+	justify-content: flex-end
+	width: 100%
+
+	// .nav-menu__item
+	&__item
+		border-right: 2px solid $w
+		
+	// .nav-menu__link
+	&__link
+		display: flex
+		flex-direction: column
+		align-items: center
+		background-color: $violet
+		height: 125px
+		max-width: 150px
+		padding: 10px 40px
+		@extend .transition
+		&:hover, &:focus
+			text-decoration: none
+			background-color: darken($violet, 3%)
+		&:active
+			background-color: darken($violet, 7%)
+	
+	// .nav-menu__icon
+	&__icon
+		max-height: 50px
+		height: 100%
+		margin-bottom: 10px
+
+	// .nav-menu__text
+	&__text
+		font-size: 14px
+		font-weight: $semi-bold
+		text-transform: uppercase
+		text-align: center
+		color: $w
+
+.nav-contact
+	display: flex
+	flex-direction: column
+	justify-content: center
+	background-color: red
+	
+	// .nav-contact__link
+	&__link
+		padding: 0 15px
+		height: 50%
+		display: flex
+		align-items: center
+		background-color: $violet
+		@extend .transition
+		&:hover, &:focus
+			text-decoration: none
+			background-color: darken($violet, 3%)
+		&:active
+			background-color: darken($violet, 7%)
+
+	// .nav-contact__icon
+	&__icon
+		max-height: 40px
+		margin-right: 15px
+
+	// .nav-contact__text
+	&__text
+		font-size: 18px
+		font-weight: $semi-bold
+		text-decoration: underline
+		color: $w
+
+
+.advantages
+	margin: 60px 0
+	display: flex
+	align-items: center
+	justify-content: center
+
+	// .advantages__item
+	&__item
+		display: flex
+		align-items: center
+		margin: 0 17px
+
+	// .advantages__text
+	&__text
+		color: $violet
+		font-weight: $semi-bold
+		font-size: 20px
+
+	// .advantages__icon
+	&__icon
+		max-width: 100px
+		min-width: 100px
+		margin-right: 15px
+
+.divider
+	height: 5px
+	background-color: #eaeaea
+	position: relative
+	margin: 50px 0
+	+col()
+	+size(12)
+	&::before, &::after
+		content: ''
+		display: block
+		height: 23px
+		width: 50px
+		background-color: $green
+		position: absolute
+		top: -9px
+	&::after
+		right: 0
+
+.footer
+	// background-color: #222326
+	background-color: #003df3
+	overflow: hidden
+
+.footer-top
+	display: flex
+	justify-content: space-between
+
+.footer-nav
+	background: linear-gradient(90deg, #222326 50%, #beaeb6 50%)
+	height: 130px
+
+	// .footer-nav__menu
+	&__menu
+		+col()
+		+size(6)
+		display: flex
+		align-items: center
+		justify-content: space-around
+		height: 130px
+	// .footer-nav__menu-item
+	&__menu-item
+
+	// .footer-nav__menu-link
+	&__menu-link
+		font-size: 20px
+		text-transform: uppercase
+		color: $w
+		position: relative
+		@extend .transition
+		&::after
+			content: ''
+			display: block
+			height: 1px
+			width: 0
+			background-color: $w
+			position: absolute
+			bottom: -1px
+			@extend .transition
+		&:hover
+			color: $w
+			text-decoration: none
+			&::after
+				width: 100%
+
+	// .footer-nav__copyright
+	&__copyright
+		+col()
+		+size(6)
+		font-size: 28px
+		font-weight: $bold
+		color: $w
+		display: flex
+		align-items: center
+		height: 130px
+
+
+.footer-info
+	background-color: $violet
+	padding: 5px 0
+
+	// .footer-info__copyright
+	&__copyright
+		+col()
+		+size(12)
+		font-size: 16px
+		font-weight: $semi-bold
+		color: $w
+		text-align: center
+
+.footer-contact
+	height: 340px
+	background-color: #222326
+	position: relative
+	&::before
+		content: ''
+		display: block
+		height: 50%
+		width: 100%
+		background-color: #d1d1d1
+		position: absolute
+
+	// .footer-contact__working
+	&__working
+		position: relative
+		z-index: 2
+		margin-top: 100px
+		height: calc( 100% - 100px )
+		display: flex
+		align-items: center
+		justify-content: center
+		flex-direction: column
+		color: $w
+		.text
+			text-transform: uppercase
+			font-weight: $bold
+			font-size: 22px
+
+		.time
+			font-weight: $bold
+			font-size: 28.8px
+
+	// .footer-contact__logo
+	&__logo
+		display: flex
+		align-items: center
+		justify-content: center
+		height: 50%
+		width: 160px
+		background-color: $w
+		padding: 20px
+
+	// .footer-contact__logo-img
+	&__logo-img
+		max-width: 125px
+		min-width: 125px
+
+	// .footer-contact__social
+	&__social
+		display: flex
+		align-items: center
+		height: 50%
+		padding: 0 15px
+		background-color: $violet
+
+	// .footer-contact__social-item
+	&__social-item
+		margin: 13px
+
+	// .footer-contact__social-link
+	&__social-link
+		@extend .transition
+		&:hover
+			opacity: .6
+
+	// .footer-contact__social-icon
+	&__social-icon
+		width: 57px
+
+	
+	// .footer-contact__left
+	&__left
+		position: relative
+		height: 340px
+		width: 100%
+
+	// .footer-contact__center
+	&__center
+		background-color: $green
+		position: relative
+		height: 340px
+		width: 100%
+		&::before
+			content: ''
+			display: block
+			height: 100px
+			width: 100%
+			background-color: #d1d1d1
+			position: absolute
+			box-shadow: inset 215px 0px 0px 0px $violet
+	
+	// .footer-contact__right
+	&__right
+		background-color: #7d5d6e
+		position: relative
+		height: 340px
+		width: 100%
+		z-index: 5
+		&::before
+			content: ''
+			display: block
+			height: 100px
+			width: 100%
+			background-color: $violet
+			position: absolute
+
+		&::after
+			content: ''
+			display: block
+			height: 100%
+			width: 1000%
+			background-color: #7d5d6e
+			position: absolute
+			z-index: -1
+			box-shadow: inset 0px 100px 0px 0px $violet
+
+	// .footer-contact__info
+	&__info
+		position: absolute
+		top: 100px
+		bottom: 0
+		z-index: 1
+		display: flex
+		flex-direction: column
+		justify-content: space-around
+
+		// .footer-contact__info-item
+	&__info-item
+		display: flex
+		align-items: center
+		margin-left: 30px
+
+	// .footer-contact__info-link
+	&__info-link
+		display: flex
+		align-items: center
+		font-size: 24px
+		color: $w
+		font-weight: $regular
+		line-height: 25px
+		@extend .transition
+		&:hover
+			text-decoration: none
+			color: $w
+			opacity: .6
+
+
+	// .footer-contact__info-icon
+	&__info-icon
+		max-width: 58px
+		min-width: 58px
+		margin-right: 37px
+
+.divider-title
+	+col()
+	+size(12)
+	height: 5px
+	background-color: #eaeaea
+	margin-top: 50px
+	margin-bottom: 50px
+	display: flex
+	align-items: center
+	justify-content: space-between
+	width: 100%
+
+	// .divider-title__item
+	&__item
+		position: relative
+		height: 95px
+		background-color: $green
+		padding: 0 23px
+		display: flex
+		align-items: center
+		@extend .transition
+		&:hover, &:focus
+			text-decoration: none
+			background-color: darken($green, 3%)
+		&:active
+			background-color: darken($green, 6%)
+
+		// .divider-title__item .divider-title__item-left
+		&.divider-title__item-left
+			&::before
+				content: ''
+				display: block
+				height: 95px
+				width: 1000%
+				background-color: #4c7f7c
+				position: absolute
+				left: -1000%
+				top: 50%
+				transform: translate(0%, -50%)
+				z-index: -1
+		// .divider-title__item .divider-title__item-right
+		&.divider-title__item-right
+			&::before
+				content: ''
+				display: block
+				height: 95px
+				width: 100%
+				background-color: #4c7f7c
+				position: absolute
+				right: -100%
+				top: 50%
+				transform: translate(0%, -50%)
+				z-index: -1
+
+	// .divider-title__text
+	&__text
+		color: $w
+		font-size: 22px
+		font-weight: $bold
+		max-width: 140px
+	// .divider-title__icon
+	&__icon
+		max-width: 40px
+		min-width: 40px
+
+
+
+
+.divider-buttons
+	+col()
+	+size(12)
+	height: 5px
+	background-color: #eaeaea
+	margin-top: 50px
+	margin-bottom: 50px
+	display: flex
+	align-items: center
+	justify-content: space-between
+	width: 100%
+
+	// .divider-buttons__item
+	&__item
+		background-color: $green
+		box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35)
+		height: 100px
+		display: flex
+		align-items: center
+		max-width: 340px
+		padding: 10px
+		@extend .transition
+		&:hover, &:focus
+			text-decoration: none
+			background-color: darken($green, 3%)
+		&:active
+			background-color: darken($green, 6%)
+
+
+	// .divider-buttons__text
+	&__text
+		font-weight: $bold
+		font-size: 22px
+		text-transform: uppercase
+		color: $w
+		margin: 0 12px
+
+	// .divider-buttons__icon
+	&__icon
+		max-width: 50px
+		min-width: 50px
+		margin: 0 12px
+
+
+.categories
+	
+	// .categories__item
+	&__item
+		+col()
+		+size(2.4)
+	// .categories__link
+	&__link
+		display: block
+		background-color: $violet
+		border-radius: 10px
+		box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35)
+		padding: 18px 3px
+		text-align: center
+		margin: 15px 0
+		font-weight: $semi-bold
+		color: $w
+		text-transform: uppercase
+		font-size: 16px
+		// white-space: nowrap
+		@extend .transition
+		&:hover, &:focus
+			color: $w
+			text-decoration: none
+			background-color: darken($green, 3%)
+		&:active
+			background-color: darken($green, 6%)
+
+
+.tags
+	
+	// .tags__items
+	&__items
+		+col()
+		+size(12)
+		display: flex
+		justify-content: space-around
+		flex-wrap: wrap
+	// .tags__link
+	&__link
+		margin: 15px
+		font-size: 20px
+		font-weight: $semi-bold
+		color: $violet
+		position: relative
+		@extend .transition
+		&::after
+			content: ''
+			display: block
+			height: 1px
+			width: 100%
+			background-color: $violet
+			position: absolute
+			bottom: 1px
+			@extend .transition
+		&:hover, &:focus
+			color: $green
+			text-decoration: none
+			&::after
+				width: 0
+		&:active
+			color: $green
+			text-decoration: none
+
+.card
+	background-color: red
+
+	// .card__item
+	&__item
+		+col()
+		+size(4)
+		position: relative
+		border-radius: 10px
+		background-color: $w
+		border: 1px solid #d0d0d0
+	// .card__new
+	&__new
+		background-color: $violet
+		font-size: 16px
+		color: $w
+		border-radius: 10px
+		height: 30px
+		line-height: 30px
+		max-width: fit-content
+		padding: 0 15px
+		position: absolute
+		top: -16px
+		left: -5px
+
+	// .card__title
+	&__title
+		font-size: 18px
+		font-weight: $semi-bold
+		line-height: 20px
+
+
+	// .card__image-container
+	&__image-container
+
+
+	// .card__image-wrapper
+	&__image-wrapper
+
+
+	// .card__image-slide
+	&__image-slide
+		max-height: 265px
+		overflow: hidden
+
+	// .card__image-pagination
+	&__image-pagination
+		.swiper-pagination-bullet
+			background-color: $w
+			opacity: 1
+			height: 5px
+			max-width: 85px
+			width: 100%
+			border-radius: 5px
+			&.swiper-pagination-bullet-active
+				background-color: $violet
+
+
+
+					
